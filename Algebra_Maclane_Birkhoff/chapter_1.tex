@@ -1,0 +1,27 @@
+\section{Sets, Functions, and Integers}
+\subsection{Sets}
+
+\subsubsection*{Exercise 5}
+When constructing a subset, each element in the set can either be in or out (2 choices).
+Hence, $2^n$.
+
+\subsubsection*{Exercise 6}
+There are $n$ choices for the first element, $n-1$ choices for the second element,
+and so on up to $n-m$, hence dividing $n!$ by $(n-m)!$. The order of these $m$ selected
+elements doesn't matter, hence the division by $m!$.
+
+\subsection{Functions}
+
+\subsubsection*{Exercise 2}
+$h_g \circ h_f$, where $h$ corresponds to left-inverse.
+
+\subsubsection*{Exercise 3}
+Let $f:A \to B$ and $g:B \to C$ be surjections. Then  $g \circ f$ is surjective
+since $\exists x \in B$ such that $g(x) = y \quad \forall y \in C$, and 
+$\exists x' \in A$ such that $f(x') = x \quad \forall x \in B$
+(from the surjectivity of $f$ and $g$). Proving injectivity follows similarly.
+
+\subsubsection*{Exercise 4}
+The reverse direction follows from Exercise 3. If $f \circ g$ is injective and $g$ is not,
+we could choose two elements from the domain of $g$ that map to the same element in 
+the domain of $f$ (contradiction). Surjectivity is a similar argument.
