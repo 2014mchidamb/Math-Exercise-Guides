@@ -7,3 +7,43 @@
 
 \subsection*{Theorem 1}
 $x \in X, y \in N_T \implies T(x + y) = T(x) + T(y) = T(x)$.
+
+\subsection{Exercise 2}
+(a) Differentiation constant and sum rules imply linearity, and multiplication by $s$ is distributive.
+Take $p(s) = 1$ to see that $ST \neq TS$.
+
+(b) Rotation by 90 degrees amounts to swapping and negating coordinates, which is linear.
+Take $p = (1, 1, 0)$ to see that $ST \neq TS$.
+
+\subsection{Exercise 3}
+(i) $T^{-1} (T(a + b)) = T^{-1} (T(a) + T(b)) = a + b = T^{-1} (T(a)) + T^{-1} (T(b))$.
+
+(ii) Composition of isomorphisms is an isomorphism, hence $ST$ is invertible.
+
+\subsection{Exercise 4}
+(i) Let $T: X \to U,\: S: U \to V$ and $l_v \in V'$. 
+Then $(ST)' (l_v) = l_v (ST) = (l_v S) T = (S' l_v) T = T' S' l_v$,
+since $S' l_v \in U'$. 
+
+(ii) Follows from linearity of transpose (definition).
+
+(iii) Let $T: X \to U$ be an isomorphism. Then $l_x = l_u T \implies l_x T^{-1} = l_u$
+for $l_u \in U', \: l_x \in X'$.
+
+\subsection{Exercise 5}
+$T''(l_{x'}) = l_{x'}T'$ where $l_{x'} \in X''$ and $l_{x'}T' \in U''$.
+Since we can identify elements in $X''$ and $U''$ with elements in $X$ and $ U$
+respectively, we have that $T''$ assigns elements of $U$ to $X$.
+
+\subsection*{Theorem 2'}
+Since $T': U' \to X'$ we have $l_u \in N_{T'} \implies T'(l_u) = l_u T = 0$.
+$N_{T'}^{\perp}$ consists of elements $l_{u'} | l_{u'} (l_u) = 0$.
+From $l_u Tx = 0$ we have that each $l_{u'}$ is identified with a $u \in R_T$.
+
+\subsection{Exercise 6}
+The first two elements of $x$ are already 0 after applying $P$, so $P^2 = P$.
+Linearity follows from linearity of vector addition.
+
+\subsection{Exercise 7}
+$P$ is linear since function addition is linear.
+$P^2 f = \frac{f(x) + f(-x)}{4} + \frac{f(x) + f(-x)}{4} = P f$.
