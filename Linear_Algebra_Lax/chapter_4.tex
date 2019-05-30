@@ -1,0 +1,41 @@
+\section{Matrices}
+
+\subsection{Exercise 1}
+$(P + T)_{ij} = ((P + T)e_j)_i = (Pe_j + Te_j)_i = P_{ij} + T_{ij} $.
+
+\subsection{Exercise 2}
+Represent $A$ as a column of row vectors $A_i$ and $B$ as a row of column
+vectors $B_i$. Denote blocks by parenthesized subscripts.
+Then the first block of $AB$ looks like:
+\begin{align*}
+        (AB)_{(11)} &=
+    \begin{pmatrix}
+            A_1B_1 & & \\
+            & \ddots & \\
+            & & A_kB_k
+    \end{pmatrix}
+    \\
+    &=
+    \begin{pmatrix}
+            A_{1, :(k+1)} B_{1, :(k+1)} & & \\
+            & \ddots & \\
+            & & A_{k, :(k+1)} B_{k, :(k+1)}
+    \end{pmatrix}
+    \\
+    &+
+    \begin{pmatrix}
+            A_{1, (k+1):} B_{1, (k+1):} & & \\
+            & \ddots & \\
+            & & A_{k, (k+1):} B_{k, (k+1):}
+    \end{pmatrix}
+    \\
+    &=
+    A_{(11)}B_{(11)} + A_{(12)}B_{(21)}
+\end{align*}
+
+Where:
+\begin{align*}
+        A_{i, :(k+1)} B_{i, :(k+1)} &= \sum_{j=1}^{k} A_{i, j} B_{i, j} \\
+        A_{i, (k+1):} B_{i, (k+1):} &= \sum_{j=k+1}^{n} A_{i, j} B_{i, j}
+\end{align*}
+The rest follow similarly.
