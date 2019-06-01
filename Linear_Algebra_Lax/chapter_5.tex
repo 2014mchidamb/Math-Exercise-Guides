@@ -1,0 +1,17 @@
+\section{Determinant and Trace}
+
+\subsection{Exercise 1}
+(a) The discriminant already has ordered versions of all the $(i, j)$ difference terms.
+Applying a permutation only changes the signs of some of the difference terms, hence
+$\sigma(p) = 1, -1$.
+
+(b) $\sigma(p_1 \circ p_2) = \text{sign}(P(p_1 \circ p_2 (x_1, ..., x_n)))  = \sigma(p_1) \text{sign}(P(p_2 (x_1, ..., x_n)))$.
+
+\subsection{Exercise 2}
+(c) A transposition swaps two indices, and hence flips the sign of their associated
+difference term in the discriminant.
+
+(d) If $p(i) = j$, then we can start with the permutation $(i \: j)$.
+Next, if $p(j) = k$, we can compose with  $(i \: k)$ to get $(i \: k) \circ (i \: j)$.
+We can do this until we have completely reconstructed the permutation using
+transpositions.
