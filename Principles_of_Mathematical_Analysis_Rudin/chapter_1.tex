@@ -1,0 +1,55 @@
+\section{The Real and Complex Number Systems}
+
+\subsection{Exercise 1}
+If $rx = q$ or $r+x = q$ for some rational $q$, then substracting $r$ from $q$ or dividing $q$ by $r$ 
+yields $x$ rational, which is a contradiction.
+
+\subsection{Exercise 2}
+We can first show that $\sqrt{3}$ is irrational by seeing that $\frac{a^2}{b^2} = 3 \implies 3 | a, 3 | b$.
+Then, since $12 = 3 * 2^2$, we have that $\sqrt{12}$ is irrational as well.
+
+\subsection{Exercise 4}
+If $\alpha > \beta$ then $\alpha$ would be an upper bound as well.
+
+\subsection{Exercise 5}
+$\forall x \in A, \: -x \leq \sup{-A}$ and $\forall \epsilon \in \mathbb{R}, \: \exists x \in A \: | \sup{-A} + \epsilon < -x \leq \sup{-A}$. Negating the last inequality gives $\inf{A} = -\sup{-A}$.
+
+\subsection{Exercise 6}
+(a) Follows from $m = \frac{np}{q}$.
+
+(b) Put $r = \frac{m}{n}, \: s = \frac{p}{q}$. Then $b^r b^s = b^{\frac{mq}{nq}} b^{\frac{np}{nq}}$.
+Pulling out $\frac{1}{nq}$ gives the desired result.
+
+(c) $b^r$ is an upper bound since $b > 1$, and if it were not the supremum we could choose 
+$t < r$ such that $b^t > b^r$. This is not possible since again, $b > 1$.
+
+(d) Every element in $B(x + y)$ can be expressed as $b^{s + t} = b^s b^t \: s \leq x, \: t \leq y$.
+If $\sup{B(x+y)} = \alpha < \sup{B(x)}\sup{B(y)}$, then $b^s b^t \leq \alpha \implies B(x) \leq \alpha b^{-t}
+\implies B(y) \leq \frac{\alpha}{B(x)} \implies B(x) B(y) \leq \alpha$.
+
+\subsection{Exercise 7}
+(a) $b^n - 1 = (b - 1) (b^{n-1} + b^{n-2} + ... + 1) \geq n (b-1)$ since $b > 1$.
+
+(b) Plug $b^{\frac{1}{n}}$ into (a).
+
+(c) Plug $n > \frac{b_-1}{t-1}$ into (b).
+
+(d) Using (c) gives that we can choose $n$ such that
+$b^{\frac{1}{n}} < y \dot b^{-w} \implies b^{w + \frac{1}{n}} < y$.
+
+(e) We can take the reciprocal of (c) and do the same as in (d).
+
+(f) If $b^x > y$ we can apply (e) for a contradiction, if $b^x < y$ we can apply (d)
+for a contradiction. 
+
+(g) Supremum is unique.
+
+\subsection{Exercise 8}
+Suppose $(0, 1) < (0, 0)$. Then $(0, -1) < (0, 0)$ after multiplying by  $(0, 1)$ twice yields a
+contradiction. Similarly, assuming the opposite yields $(-1, 0) > (0, 0)$.
+
+\subsection{Exercise 9}
+Does not exhibit least upper bound property, since you can always find $e$ such that $b < e < d$.
+
+\subsection{Exercise 10}
+Exception is 0.
