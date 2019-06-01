@@ -1,27 +1,59 @@
 \section{Sets, Functions, and Integers}
 \subsection{Sets}
 
-\subsubsection*{Exercise 5}
+\subsubsection{Exercise 5}
 When constructing a subset, each element in the set can either be in or out (2 choices).
 Hence, $2^n$.
 
-\subsubsection*{Exercise 6}
+\subsubsection{Exercise 6}
 There are $n$ choices for the first element, $n-1$ choices for the second element,
 and so on up to $n-m$, hence dividing $n!$ by $(n-m)!$. The order of these $m$ selected
 elements doesn't matter, hence the division by $m!$.
 
 \subsection{Functions}
 
-\subsubsection*{Exercise 2}
+\subsubsection{Exercise 2}
 $h_g \circ h_f$, where $h$ corresponds to left-inverse.
 
-\subsubsection*{Exercise 3}
+\subsubsection{Exercise 3}
 Let $f:A \to B$ and $g:B \to C$ be surjections. Then  $g \circ f$ is surjective
 since $\exists x \in B$ such that $g(x) = y \quad \forall y \in C$, and 
 $\exists x' \in A$ such that $f(x') = x \quad \forall x \in B$
 (from the surjectivity of $f$ and $g$). Proving injectivity follows similarly.
 
-\subsubsection*{Exercise 4}
+\subsubsection{Exercise 4}
 The reverse direction follows from Exercise 3. If $f \circ g$ is injective and $g$ is not,
 we could choose two elements from the domain of $g$ that map to the same element in 
 the domain of $f$ (contradiction). Surjectivity is a similar argument.
+
+\subsubsection{Exercise 5}
+$f$ has no right inverse since it is not surjective.
+There are infinitely many left inverses of $f$, two possibilities are 
+mapping to square roots when possible and to 1 or 2 otherwise.
+
+\subsubsection{Exercise 6}
+Apply the left inverse of $f$.
+
+\subsubsection{Exercise 7}
+When surjective, use right inverse.
+
+\subsubsection{Exercise 8}
+Define $h$ such that $h(y) = x$ if $\exists x \in S \: | f(x) = y$, and $h(y) = x'$ otherwise
+(axiom of choice necessary for choosing $x$). If $f$ is injective, there will only be
+one choice of $x$, and if $f$ is surjective, there will be some $x$ for every $y$.
+
+\subsubsection{Exercise 9}
+Unique right inverse indicates that every element in the range has
+only one choice to map back to in the domain, implying injectivity.
+
+\subsubsection{Exercise 10}
+If $g$ is a bijection, then we can define $f$ such that $f(y) = x$ 
+where $g(x) = y$. $f$ is then a two-sided inverse.
+If  $f$ is a two-sided inverse of $g$, then every element of $T$ maps to a
+unique element of $S$ (from left inverse) and vice versa. Hence $g$ is
+a bijection.
+
+\subsubsection{Exercise 11}
+Following the hint, we can see that $f: U \to \mathcal{F}$ is surjective since
+$S \in \mathcal{F} \implies S \neq \emptyset \implies \exists u \in S \implies u \in U \implies f(u) = S$.
+The existence of the right inverse then gives us the axiom of choice.
