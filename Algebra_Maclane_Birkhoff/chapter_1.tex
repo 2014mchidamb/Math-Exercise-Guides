@@ -38,7 +38,7 @@ Apply the left inverse of $f$.
 When surjective, use right inverse.
 
 \subsubsection{Exercise 8}
-Define $h$ such that $h(y) = x$ if $\exists x \in S \: | f(x) = y$, and $h(y) = x'$ otherwise
+Define $h$ such that $h(y) = x$ if $\exists x \in S \: | \: f(x) = y$, and $h(y) = x'$ otherwise
 (axiom of choice necessary for choosing $x$). If $f$ is injective, there will only be
 one choice of $x$, and if $f$ is surjective, there will be some $x$ for every $y$.
 
@@ -57,3 +57,86 @@ a bijection.
 Following the hint, we can see that $f: U \to \mathcal{F}$ is surjective since
 $S \in \mathcal{F} \implies S \neq \emptyset \implies \exists u \in S \implies u \in U \implies f(u) = S$.
 The existence of the right inverse then gives us the axiom of choice.
+
+\subsection{Relations and Binary Operations}
+
+\subsubsection{Exercise 2}
+Symmetry + transitivity imply circularity. 
+For the other direction, we have 
+$xRy, \: yRy \implies yRx$, which gives both symmetry and transitivity.
+
+\subsubsection{Exercise 3}
+This only implies reflexivity for the elements $x, y \in X \: | \: (x, y) \in R$, not $\forall x \in X$.
+
+\subsubsection{Exercise 4}
+If $R$ is transitive $T = R$. Otherwise, start with $T = R$ and add $(x, z)$ to $T$
+whenever  $(x, y), (y, z) \in R$. Repeat this process until there are no more pairs to add.
+
+\subsubsection{Exercise 5}
+Let $R \subset X \times Y, \: S \subset Y \times Z, \: T \subset Z \times A$.
+\begin{align*}
+        x R \circ (S \circ T) a &\implies \exists y \in Y \: | \: xRy, y (S \circ T) a \\
+        &\implies \exists z \in Z \: | \: ySz, zTa \\
+        &\implies x (R \circ S) z \\
+        &\implies x (R \circ S) \circ T a
+\end{align*}
+
+\subsubsection{Exercise 6}
+Let $R \subset X \times Y, \: S \subset Y \times Z$.
+\begin{align*}
+        z (R \circ S)^{\smile} x &\implies x (R \circ S) z \\
+                                 &\implies \exists y \in Y \: | \: xRy, ySz \\
+                                 &\implies yR^{\smile} x, \:  zS^{\smile} y \\
+                                 &\implies z (S^{\smile} \circ R^{\smile}) x
+\end{align*}
+
+\subsubsection{Exercise 7}
+\begin{align*}
+        (x, z) \in G(g \circ f) &\implies \exists y \in Y \: | \: g(y) = z, \: f(x) = y \\
+                                &\implies (x, y) \in G(f), \: (y, z) \in G(g) \\
+                                &\implies (x, z) \in G(f) \circ G(g)
+\end{align*}
+
+\subsubsection{Exercise 9} 
+\begin{align*}
+        (x, y) \in G(f) &\implies \forall x \in X, \: \exists y \in Y \: | \: f(x) = y \\
+                        &\implies \forall x \in X, \: (x, x) \in G(f) \circ G^{\smile} (f) \\
+                        &\text{and} \quad \forall y \in \text{Im} f, \: (y, y) \in G^{\smile} (f) \circ G(f)
+\end{align*}
+
+\subsubsection{Exercise 10}
+\begin{align*}
+        &x \square y = u \square (x \square y) = (u \square y) \square x = y \square x \\
+        &x \square (y \square z) = x \square (z \square y) = (x \square y) \square z
+\end{align*}
+
+\subsection{The Natural Numbers}
+
+\subsubsection{Exercise 1}
+$f^0 = 1_X$ is trivially an injection. Suppose $f^n$ is an injection for some $n \in \mathbb{N}$.
+Then $f^{\sigma(n)} = f \circ f^n$ is a composition of injections and we are done.
+
+\subsubsection{Exercise 2}
+Same thing as Exercise 1.
+
+\subsubsection{Exercise 3}
+We have that $\sigma^0(0) = 0$. Now assuming  $\sigma^n(0) = n$ for some $n \in \mathbb{N}$,
+we have $\sigma^{\sigma(n)}(0) = \sigma \circ \sigma^n(0) = \sigma(n) = n + 1$.
+
+\subsubsection{Exercise 6}
+We can take $\sigma^{-1}(n) = n - 1$ for $n > 0$ and $\sigma^{-1}(0) = 0, 1, 2$
+to get 3 different left inverses.
+
+\subsubsection{Exercise 8}
+Let $n \in U$ if the elements in all sets of size $n$ are equal.
+Since we can construct a set with two different elements, we have that $n = 1$ does
+not imply $\sigma(n) \in U$, and the induction axiom cannot be applied to $U$.
+
+\subsubsection{Exercise 9}
+(Property I, Property II): Take $X = \mathbb{N}$ and $\sigma(x) = x^2 + 1$.
+
+(Property I, Property III): Let $X = \{0, 1\}$ and let $\sigma(0) = 1, \: \sigma(1) = 0$.
+Then $\sigma$ is clearly injective, and any subset of $X$ that contains 0 and $\sigma(0)$ 
+is all of $X$.
+
+(Property II, Property III): Again take $X = \{0, 1\}$, but this time let $\sigma(0) = \sigma(1) = 1$.
