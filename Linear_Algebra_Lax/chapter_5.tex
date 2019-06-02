@@ -15,3 +15,32 @@ difference term in the discriminant.
 Next, if $p(j) = k$, we can compose with  $(i \: k)$ to get $(i \: k) \circ (i \: j)$.
 We can do this until we have completely reconstructed the permutation using
 transpositions.
+
+\subsection{Exercise 3}
+By starting with a different $i$ in Exercise 2 (d), we can obtain a different
+decomposition of transpositions. However, the parity of the decomposition must
+be the same, as otherwise $\sigma(p)$ will take on two different values for
+the same $p$.
+
+\subsection{Exercise 4}
+(Property II): Each term in $D(a_1, ..., a_n)$ contains exactly one element
+from each of the $a_i$. Thus, scaling any of the $a_i$ by $k$ scales the entire
+determinant by $k$. Similar logic for vector addition.
+
+(Property III): The only non-zero term in $D(e_1, ..., e_n)$ is associated with
+the identity permutation, hence $D(e_1, ..., e_n) = 1$.
+
+(Property IV): Swapping two arguments is the same as applying a transposition to
+each of the terms in $D(a_1, ..., a_n)$, which flips the sign of $D$.
+
+\subsection{Exercise 5}
+Suppose $a_1 = a_2$. Then:
+\begin{align*}
+        D(a_1, a_2, ..., a_n) &= -D(a_2, a_1, ..., a_n) \\
+        D(a_1, a_2, ..., a_n) + D(a_1, a_2, ..., a_n) &= 0
+\end{align*}
+
+\subsection{Exercise 6}
+We can swap rows and columns until $A$ is in the same form as in Lemma 2.
+Since each row and column swap is equivalent to applying a transposition,
+we get that $\det A = (-1)^{i + j} \det A_{ij}$.
