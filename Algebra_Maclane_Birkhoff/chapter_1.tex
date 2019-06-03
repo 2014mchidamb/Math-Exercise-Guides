@@ -178,3 +178,34 @@ This is exactly the successor function $\sigma$.
 \subsubsection{Exercise 6}
 $k + n = \sigma^n(k) = \sigma^n(m) \implies k = m$ since a composition of injections
 is an injection.
+
+\subsection{Inequalities}
+
+\subsubsection{Exercise 1}
+Since  $x = x$ we have reflexivity of $\leq$.
+Since $x \leq y \implies x + a = y$ and $y \leq z \implies y + b = z$,
+we have $x + a + b = z$ giving transitivity.
+
+\subsubsection{Exercise 2}
+ \begin{align*}
+         m < n &\implies m + x = n \\
+               &\implies m + x + k = n + k \\
+               &\implies m + k < n + k
+\end{align*}
+Multiplication is also isotonic since it's just iterated addition.
+
+\subsubsection{Exercise 3}
+Suppose $0 \in U, \: n \in U \implies \sigma(n) \in U$ and $U \neq \mathbb{N}$.
+Then from well-ordering, we have that $\mathbb{N} / U$ has a first element $f$ 
+such that $m < f \implies m \in U$. However, this gives us that
+$\exists m \in  U \: | \: \sigma(m) = f$ which leads to a contradiction.
+
+\subsubsection{Exercise 4}
+Suppose $S$ is well-ordered with first element $f$ but $U \subset S$ is not.
+Then $V \subset U \: | \: V \neq \emptyset$ and $V$ has no first element.
+However, since $V \subset S$, we have a contradiction, since well-ordering
+implies that every subset of $S$ has a first element.
+
+\subsubsection{Exercise 6}
+The subset consisting of that infinite descending sequence would contain no
+first element.
