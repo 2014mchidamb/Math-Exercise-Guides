@@ -44,3 +44,31 @@ Suppose $a_1 = a_2$. Then:
 We can swap rows and columns until $A$ is in the same form as in Lemma 2.
 Since each row and column swap is equivalent to applying a transposition,
 we get that $\det A = (-1)^{i + j} \det A_{ij}$.
+
+\subsection{Exercise 7}
+Each term in the sum $D(a_1, ..., a_n) = \sum \sigma(p) a_{p_1 1} ... a_{p_n n}$ consists of
+exactly one element from each column and each row; swapping rows and columns does not
+change the terms in the sum. However, the permutation associated with each term is changed.
+The permutation $p$ that sends $1 \to p_1$ becomes $p'$ sending $p_1 \to 1$. This $p'$ 
+is exactly $p^{-1} $. Since $\sigma(1) = \sigma(p^{-1}  \circ p) = \sigma(p^{-1}) \sigma(p)$, 
+$\sigma(p^{-1}) = \sigma(p)$ we are done.
+
+\subsection{Exercise 8}
+$P$ is the linear transformation such that $P(e_j) = e_i$; in other words,
+$P$ rearranges the representation of $x$ by applying $p$ to the components of $x$.
+We also have that $PQx = P q(x) = p \circ q(x)$, since $Qx$ permutes the components
+of $x$ to produce $q(x)$, and $P q(x)$ permutes the components of $q(x)$ to produce
+$p \circ q(x)$.
+
+\subsection{Exercise 9}
+\begin{align*}
+        &\Tr AB = \sum_{i = 1}^m (AB)_{ii} = \sum_{i=1}^m \sum_{j=1}^n a_{ij}b_{ji} \\
+        &\Tr BA = \sum_{j=1}^n (BA)_{jj} = \sum_{j=1}^n \sum_{i=1}^m b_{ji} a_{ij}
+\end{align*}
+
+\subsection{Exercise 10}
+\begin{align*}
+        \Tr A A^{\top} &= \sum (A A^{\top})_{ii} = \sum \sum a_{ij} a^{\top}_{ji} \\
+                       &= \sum \sum a_{ij}^2
+\end{align*}
+
