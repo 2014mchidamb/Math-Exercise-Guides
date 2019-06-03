@@ -49,7 +49,24 @@ Suppose $(0, 1) < (0, 0)$. Then $(0, -1) < (0, 0)$ after multiplying by  $(0, 1)
 contradiction. Similarly, assuming the opposite yields $(-1, 0) > (0, 0)$.
 
 \subsection{Exercise 9}
-Does not exhibit least upper bound property, since you can always find $e$ such that $b < e < d$.
+Does exhibit least upper-bound property since you can take $(\sup{a_i}, \sup{b_i})$.
 
 \subsection{Exercise 10}
 Exception is 0.
+
+\subsection{Exercise 11}
+Take $w = \frac{1}{\abs{z}}z$ and $r = \abs{z}$ when $\abs{z} \neq 0$. 
+$w$ and $r$ are not uniquely determined; take $z = 0$ for example.
+
+\subsection{Exercise 12}
+By strong induction:
+\begin{align*}
+        \abs{z_1 + ... + z_{n+1}} &\leq \abs{z_1 + ... + z_n} + \abs{z_{n+1}} \\
+                                  &\leq \abs{z_1} + ... + \abs{z_{n+1}}
+\end{align*}
+
+\subsection{Exercise 13}
+\begin{align*}
+        \abs{x - y}^2 &= x\bar{x} - 2\abs{x}\abs{y} + y \bar{y} \\
+                      &\geq (\abs{x} - \abs{y})^2
+\end{align*}
