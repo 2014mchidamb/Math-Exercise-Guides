@@ -1,0 +1,82 @@
+\section{Basic Topology}
+
+\subsection{Exercise 1}
+The empty set has no elements, so all of its elements are vacuously also elements
+of every set.
+
+\subsection{Exercise 2}
+The roots of complex polynomials with integer coefficients can be expressed 
+as elements of the countable cross product of $\mathbb{N}$ with itself
+(cross $\mathbb{N}$ with itself $n$ times for the coefficients, and then once
+more to indicate which root).
+
+\subsection{Exercise 3}
+If all real numbers were algebraic, then the set of algebraic numbers would be
+uncountable (thus contradicting Exercise 2).
+
+\subsection{Exercise 4}
+The set of irrational numbers is $\mathbb{R} / \mathbb{Q}$, which
+must be uncountable as otherwise $\mathbb{R}$ would be countable.
+
+\subsection{Exercise 5}
+We can use $\big(\frac{n}{n+1}\big)_{n \in \mathbb{N}} \cup \big(\frac{2n}{n+1}\big)_{n \in \mathbb{N}} \cup \big(\frac{3n}{n+1}\big)_{n \in \mathbb{N}} $ to get the three limit points $1, 2, 3$.
+
+\subsection{Exercise 6} 
+If $p$ is a limit point of $E'$, then every neighborhood of $p$ contains
+a limit point $q$ of $E$, and every neighborhood of $q$ contains a point
+of $E$ thereby implying that $p$ is a limit point of $E$. $E$ and $E'$ 
+do not need to have the same limit points, since $E'$ could be finite
+and thus have no limit points.
+
+\subsection{Exercise 7}
+(a) If $p$ is a limit point of $\overline{B_n}$, then every neighborhood
+of $p$ contains a point $q \in A_i$. Since there are only finitely many $A_i$,
+$p$ must be a limit point for at least one of the $A_i$, as an infinite number
+of neighborhoods of $p$ must have non-zero intersection with some of the $A_i$.
+
+(b) If we take $A_i = \big(\frac{i n}{(i + 1)n+1}\big)_{n \in \mathbb{N}}$, then
+1 is a limit point of $B_n$ despite not being a limit point of any of the $A_i$.
+
+\subsection{Exercise 8}
+Every point of an open set in $\mathbb{R}^2$ is by definition a limit point of
+the set, since the point must have a neighborhood contained in the set. The same
+is not true for closed sets, since we can just take a finite set.
+
+\subsection{Exercise 10}
+Every set in $X$ is open, since any set containing $p$ also contains $N_r(p)$ for $r < 1$.
+No set in $X$ is closed, since $N_r(p) = p$ for $r < 1$. All infinite sets in $X$ are not
+compact, since we can take balls of radius $r < 1$ around each point as an open cover.
+
+\subsection{Exercise 12}
+Take any open cover of $K$. There must be some open set in this cover containing 0,
+which means that the same set contains all but a finite number of the elements of $K$ 
+(since 0 is the only limit point of $K $). Take a union of this set as well as the finitely
+many other sets containing the aforementioned points to get a finite subcover.
+
+\subsection{Exercise 13}
+Take $\cup_{k = 1}^\infty \{0, \big(\frac{n}{kn+1}\big)_{n \in \mathbb{N}}, \frac{1}{k}\}$.
+This set is closed and bounded, so it is compact by Heine-Borel. Its limit points
+are 0 and $\big(\frac{1}{k}\big)_{n \in \mathbb{N}}$.
+
+\subsection{Exercise 14}
+We can use $\cup_{n \in \mathbb{N}} (0, \frac{n}{n + 1})$, which has no finite subcover
+(since we could choose $x \in (0, 1)$ larger than the largest endpoint in the finite subcover).
+
+\subsection{Exercise 15}
+For closed, we can take $K_i = \mathbb{N} / {0, ..., i - 1}$, since any $x \in K_i$ will not
+be in $K_j$ if $j > x$. For bounded, we can take $K_i = (0, \frac{1}{i})$.
+
+\subsection{Exercise 16}
+$E$ is by definition bounded, and $E$ is closed since $q^2 \neq 3$ ($q$ is rational), and
+$q^2 > 3 \implies \exists \epsilon \: | \: p  \in N_{\epsilon}(q) \implies p^2 > 3$. Same
+logic gives that $E$ is also open in $\mathbb{Q}$. $E$ is, however, not compact, since
+we can construct an open cover consisting of $G_n = \{x \: | \: 2 < x^2 < 2 + \frac{n}{n+1}\}$.
+
+\subsection{Exercise 17}
+$E$ is not countable by diagonalization. $E$ is not dense in $[0, 1]$, since $E \cap [0, 0.1] = \emptyset$.
+$E$ is not perfect, consider $N_{0.001}(0.77)$. $E$ is closed and therefore compact by Heine-Borel.
+To see closed, suppose a limit point $q$ had a non-4/7 digit in the $i^{th}$ decimal spot. Then we could
+take a neighborhood of size $10^{-(i + 1)}$.
+
+\subsection{Exercise 18}
+Rationals are dense in $\mathbb{R}$, so no.
