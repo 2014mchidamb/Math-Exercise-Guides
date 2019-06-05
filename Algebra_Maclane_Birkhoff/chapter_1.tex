@@ -229,3 +229,24 @@ which gives $x_1 = x_2$.
 
 \subsubsection{Exercise 5}
 Same logic as Exercise 3, except using the result of Exercise 1.
+
+\subsection{The Integers Modulo $n$}
+
+\subsubsection{Exercise 3}
+\begin{align*}
+        h - k \in n\mathbb{Z},\:  r - s \in n\mathbb{Z} &\implies (h - k) + (r - s) \in n\mathbb{Z} \\
+                                                     &\implies (h + r) - (k + s) \in n\mathbb{Z} \\
+        h (r - s) \in n\mathbb{Z},\: s (h - k) \in n\mathbb{Z} &\implies h (r - s) + s (h - k) \in n\mathbb{Z} \\
+                                                               &\implies hr - ks \in n\mathbb{Z}
+\end{align*}
+
+\subsubsection{Exercise 4}
+Just check the squares of $0, ..., 7$ mod 8 to get the desired result.
+
+\subsubsection{Exercise 5}
+7 cannot be decomposed into a sum of 3 integers from the set $\{0, 1, 4\}$.
+
+\subsubsection{Exercise 6}
+One of the three consecutive integers must be divisible by 3; let the remainder of this integer mod 9 be
+$k$. Then, WLOG, we can let the other two integers be $k - 1$ and $k + 1$ mod 9. We then have that
+$(k - 1)^3 + k^3 + (k + 1)^3 = 3k^3 + 6k$, which is divisible by 9 since $k$ is divisible by 3.
