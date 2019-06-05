@@ -32,4 +32,43 @@ $s_n = 1 + x + ... + x^n \implies x s_n = x + x^2 + ... + x^{n+1} \implies (1 - 
 \subsection*{Example 3.53}
 $\sum_{k=1}^{\infty} \frac{1}{4k-3} + \frac{1}{4k-1} - \frac{1}{2k} < \frac{5}{6} + \sum_{k=2}^{\infty} \frac{1}{4k-4} + \frac{1}{4k-4} - \frac{1}{2k}$. The RHS converges since $\frac{1}{4k-4} + \frac{1}{4k-4} - \frac{1}{2k} = \frac{1}{2k^2 - 2k}$.
 
+\newpage
 
+\subsection{Exercise 1}
+All we need is the inequality $\abs{s_n - s} \geq \abs{\abs{s_n} - \abs{s}}$.
+The converse is not true, since we can take $s_n = (-1)^n$.
+
+\subsection{Exercise 2}
+My original idea: $\sqrt{(n + x)^2} - n = x$. Setting $(n + x)^2 \geq n^2 + n$ gives
+$x^2 \geq (1 - 2x) n$. The last inequality is only true for all $n$ when $x \geq \frac{1}{2}$.
+This implies that $\frac{1}{2}$ is the supremum of $\sqrt{n^2 + n} - n$. Since 
+$\sqrt{n^2 + n} - n$ is increasing, it converges to $\frac{1}{2}$.
+
+Better: $(\sqrt{n^2 + n} - n) (\sqrt{n^2 + n} + n) = n \implies \sqrt{n^2 + n} - n = \frac{1}{\sqrt{1 + \frac{1}{n}} + 1}$.
+
+\subsection{Exercise 3}
+Clearly $s_{n + 1} > s_n$. We can see that $s_n < 2$ by induction, since $s_1 < 2$ and
+$2 + \sqrt{s_n} < 4$. This gives that $s_n$ is monotone and bounded, implying it converges.
+
+\subsection{Exercise 4}
+\begin{align*}
+&s_{2m + 1} = \sum_{i = 1}^{m} (\frac{1}{2})^i, \: s_{2m} = \sum_{i = 2}^{m} (\frac{1}{2})^i \\
+&\implies \limsup_{n \to \infty} s_n = 1, \: \liminf_{n \to \infty} s_n = \frac{1}{2}
+\end{align*}
+
+\subsection{Exercise 5}
+\begin{align*}
+        \limsup_{n \to \infty} (a_n + b_n) &= \sup_{\{k\}}{\{\lim_{k \to \infty} (a_{n_k} + b_{n_k})\}} \\
+                                           &= \sup_{\{k\}}{\{\lim_{k \to \infty} a_{n_k} + \lim_{k \to \infty} b_{n_k}\}}
+\end{align*}
+
+\subsection{Exercise 6}
+(a) $\sqrt{n + 1} - \sqrt{n} = \frac{1}{\sqrt{n + 1} + \sqrt{n}}$ diverges from comparison
+to harmonic series (same technique as Exercise 2).
+
+(b) Converges, by comparison to $\sum_{n = 1}^{\infty} \frac{1}{n^p}$ for $p = \frac{3}{2}$.
+
+(c) Converges by root test, since $\lim_{n \to \infty} n^{\frac{1}{n}} = 1$.
+
+(d) Converges when $\abs{z} > 1$ and diverges otherwise. To see this, put $z = \abs{z}e^{i\theta}$ 
+to get $\lim_{n \to \infty} \frac{1}{1 + \abs{z}^n e^{ni\theta}}$.
