@@ -250,3 +250,21 @@ Just check the squares of $0, ..., 7$ mod 8 to get the desired result.
 One of the three consecutive integers must be divisible by 3; let the remainder of this integer mod 9 be
 $k$. Then, WLOG, we can let the other two integers be $k - 1$ and $k + 1$ mod 9. We then have that
 $(k - 1)^3 + k^3 + (k + 1)^3 = 3k^3 + 6k$, which is divisible by 9 since $k$ is divisible by 3.
+
+\subsection{Equivalence Relations and Quotient Sets}
+
+\subsubsection{Exercise 1}
+The quotient $T / S$ consists of the set of all possible equivalence classes of triangles
+based on the relation of triangle similarity. Thus, each element of $T / S$ corresponds to a
+different kind of triangle similarity, or ``shape''.
+
+\subsubsection{Exercise 2}
+$p \times p$ is an equivalence relation on $\mathbb{Z} \times \mathbb{Z}$. Furthermore,
+$(p \times p) (x, y) = (p \times p) (x', y') \implies p(x + y) = p(x' + y')$.
+Then by Theorem 19, we can define addition of cosets of two integers as the function
+that commutes with the coset of the sum of the integers.
+
+\subsubsection{Exercise 3}
+Reflexivity and symmetry are clear; transitivity follows from the fact that if  $(x_1, y_1)E(x_2,y_2), \: 
+(x_2, y_2)E(x_3, y_3)$, then $x_3 - x_1 = x_3 - x_2 + x_2 - x_1$ which is the sum of two integers and
+therefore an integer. 
