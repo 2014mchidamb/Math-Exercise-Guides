@@ -268,3 +268,53 @@ that commutes with the coset of the sum of the integers.
 Reflexivity and symmetry are clear; transitivity follows from the fact that if  $(x_1, y_1)E(x_2,y_2), \: 
 (x_2, y_2)E(x_3, y_3)$, then $x_3 - x_1 = x_3 - x_2 + x_2 - x_1$ which is the sum of two integers and
 therefore an integer. 
+
+\subsection{Morphisms}
+
+\subsubsection{Exercise 1}
+The additive endomorphisms of $\mathbb{Z}$ are completely determined by the value they map 1 to.
+Thus, they are all functions of the form $f(z) = c z$ for some constant $c \in \mathbb{Z}$.
+
+\subsubsection{Exercise 2}
+Every additive morphism from $\mathbb{Z}_n$ to $\mathbb{Z}_m$ is of the form $f(z) = p_m (c z)$ 
+where $p_m: \mathbb{Z} \to \mathbb{Z}_m$ maps elements of $\mathbb{Z}$ to their remainders mod $m$  
+and $c \in  \mathbb{Z}_m$.
+
+\subsubsection{Exercise 3}
+Follows the structure indicated in Exercise 2.
+
+\subsubsection{Exercise 4}
+Each rotation of the square can be decomposed into clockwise rotations. If we label the vertices of 
+the square as $0, 1, 2, 3$, then a clockwise rotation can be thought of as adding 1 mod 4. Thus,
+the isomorphisms between $(\mathbb{Z}_4, +)$ and $(Q, \circ)$ are exactly the additive isomorphisms
+between $\mathbb{Z}_4$ and itself. There are only 2 such isomorphisms: $f(1) = 1$ and $f(1) = 3$.
+
+\subsubsection{Exercise 5}
+Follows from left inverse for injectivity and right inverse for surjectivity.
+
+\subsubsection{Exercise 7}
+Any morphism $f: (\mathbb{R}, \times) \to (\mathbb{R}, +)$ satisfies
+\begin{align*}
+        f(1 * 1) &= f(1) + f(1) \implies f(1) = 0 \\
+        f(0 * 0) &= f(0) + f(0) \implies f(0) = 0
+\end{align*}
+Which means $f$ cannot be an isomorphism.
+
+\subsection{Semigroups and Monoids}
+
+\subsubsection{Exercise 1}
+If $u$ and $u'$ are both units, then $u \square u' = u' = u$.
+
+\subsubsection{Exercise 2}
+The terms $a_1, ..., a_m$ and $a_{m+1}, ..., a_{m+n}$ together give $a_1, ..., a_{m + n}$.
+
+\subsubsection{Exercise 3}
+As stated in the text, follows from induction on $n$ (the proofs can be found in previous sections).
+
+\subsubsection{Exercise 4}
+Due to commutativity, we can rearrange the terms in the double sum as we like, thereby allowing us
+to swap sums.
+
+\subsubsection{Exercise 5}
+Let $f: (\mathbb{N}, +) \to (\mathbb{N}, \times)$ be such that $f(n) = 0 \:  \forall n \in \mathbb{N}$.
+Then $f$ is a morphism that does not map the additive unit 0 to the multiplicative unit 1.
