@@ -14,4 +14,31 @@ Suppose $q(A) = \sum_{i = 0}^N q_i A^i$. Then $q_i A^i f = q_i a^i f + q_i i a^{
 Exercise 2. From the linearity of the derivative it then follows that $q(A) f = q(a) f + q'(a) h$. 
 
 \subsection{Exercise 4}
+Applying Lemma 9 to $p_1 ... p_k$ and $p_{k+1}$ gives the desired result.
 
+\subsection{Exercise 5}
+$(A - aI)^d x = 0 \implies A (A - aI)^d x = 0 \implies (A - aI)^d (Ax) = 0 \implies Ax \in N_d$.
+
+\subsection{Exercise 6}
+Since $m_A$ divides the characteristic polynomial of $A$ (by definition of $d_i$), $m_A (A) = 0$ by Cayley-Hamilton. 
+Suppose there is some polynomial $q(A) = 0$ with $\deg(q) < \deg(m_A)$.
+The roots of $q$ must contain all of the eigenvalues of $A$, since for any eigenvector $h$ we have that
+$q(A)h = q(a_h)h$ (where $a_h$ denotes the eigenvalue associated with $h$). Thus, the roots of $q$ can
+only differ in multiplicity from $m_A$. However, if any root of $q$ has multiplicity $d_i' < d_i$, then
+we can choose an element $x \in N_{d_i}$ such that $q(A)x \neq 0$, which is a contradiction (since
+$N_{d_i'} \subset N_{d_i}$).
+
+\subsection{Exercise 7}
+The columns of $A$ are $Ax_i$.
+
+\subsection{Exercise 8}
+By induction.
+
+\subsection{Exercise 9}
+The minimal polynomial of $A$ divides the minimal polynomial of $A^{\top}$, and vice versa,
+so they must be the same. Thus, the indices of each eigenvalue of $A$ and $A^{\top}$ must be the same,
+which means we can apply Theorem 12 to see that they are similar.
+
+\subsection{Exercise 10}
+$(\xi^{(i)}, x) = \sum k_j (\xi^{(i)}, x^{(j)}) = k_i (\xi^{(i)}, x^{(i)})$ since
+$(\xi^{(i)}, x^{(j)}) = 0$ by Theorem 17.
