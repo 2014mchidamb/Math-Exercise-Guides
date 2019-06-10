@@ -1,0 +1,29 @@
+\section{Continuity}
+
+\subsection{Exercise 1}
+Continuity implies $\lim_{h \to 0} [f(x + h) - f(x - h)] = 0$, since we can choose $h$ to be within
+$\delta$ of $x$ such that $\abs{f(x + h) - f(x) + f(x) - f(x - h)} \leq \abs{f(x + h) - f(x)}
++ \abs{f(x - h) - f(x)} < \epsilon$. However, the converse (as asked in the question) need not be
+true, since we don't have to have $\lim_{h \to 0} f(x + h) = f(x) = \lim_{h \to 0} f(x - h)$.
+For example, consider $x \neq 0 \implies f(x) = \frac{1}{\abs{x}}, \: f(0) = 0$. 
+
+\subsection{Exercise 2}
+Suppose $p$ is a limit point of $E$. Then there is a sequence $(x_n) \in E \: | \: \lim_{n \to \infty} x_n = p$.
+Since $f$ is continuous, we have that $lim_{n \to \infty} f(x_n) = f(p)$, which implies that $f(p)$ is
+a limit point of $f(E)$ giving us that $f(\overline{E}) \subset  \overline{f(E)}$.
+
+\subsection{Exercise 3}
+Similar to Exercise 2: if $p$ is a limit point of $Z(f)$, then there exists some sequence $(x_n) \in E \: | \: 
+\lim_{n \to \infty} x_n = p$. Since $f$ is continuous, we have that $\lim_{n \to  \infty} f(x_n) = f(p)$. 
+Then it follows that $x_n \in Z(f) \implies f(x_n) = 0 \implies f(p) = 0$.
+
+\subsection{Exercise 4}
+The fact that $f(E)$ is dense in $f(X)$ follows from Exercise 2, since $X = \overline{E}$.
+Similarly, $\lim_{n \to \infty} g(p_n) = g(p) \implies \lim_{n \to \infty} f(p_n) = g(p)$ 
+since $p_n \in E$. Thus, $g(p) = f(p)$ for all $p \in X$.
+
+\subsection{Exercise 5}
+If $f$ is defined on an open set in $\mathbb{R}^1$, then it need not be defined at its endpoints.
+For example, consider $f(x) = \frac{1}{x}$ defined on $(0, 1)$. However, if $f$ is defined on a
+closed subset $E \subset \mathbb{R}^1$, then we can take $g(x)$ to be $f(x)$ on $E$ and straight
+line "continuations" everywhere else.
