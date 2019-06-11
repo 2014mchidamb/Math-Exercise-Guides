@@ -1,0 +1,48 @@
+\section{Euclidean Structure}
+
+\subsection{Exercise 1}
+Applying Cauchy-Schwarz gives that $(x, y) \leq \norm{x}\norm{y} = \norm{x}$, which yields
+the desired result.
+
+\subsection{Exercise 2}
+Both of these just follow from the fact that a linear space with Euclidean structure is
+isomorphic to $R^k$, which has the desired properties. The following feel like cop-out
+solutions, but I feel they're fair given this isn't supposed to be a real analysis text.
+
+(i) Let $x_k = \sum_i a_i^{(k)} x^{(i)}$ and $x_j = \sum_i a_i^{(j)} x^{(i)}$. Then we have that
+$\norm{x_k - x_j} \to 0 \implies \abs{a_i^{(k)} - a_i^{(j)}} \to 0$. Since $\mathbb{R}$ is
+complete, $a_i^{(n)} \to a_i$ for some $a_i \in \mathbb{R}$. Thus $x_k \to x = \sum a_i x^{(i)}$.
+
+(ii) Same logic as (i): the individual $a_i^{(n)}$ have convergent subsequences.
+
+\subsection{Exercise 3}
+We also need to assume $X$ is finite dimensional (I think).
+
+(i) Since $X$ is finite dimensional, we have that $x = \sum a_i e^{(i)}$ for some basis $e^{(i)}$. Let
+$v$ be the vector whose components are $v_i = \norm{Ae^{(i)}}$. Then
+\begin{align*}
+        \norm{Ax} &= \norm{\sum a_i Ae^{(i)}} \\
+                  &= \norm{(x, v)} \\
+                  &\leq \norm{x} \norm{v}
+\end{align*}
+Since $\norm{v}$ is a constant, $\norm{Ax}$ is bounded on the unit sphere.
+
+(ii) We have that $\norm{A} = \max_x \frac{\norm{Ax}}{\norm{x}} = \max_x \norm{Ax}$.
+ The result then follows from $(Ax, y) \leq \norm{Ax}$.
+
+(iii) Let $v$ be as in (i). Then $\norm{Ax_i - Ax_j} \leq \norm{A} \norm{x_i - x_j}$. Since
+$\norm{A} \leq \norm{v}$ from (i), we are done (we can make $ \norm{x_i - x_j}$ as small
+as we'd like).
+
+\subsection{Exercise 4}
+Follows immediately from $(Ax, y) = (x, A^{*}y)$ and Exercise 3 (ii).
+
+\subsection{Exercise 5}
+Let $x = y_1 + y_1^{\perp}$ and $z = y_2 + y_2^{\perp}$. Then
+\begin{align*}
+        (P_Y x, z) &= (y_1, y_2 + y_2^{\perp}) \\
+                   &= (y_1, y_2) + 0 \\
+                   &= (y_1, y_2) + (y_1^{\perp}, y_2) \\
+                   &= (x, P_Y z)
+\end{align*}
+
