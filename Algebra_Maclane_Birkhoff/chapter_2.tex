@@ -1,0 +1,89 @@
+\section{Groups}
+
+\subsection{Groups and Symmetry}
+
+\subsubsection{Exercise 2}
+Map each element $x \in \mathbb{Z}_6$ to the pair $(p_2(x), p_3(x))$.
+This is an isomorphism, since the projections $\mathbb{Z}_6 \to \mathbb{Z}_3$ 
+and $\mathbb{Z}_6 \to \mathbb{Z}_3$ are both group morphisms, and the mapping
+itself is a bijection.
+
+\subsubsection{Exercise 3}
+To see that there is no isomorphism $f: \mathbb{Z}_4 \to \mathbb{Z}_2 \times \mathbb{Z}_2$, 
+consider $f(1)$ and $f(3)$. We have that $f(0) = f(1 + 3) = f(1) + f(3)$ which is not
+possible since $f(0) = (0, 0)$ (has to be the case since $f(x) = f(0) + f(x)$ ).
+
+Rotations do not preserve symmetry for rectangles, since distances between adjacent
+vertices change. The only transformations that preserve symmetry are reflections
+across the vertical and horizontal axes, giving 4 possible transformations. We can
+then map $(0, 0)$ to the identity, $(0, 1)$ to a vertical reflection, $(1, 0)$ to
+a horizontal reflection, and $(1, 1)$ to a vertical + horizontal reflection.
+
+\subsubsection{Exercise 4}
+
+\subsubsection{Exercise 5}
+
+\subsubsection{Exercise 6}
+
+\subsubsection{Exercise 10}
+The set of these permutations has identity  $(1, 0)$, and any permutation $(a, b)$ has
+inverse $(\frac{1}{a}, -\frac{b}{a})$. Furthermore, $(a_2, b_2) \circ (a_1, b_1) = (a_1 a_2, a_2 b_1 + b_2)$,
+which is associative since multiplication and addition are both associative.
+
+\subsubsection{Exercise 11}
+(a) To show that the given function is a permutation on $\mathbb{R}\cup{\infty}$, we need to show that it is a
+bijection from $\mathbb{R}\cup{\infty} \to \mathbb{R}\cup{\infty}$.
+Suppose $f(x_1) = f(x_2)$. Then
+\begin{align*}
+        \frac{ax_1 + b}{cx_1 + d} &= \frac{ax_2 + b}{cx_2 + d} \\
+        (ad - bc)x_1 &= (ad - bc)x_2 \implies x_1 = x_2
+\end{align*}
+So $f$ is an injection from $\mathbb{R}\cup{\infty} \to \mathbb{R}\cup{\infty}$. Furthermore, if
+we set $f(x) = y$, we can solve for $x$, which gives us that $f$ is also a surjection.
+
+(b) I'm sure an inverse can be found, but it's tedious... Associativity then follows again from associativity
+of multiplication and addition.
+
+\subsubsection{Exercise 12}
+
+\subsubsection{Exercise 13}
+(a) Any automorphism of $\mathbb{Z}_3$ has to fix 0. Thus, the only two automorphisms are the identity
+and the automorphism that swaps 1 and 2.
+
+(b) Fixing $(0, 0)$, we see that we can permute the remaining three elements as we want, giving
+the isomorphism to $S_3$.
+
+(c) 
+
+\subsection{Rules of Calculation}
+
+\subsubsection{Exercise 1}
+(a) Multiply by inverse and use associativity.
+
+(b) Associativity.
+
+(c) Associativity and then inverse of product.
+
+\subsubsection{Exercise 2}
+Multiply by $a^{-1}$.
+
+\subsubsection{Exercise 3}
+Since the unit is its own inverse, we're left with $2n - 1$ elements that need to be paired with one another.
+Since $2n - 1$ is odd, we have that one of the elements must be its own inverse.
+
+\subsubsection{Exercise 4}
+Any group with 3 elements must be of the form $1, a, a^{-1}$. Thus, each of these groups is clearly
+isomorphic to the others.
+
+\subsubsection{Exercise 5}
+I struggled to untie the ideas of cancellation and inverse, so I ended up looking up a hint for this one. To
+see that an infinite set with cancellation does not need to be a group, consider $(\mathbb{N}, +)$.
+This is a monoid that was proven to have cancellation in chapter 1, but does not contain inverses.
+
+For the case of a finite set $G$, we can use the fact that $f(x) = ax$ is an injection for any $a \in G$, 
+since $ax = ay \implies x = y$ by cancellation. Since $G$ is finite, $f$ is also a surjection. Therefore,
+$\exists a \: | \: ax = 1$ which gives us that there is a left inverse. Applying the same logic using
+$f(x) = xa$ gives a right inverse, which completes the proof since these inverses must be equal.
+
+\subsubsection{Exercise 6}
+
