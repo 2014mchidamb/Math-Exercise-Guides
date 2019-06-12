@@ -27,3 +27,25 @@ If $f$ is defined on an open set in $\mathbb{R}^1$, then it need not be defined 
 For example, consider $f(x) = \frac{1}{x}$ defined on $(0, 1)$. However, if $f$ is defined on a
 closed subset $E \subset \mathbb{R}^1$, then we can take $g(x)$ to be $f(x)$ on $E$ and straight
 line "continuations" everywhere else.
+
+\subsection{Exercise 6}
+$f$ is a bijection from $E$ to its graph $G(E)$. If $f$ is continuous, then we can take the inverse image of
+an open cover of $G(E)$ to get an open cover of $E$. Since $E$ is compact, this open cover must have a
+finite subcover whose image under $f$ will be a finite subcover for $G(E)$, thereby giving the compactness of
+$G(E)$.
+
+I looked up a hint on the reverse direction. Consider an infinite (finite case presents no issues) closed set 
+$V \subset G(E)$. Take some arbitrary subsequence $(x_k, f(x_k)) \in V$. 
+By the compactness of $G(E)$, this subsequence has a limit point $(x, f(x)) \in G(E)$, and this limit point is
+contained in $V$ since $V$ is closed. Thus, $f^{-1} (V)$ also contains $x_k \to x$, implying that $f^{-1} (V)$ 
+contains all of its limit points and is therefore closed. This shows that $f$ is continuous.
+
+For what it's worth, I think 
+\href{http://at.yorku.ca/cgi-bin/bbqa?forum=ask_an_analyst_2005&task=show_msg&msg=3485.0001.0001.0001}{this}
+argument using projections is much nicer.
+
+\subsection{Exercise 7}
+
+
+\subsection{Exercise 8}
+
