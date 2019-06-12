@@ -46,3 +46,58 @@ Let $x = y_1 + y_1^{\perp}$ and $z = y_2 + y_2^{\perp}$. Then
                    &= (x, P_Y z)
 \end{align*}
 
+\subsection{Exercise 6}
+Reflection across $x_3 = 0$ sends $(x_1, x_2, x_3) \to (x_1, x_2, -x_3)$. Hence it can be represented as
+\begin{align*}
+       A =
+       \begin{pmatrix}
+               1 & 0 & 0 \\
+               0 & 1 & 0 \\
+               0 & 0 & -1
+       \end{pmatrix}
+\end{align*}
+Which has determinant -1 (product of diagonal terms).
+
+\subsection{Exercise 7}
+(a) If $A$ is orthogonal, then $A^{*}A = I$. Since $A^{*} = A^{\top}$ in this case, we immediately get
+that the column vectors of $A$ are pairwise orthogonal unit vectors. Similarly, a matrix $A$ with
+pairwise orthogonal unit vectors satisfies $A^{*} A = I$, implying that it is orthogonal.
+
+(b) $A^{*} A = I \implies A^{*} = A^{-1} \implies A A^{*} = I$ so $A$ orthogonal implies $A^{*}$ orthogonal.
+The result then follows from plugging $A^{*}$ into (a).
+
+\subsection{Exercise 8}
+The proof is almost identical to the non-complex case.
+\begin{align*}
+        (x + ty, x + ty) &= (x, x) + (ty, x) + (x, ty) + \norm{t}^2 (y, y) \\
+                         &= (x, x) + t(y, x) + \bar{t}(x, y) + \norm{t}^2 (y, y)
+\end{align*}
+Plugging in $t = \frac{(x, y)}{(y, y)}$ and using the fact that $(x + ty, x + ty) \geq 0$ for all
+complex $t$ gives the desired inequality.
+
+\subsection{Exercise 9}
+\subsubsection{Theorem 4}
+The proof of Theorem 4 is the same, except we use $y = \sum \bar{b_k} x^{(k)}$ instead.
+
+\subsubsection{Theorem 5}
+No changes need to be made to the proof of Theorem 5.
+
+\subsubsection{Theorem 6}
+Again, no changes need to be made.
+
+\subsubsection{Theorem 7}
+No changes need to be made here either, since $(y, y^{\perp}) = 0 \implies \overline{(y, y^{\perp})} = 0$.
+
+\subsection{Exercise 10}
+\subsubsection{Theorem 8}
+Parts (i)-(iii) remain the same. For part (iv), we see that 
+\begin{align*}
+        (Ax, y) = (x, A^{*}y) = \overline{(A^{*}y, x)} = \overline{(y, A^{**}x)} = (A^{**}x, y)
+\end{align*}
+
+\subsubsection{Theorem 9}
+(i) $\norm{kA} = \max_x \frac{\sqrt{(kAx, kAx)}}{\norm{x}} = \sqrt{k\bar{k}} \norm{A} = \norm{k} \norm{A}$.
+
+(ii) Applying triangle inequality to the definition of norm gives the result.
+
+(iii) Comes immediately from $\norm{A(Bx)} \leq \norm{A} \norm{Bx}$.
