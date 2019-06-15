@@ -12,6 +12,9 @@ Suppose $p$ is a limit point of $E$. Then there is a sequence $(x_n) \in E \: | 
 Since $f$ is continuous, we have that $lim_{n \to \infty} f(x_n) = f(p)$, which implies that $f(p)$ is
 a limit point of $f(E)$ giving us that $f(\overline{E}) \subset  \overline{f(E)}$.
 
+To see that $f(\overline{E})$ can be a proper subset, consider $f: \mathbb{Z}^{+} \to \mathbb{Q}$ with
+$f(x) = \frac{1}{x}$. Then $f$ is continuous and $0 \notin f(\overline{\mathbb{Z}^{+}}) = f(\mathbb{Z}^{+})$.
+
 \subsection{Exercise 3}
 Similar to Exercise 2: if $p$ is a limit point of $Z(f)$, then there exists some sequence $(x_n) \in E \: | \: 
 \lim_{n \to \infty} x_n = p$. Since $f$ is continuous, we have that $\lim_{n \to  \infty} f(x_n) = f(p)$. 
@@ -25,8 +28,10 @@ since $p_n \in E$. Thus, $g(p) = f(p)$ for all $p \in X$.
 \subsection{Exercise 5}
 If $f$ is defined on an open set in $\mathbb{R}^1$, then it need not be defined at its endpoints.
 For example, consider $f(x) = \frac{1}{x}$ defined on $(0, 1)$. However, if $f$ is defined on a
-closed subset $E \subset \mathbb{R}^1$, then we can take $g(x)$ to be $f(x)$ on $E$ and straight
-line "continuations" everywhere else.
+closed subset $E \subset \mathbb{R}^1$, then $E^c$ is an open set in $\mathbb{R}$ and can thus be
+decomposed into the union of a countable number of open intervals $(a_n, b_n)$. We can thus take
+$g$ to be $g(x) = \frac{b_n - x}{b_n - a_n} f(a_n) + (1 - \frac{b_n - x}{b_n - a_n}) f(b_n)$ 
+(the straight line interpolation between $f(a_n)$ and $f(b_n)$).
 
 \subsection{Exercise 6}
 $f$ is a bijection from $E$ to its graph $G(E)$. If $f$ is continuous, then we can take the inverse image of
@@ -45,7 +50,95 @@ For what it's worth, I think
 argument using projections is much nicer.
 
 \subsection{Exercise 7}
+Suppose for any $M$ that $\exists x, y \: | \: f(x, y) > M$ (we consider only the case where $x > 0$, as the
+other case is identical). Then we can solve the resulting quadratic to see that, if such $x$ and $y$ exist,
+then $x > \frac{y^2 (1 + \sqrt{1 - 4M^2})}{2M}$. However, $\sqrt{1 - 4M^2}$ is not defined in $\mathbb{R}$
+for $M > \frac{1}{2}$, so $f$ must be bounded. Performing the same analysis for $g$ yields 
+$x > \frac{y^2 (1 + \sqrt{1 - 4y^2M^2})}{2M}$. Since $y$ can be chosen to make the inequality for $x$ have
+a solution in $\mathbb{R}$, $g$ is unbounded.
 
+To show that $f$ is discontinuous at $(0, 0)$, we need only consider the sequence consisting of 
+$(0, \frac{n}{n + 1})$ to see that $\lim_{n \to \infty} f(0, \frac{n}{n+1}) = 1 \neq 0$. Plugging in
+$y = ax + b$ leads to $f$ and $g$ being quotients of two polynomials with non-zero denominator,
+indicating that they're both continuous.
 
 \subsection{Exercise 8}
+Suppose $f$ is not bounded. Then there is a sequence $f(x_n) \: | \: \forall N, \exists m, n \geq N \: \abs{f(x_n) - f(x_m)} > \epsilon$ for some
+$\epsilon$, since otherwise $f(x_n)$ would converge to some point of $\mathbb{R}$. As $f$ is 
+uniformly continuous, this means that $\abs{x_n - x_m} > \delta$ for infinitely many $n, m$.
+However, that would then imply that $E$ is not bounded, which is a contradiction. Thus, $f$ is bounded on
+$E$.
 
+If $E$ is not bounded, we can just take $f(x) = x$.
+
+\subsection{Exercise 9}
+Let $E$ consist of all $x, y \: | \: d_X (x, y) < \delta$. Then $\text{diam} E < \delta$. Similarly, if
+$\forall x, y \: d_Y(f(x), f(y)) < \epsilon$, then $\text{diam} f(E) < \epsilon$.
+
+\subsection{Exercise 10}
+Suppose $f$ is not uniformly continuous. Then there is a sequence $x_n \in X \: | \: x_n \to x$, but
+$\forall N, \exists m, n \geq N \: | \: d_Y(f(x_n), f(x_m)) > \epsilon$ for some $\epsilon > 0$. This,
+however, makes $f(x_n)$ an infinite subset of $f(X)$ which does not have a limit point, thereby 
+contradicting the fact that $f(X)$ is compact.
+
+\subsection{Exercise 11}
+The first part of this exercise is basically what I was doing for Exercises 8 and 10. Since $f$ 
+is uniformly continuous, $\exists \delta \: | \: d_X(x_n, x_m) < \delta \implies d_Y(f(x_n), f(x_m)) < \epsilon$
+. Since $(x_n)$ Cauchy converges, we can make $d_X(x_n, x_m)$ arbitrarily small, which then implies that
+we can make $d_Y(f(x_n), f(x_m))$ arbitrarily small, indicating that $f(x_n)$ Cauchy converges as well.
+
+\subsection{Exercise 12}
+To state it more precisely: if $f: X \to Y$ and $g: Y \to Z$ are both uniformly continuous, then $g \circ f$ 
+is also uniformly continuous.
+
+From uniform continuity of $g$, $\exists \delta \: | \: d_Y(y_1, y_2) < \delta \implies d_Z(g(y_1), g(y_2)) < \epsilon$.
+Since $f$ is uniformly continuous, $\exists \delta' \: | \: d_X(x_1, x_2) < \delta' \implies
+d_Y(f(x_1), f(x_2)) < \delta$. The existence of this $\delta'$ gives us that $g \circ f$ is uniformly
+continuous.
+
+\subsection{Exercise 13}
+Suppose $p$ is a limit point of $E$ and $x_n \in E \: | \: x_n \to p$.
+Then $f(x_n)$ Cauchy converges to a point $q$ in the codomain of $f$. We can simply take $g(p) = q$
+whenever $p \notin E$ to get a continuous extension of $f$. Since this proof depends only on the convergence
+of the Cauchy sequence $f(x_n)$ to a point in the codomain, it will hold for the codomain being any
+complete metric space.
+
+\subsection{Exercise 16}
+The function $[x]$ has a simple discontinuity at every integer $x$, since the left-hand limit is  $x-1$ 
+and the right-hand limit is $x$. Similarly, the function $(x)$ also has a simple discontinuity at every integer,
+ since the left-hand limit is 1 and the right-hand limit is 0.
+
+\subsection{Exercise 17}
+We proceed as hinted in the text. The two types of simple discontinuity we need to consider are
+$f(x-) \neq f(x+)$ and $f(x-) = f(x+) \neq f(x)$. For the first case, suppose (WLOG) that
+$f(x-) < f(x+)$. Then we can construct a rational triple $(p, q, r)$ such that 
+\begin{align*}
+        &f(x-) < p < f(x+) \\
+        &a < q < t < x \implies f(t) < p \\
+        &x < t < r < b \implies f(t) > p
+\end{align*}
+To see that such a triple can only be associated with one such $x$, consider $x' = x + \epsilon$ with
+$\epsilon > 0$ (the other case is identical). Then we can choose $t \in (x, x')$ with $q < x < t < r < x'$,
+which means $t > q$ does not imply $f(t) < p$. This handles simple discontinuities of the form
+$f(x-) \neq f(x+)$.
+
+We can similarly handle the case where $f(x-) = f(x+) \neq f(x)$. Suppose (WLOG) that $f(x) > f(x+)$ ; 
+we can then construct a rational triple $(p, q, r)$ such that
+\begin{align*}
+        &f(x+) < p < f(x) \\ 
+        &a < q < t < x \implies f(t) < p \\
+        &x < t < r < b \implies f(t) < p 
+\end{align*}
+Again, such a triple can only be associated with a single $x$, since $x \in (x, x + \epsilon)$ and
+$f(x) > p$. Therefore $f$ has only countably many simple discontinuities.
+
+\subsection{Exercise 23}
+From the definition of convexity, we have that
+\begin{align*}
+        f(\lambda x + (1 - \lambda) p) &\leq \lambda f(x) + (1 - \lambda) f(p) \\
+        f(\lambda x + (1 - \lambda) p) - f(p) &\leq \lambda (f(x) - f(p)) \\
+        f(p) - f(\lambda x + (1 - \lambda) p) &\geq \lambda (f(p) - f(x)) \\
+        \implies \lim_{\lambda \to 0} f(\lambda x + (1 - \lambda) p) &= f(p)
+\end{align*}
+Since $\lim_{\lambda \to 0} \lambda x + (1 - \lambda) p = 0$ for all choices of $x$, we have that $f$ 
+is continuous.
