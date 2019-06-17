@@ -35,4 +35,45 @@ desired result.
 No, since $P(B^c) = 1 - P(B) \implies P(B) = \frac{3}{4}$ and $\frac{3}{4} + \frac{1}{3} > 1$.
 
 \subsection{Exercise 18}
+This exercise (based on the provided answer) seems to assume that the balls are distinguishable. 
+There are $n^n$ different arrangements of balls in cells (each ball has $n$ options). If 
+exactly one cell must remain empty, then exactly one other cell must have two balls. There are
+$n$ choices for the empty cell and $n - 1$ choices for the double cell. The two balls to go into
+the double cell can be chosen in $\binom{n}{2}$ ways, and the remaining balls can be ordered in
+$(n - 2)!$ ways (since they are distinguishable), hence giving the provided result.
 
+\subsection{Exercise 21}
+There are $\binom{2n}{2r}$ ways to choose $2r$ shoes from the collection. If we want to ensure that
+no pairs of shoes are drawn, we should only draw one shoe from each of the $n$ pairs, which we can do
+in $\binom{n}{2r}$ ways. For each of the $2r$ shoes we can either choose the right or left shoe from 
+the pair (assuming distinguishability).
+
+\subsection{Exercise 23}
+We use \href{https://en.wikipedia.org/wiki/Vandermonde%27s_identity}{Vandermonde's identity} with $m = n = r$ to get
+\begin{align*}
+        \sum_{k = 0}^n \bigg(\frac{1}{2^n} \binom{n}{k} \bigg)^2 = \frac{1}{4^n} \binom{2n}{n}
+\end{align*}
+
+\subsection{Exercise 25}
+Depends on how you define the sample space, see \href{https://en.wikipedia.org/wiki/Boy_or_Girl_paradox#Analysis_of_the_ambiguity}{Wikipedia} for a lengthy discussion.
+
+\subsection{Exercise 26}
+We take the complement of the probability that we roll a 6 in the first 5 rolls:
+$1 - \sum_{k = 0}^{4} \frac{5^k}{6^{k+1}}$.
+
+\subsection{Exercise 35}
+From the definition of conditional probability and the fact that $P(B) > 0$,
+we have that $P(\dot | B) > 0$ and $P(S | B) = \frac{P(B)}{P(B)} = 1$. Countable additivity
+follows from $A \cap B$ and $A' \cap B$ being disjoint if $A$ and $A'$ are.
+
+\subsection{Exercise 36}
+To solve the first part, we take the complement of the probability that the target was hit fewer than
+two times, which is
+\begin{align*}
+        1 - \bigg(\frac{4}{5}\bigg)^{10} - 10\bigg(\frac{4}{5}\bigg)^9 \frac{1}{5} \approx 0.624
+\end{align*}
+If we let $A$ be the event that the target was hit at least once, and $B$ be the event that the target was
+hit at least twice, then we see that $A \cap B = B$. The conditional probability is thus
+\begin{align*}
+        \frac{1 - \bigg(\frac{4}{5}\bigg)^{10} - 10\bigg(\frac{4}{5}\bigg)^9 \frac{1}{5}}{1 - \bigg(\frac{4}{5}\bigg)^{10}} \approx 0.699
+\end{align*}
