@@ -1,0 +1,48 @@
+\section{Differentiation}
+
+\subsection{Exercise 1}
+We have that
+\begin{align*}
+        \abs{f(x) - f(y)} &\leq (x - y)^2 = \abs{x - y}^2 \\
+        \frac{\abs{f(x) - f(y)}}{\abs{x - y}} &\leq \abs{x - y} \\
+                                              &\implies f'(x) = 0 \: \forall x
+\end{align*}
+Since we can write $\frac{f(t) - f(x)}{t - x} = f'(x) + u(t)$ with $\lim_{t \to x} u(t) \to 0$, we have that
+\begin{align*}
+        f(t) - f(x) = (t - x) u(t), &\quad f(t) - f(y) = (t - y) v(t) \\
+        f(y) - f(x) = (y - x) u(y), &\quad f(x) - f(y) = (x - y) v(x) \implies u(y) = v(x) \: \forall x, y \\
+        f(y) - f(x) &= 0 \implies f(x) = f(y) \: \forall x, y
+\end{align*}
+Whoops, I did this before reading the mean value theorem section - this problem follows immediately
+from applying the mean value theorem after showing $f'(x) = 0$.
+
+\subsection{Exercise 2}
+Take $x, t \in (a, b)$ with $t > x$. Applying the mean value theorem to $f$ on $[x, t]$, we get
+$f(t) - f(x) = (t - x) f'(y)$ for some $y \in (x, t)$. Since $f'(y) > 0 \implies f(t) - f(x) > 0$,
+$f$ is strictly increasing on $(a, b)$. We can prove $g = f^{-1}$ is differentiable directly
+\begin{align*}
+        \lim_{t \to x} \frac{g(f(t)) - g(f(x))}{f(t) - f(x)} &= \lim_{t \to x} \frac{t - x}{f(t) - f(x)} \\
+                                                             &= \frac{1}{f'(x)}
+\end{align*}
+
+\subsection{Exercise 3}
+Suppose (WLOG) that $x_2 > x_1$ but $f(x_2) = f(x_1)$. Then we have that
+\begin{align*}
+        x_2 + \epsilon g(x_2) &= x_1 + \epsilon g(x_1) \\
+        (x_2 - x_1) + \epsilon (g(x_2) - g(x_1)) &= 0 \\
+        1 + \epsilon g'(x) &= 0 \quad x \in (x_1, x_2) \\
+        1 + \epsilon g'(x) &\geq 1 - \epsilon \abs{g'(x)} \\
+                           &> 0 \quad \forall \epsilon < \frac{1}{M}
+\end{align*}
+Where the penultimate step follows from the mean value theorem.
+Thus, we can choose an $\epsilon$ such that $f(x_2) \neq f(x_1)$, which means we can make $f$ injective.
+
+\subsection{Exercise 4}
+Let $f(x) = C_0 + C_1 x + ... + C_n x^n$ and $g(x) = C_0 x + \frac{C_1}{2} x^2 + ... + \frac{C_n}{n+1}x^{n+1}$.
+Then $g'(x) = f(x)$. Applying the mean value theorem to $g(x)$ on $[0, 1]$ yields that there is an $x$ 
+such that $g'(x) = f(x) = g(1) - g(0) = 0$, so $f$ has a root in $(0, 1)$.
+
+\subsection{Exercise 5}
+It looks like the mean value theorem is this chapter's ratio test; you can guess how this will go.
+By the mean value theorem, $f'(y) = f(x + 1) - f(x)$ for $y \in [x, x+1]$. Thus we have
+$\lim_{x \to \infty} g(x) = \lim_{y \to \infty} f'(y) = 0$.
