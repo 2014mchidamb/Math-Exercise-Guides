@@ -16,4 +16,83 @@ Then the nullspace of the mapping $P: S \to S_+$ defined as setting the first $p
 consists of those vectors for which $q = 0$. Since the dimension of this nullspace is $p_0$, we have the
 desired result. Showing the same for $S_-$ is analogous.
 
+\subsection{Exercise 4}
+This exercise is almost identical to the second proof of Theorem 4 shown in the book.
+
+(a) Let $q(x) = (x, Hx)$ and $p(x) = (x, Mx)$. Then $R_{H,M} (x) = \frac{q(x)}{p(x)}$ is real
+since $H$ and $M$ are both self-adjoint. Furthermore, $R_{H,M} (kx) = R_{H,M} (x)$, so it suffices
+to optimize $R_{H,M}$ over the unit sphere. Since the unit sphere is compact, and $R_{H,M}$ is the
+quotient of two continuous functions (with $p(x) > 0$ due to positivity), $R_{H, M}$ has a minimum
+on the unit sphere (which is non-zero).
+
+(b) Let the minimum in question be $f$. Then we can do exactly as Lax did and consider $R_{H,M}(f + tg)$ 
+as a function of a single real variable $t$. The derivative of this function at $t = 0$ is $0$, from which
+we get
+\begin{align*}
+        \frac{p(f) \dot{q}(0) - q(f) \dot{p}(0)}{p^2(f)} &= 0 \\
+        \dot{q}(0) - b\dot{p}(0) &= 0 \quad b = \frac{q(f)}{p(f)} \\
+        (g, Hf) = b (g, Mf) &\implies Hf = bMf
+\end{align*}
+Where $\dot{q}$ and $\dot{p}$ refer to the derivatives of $q, p$ with respect to the variable $t$.
+
+(c) We are done if we can show that both $H$ and $M$ map the space $Y$ consisting of
+$(y, Mf) = 0$ back to itself. To do so, we appeal to the representation of $M$ as a sum of projection
+operators, $M = \sum a_i P_i$ (this is possible since $M$ is self-adjoint). Using this representation,
+we have that
+\begin{align*}
+        (My, Mf) = (y, M^2 f) = (y, \sum a_i^2 P_i f) = \sum a_i (y, a_i P_i f) = 0
+\end{align*}
+The analogous result follows for $H$ since $HM f = b M^2 f$.
+
+(d) This follows immediately from solving the constrained optimization problem in (c) in the same manner
+as (b).
+
+\subsection{Exercise 5}
+Repeatedly applying the procedure outlined in Exercise 4 allows us to construct the desired $f_i$. These
+$f_i$ all satisfy $(Mf_i, Mf_j) = 0$ for $i \neq j$, so $Mf_i$ forms a basis for $X$. 
+As such, $f_i$ must also form a 
+basis for $X$, as otherwise the $Mf_i$ would have a nontrivial linear relation sending them to 0.
+
+\subsection{Exercise 6}
+The equivalent minmax is
+\begin{align*}
+        b_j = \min_{\text{dim} S = j} \max_{x \in S, x \neq 0} \frac{(x, Hx)}{(x, Mx)}
+\end{align*}
+The logic to show this is the same as in Theorem 10 in the book. For showing $\geq b_j$ we use the linear
+conditions $(x, f_i) = 0$ to get an $x$ with no contribution from $f_1, ..., f_{j-1}$. For $\leq b_j$ 
+we use the space spanned by $f_1, ..., f_j$.
+
+The only difference is that instead of using Equation (36) from the chapter, we instead use
+\begin{align*}
+        x &= z_1 f_1 + ... + z_n f_n \\
+        \frac{(x, Hx)}{(x, Mx)} &= \frac{\sum b_i z_i^2 (f_i, Mf_i)}{\sum z_i^2 (f_i, Mf_i)}
+\end{align*}
+
+\subsection{Exercise 7}
+We have that $Hf_i = bMf_i \implies M^{-1} H f_i = b_i f$ and all of the $b_i$ are real per Exercises 4 and 5.
+If $H$ is also positive, then $R(x)$ as defined in Exercise 4 is always positive, so the $b_i$ will be
+positive as well.
+
+\subsection{Exercise 8}
+Since  $N$ is normal, it has an orthonormal basis consisting of eigenvectors $f_i$. Thus, we have
+\begin{align*}
+        x &= z_1 f_1 + ... + z_n f_n \\
+        \frac{(Ax, Ax)}{(x, x)} &= \frac{\sum n_i^2 z_i^2}{\sum z_i^2} \\
+                                &\leq \max n_j^2
+\end{align*}
+Equality holds when $x$ is selected to be the eigenvector corresponding to the largest (in absolute value) 
+eigenvalue. Thus, $\norm{N} = \max \abs{n_j}$.
+
+\subsection{Exercise 9}
+(a) $S$ is clearly an isometry, since all it does is rearrange terms in the expression for the distance
+between two vectors.
+
+(b) Since $S^n = I$, the eigenvalues of $S$ must be $n^{\text{th}}$ roots of unity. Each $n^{\text{th}}$ 
+root $a_i$ can be used to construct an eigenvector by letting $x_1 = \bar{a_i}, x_2 = \bar{a_i}^2, ..., x_n = 1$.
+
+(c) Let $x$ and $y$ be eigenvectors corresponding to the eigenvalues $a_i$ and $a_j$ and let $(x, y) = \alpha$.
+Then $a_i \bar{a_j} (x, y) = \alpha$ since the $a_i \bar{a_j}$ powers are cyclic. 
+Since $1 - a_i \bar{a_j} \neq 0$ for all $i \neq  j$, $(x, y) = 0$ when $i \neq j$ and the eigenvectors are
+therefore orthogonal.
+
 
