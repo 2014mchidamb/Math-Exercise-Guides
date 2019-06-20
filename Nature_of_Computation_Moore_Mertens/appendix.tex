@@ -1,0 +1,39 @@
+\section{Appendix}
+
+\subsection{The Story of O}
+
+\subsubsection{Exercise A.1}
+We can choose $n_3 = max(n_1, n_2)$ such that $f_1(n) + f_2(n) \leq (C_1 + C_2)g$ whenever
+$n > n_3$.
+
+\subsubsection{Exercise A.2}
+Similar to the first exercise, but now we have $C_1 C_2 h$ instead.
+
+\subsubsection{Exercise A.3}
+Logarithms of different bases differ by a constant.
+
+\subsubsection{Exercise A.4}
+The argument treats $k$ as a constant, when in reality $k = O(n)$. The answer should be
+$O(n^3)$, which can be checked by looking at the closed form of the sum.
+
+\subsubsection{Exercise A.5}
+$2^{O(n)}$ and $O(2^{n})$ are not the same, since $\limsup_{n \to  \infty} \frac{2^{C_1n}}{C_{2}2^n}$
+only converges to a nonzero constant when $C_1 = 1$.
+
+\subsubsection{Exercise A.6}
+$n^{k} \neq \Theta(2^n)$, $e^{-n} \neq \Theta(n^{-c})$, and $n! \neq \Theta(n^n)$, as all limits go to 0.
+
+\subsubsection{Exercise A.7}
+Take $f = n$ and $g = 2n$. 
+
+\subsubsection{Exercise A.8}
+1. We can pull out the exponents as constants, so $f = \Theta(g)$.
+
+2. $3 < 2^2$ so $f = o(g)$.
+
+3. $n = \omega(\log^2 n)$ so $f = \omega(g)$.
+
+4. $2^{\log n} \to \infty$ so $f = \omega(g)$.
+
+\subsubsection{Exercise A.9}
+One example is $n^{\log n}$.
