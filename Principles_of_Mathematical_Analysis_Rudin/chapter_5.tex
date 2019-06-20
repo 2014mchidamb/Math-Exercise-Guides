@@ -46,3 +46,76 @@ such that $g'(x) = f(x) = g(1) - g(0) = 0$, so $f$ has a root in $(0, 1)$.
 It looks like the mean value theorem is this chapter's ratio test; you can guess how this will go.
 By the mean value theorem, $f'(y) = f(x + 1) - f(x)$ for $y \in [x, x+1]$. Thus we have
 $\lim_{x \to \infty} g(x) = \lim_{y \to \infty} f'(y) = 0$.
+
+\subsection{Exercise 6}
+Consider $x > y > 0$. By the mean value theorem (surprise), we have that
+\begin{align*}
+        f(x) - f(y) &= f'(a) (x - y) \quad a \in (x, y) \\
+                    &< f'(x) (x - y) \\
+        \lim_{y \to 0} \frac{f(x) - f(y)}{x - y} &< \lim_{y \to 0} f'(x) \\
+        \frac{f(x)}{x} &< f'(x)
+\end{align*}
+Differentiating $g$, we get
+\begin{align*}
+        g'(x) &= \frac{xf'(x) - f(x)}{x^2} \\
+        f'(x) > \frac{f(x)}{x} &\implies g'(x) > 0
+\end{align*}
+So $g$ is monotonically increasing.
+
+\subsection{Exercise 7}
+If $f$ and $g$ are real, then the result follows immediately from L'Hopital's, since the existence of 
+$f'(x), g'(x)$ imply that $f$ and $g$ are continuous (so the requirement that $f(x) \to 0$ and $g(x) \to 0$ 
+is satisfied). More generally, for complex functions, we have
+\begin{align*}
+        \lim_{t \to x} \frac{f(t)}{g(t)} &= \lim_{t \to x} \frac{f_1(t) + f_2(t) i}{g_1(t) + g_2(t) i} \\
+                                         &= \lim_{t \to x} \frac{\frac{f_1(t) + f_2(t)i}{t - x}}{\frac{g_1(t) + g_2(t)i}{t - x}} \\
+                                         &= \frac{f'(x)}{g'(x)}
+\end{align*}
+
+\subsection{Exercise 8}
+Exercise 7 was a brief detour, but we are now back to hammering away with the mean value theorem. We have
+\begin{align*}
+        \abs{\frac{f(t) - f(x)}{t - x} - f'(x)} &< \epsilon \\
+        \abs{f'(y) - f'(x)} &< \epsilon 
+\end{align*}
+Where $y \in (x, t)$ or $y \in (t, x)$. Since $f'$ is continuous, we can choose $\delta$ such that
+$\abs{y - x} < \delta$ implies the above inequality, which means we can take $\abs{t - x} < \delta$ to
+get the desired result.
+
+This does not seem to have to hold for vector-valued functions, since in that case we only have
+$\abs{f(t) - f(x)} \leq (t - x) \abs{f'(y)}$.
+
+\subsection{Exercise 9}
+Yes, since we can apply L'Hopital's to $(0, +\infty)$ and $(-\infty, 0)$
+\begin{align*}
+        f'(0) &= \lim_{t \to 0} \frac{f(t) - f(0)}{t} \\
+              &= \lim_{t \to 0} f'(t) = 3
+\end{align*}
+
+\subsection{Exercise 10}
+We proceed exactly as directed by Rudin
+\begin{align*}
+        \lim_{x \to 0} \frac{f(x)}{g(x)} &= \lim_{x \to 0} \bigg(\frac{f(x)}{x} - A\bigg) \frac{x}{g(x)} + \frac{Ax}{g(x)} \\
+                                         &= \frac{\lim_{x \to 0} \frac{f(x) - Ax}{x}}{\lim_{x \to 0} \frac{g(x)}{x}} + \frac{A}{\lim_{x \to 0} \frac{g(x)}{x}} \\
+                                         &= 0 + \frac{A}{B}
+\end{align*}
+Where the final step follows from breaking up $f, g, A$ into their real and imaginary components and applying
+L'Hopital's ($\Re f'(x) - \Re A$ and $\Im f'(x) - \Im A$ both go to 0).
+
+\subsection{Exercise 11}
+Double application of L'Hopital's
+\begin{align*}
+        \lim_{h \to 0} \frac{f(x + h) + f(x - h) - 2f(x)}{h^2} &= \lim_{h \to 0} \frac{f'(x + h) - f'(x - h)}{2h} \\
+                                                               &= \lim_{h \to 0} \frac{f''(x + h) + f''(x - h)}{2} \\
+                                                               &= f''(x)
+\end{align*}
+If we let $f(x) = x \sin \frac{1}{\abs{x}}$ when $x \neq 0$ and $f(0) = 0$, then $f''(0)$ does not exist. 
+However, plugging $f$ into the above limit and setting $x = 0$, we see that the limit is 0.
+
+\subsection{Exercise 12}
+
+\subsection{Exercise 14}
+
+\subsection{Exercise 15}
+
+\subsection{Exercise 18}
