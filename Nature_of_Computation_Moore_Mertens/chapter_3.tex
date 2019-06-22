@@ -1,0 +1,19 @@
+\section{Insights and Algorithms}
+
+\subsection{Exercises}
+
+\subsubsection{Exercise 3.1}
+Assume $f(n) = 2^{n} - 1$. Then $f(n + 1) = 2^{n + 1} - 2 + 1 = 2^{n + 1} - 1$.
+
+\subsubsection{Exercise 3.2}
+We have that
+\begin{align*}
+        (QQ^* )_{ab} &= \frac{1}{n}\sum_{k = 0}^{n - 1} w_n^{ak} \bar{w_n^{kb}} \\
+                     &= \frac{1}{n}\sum_{k = 0}^{n - 1} w_n^{k(i - j)}\\
+\end{align*}
+If $i = j$, then $(QQ^*)_{ab} = 1$. Otherwise, since $w_n^{(i - j)}$ is a root of unity,
+\begin{align*}
+        (QQ^*)_{ab} &= w_n^{i - j} (QQ^*)_{ab} \implies (1 - w_n^{i - j}) (QQ^*)_{ab} = 0 \implies
+        (QQ^*)_{ab} = 0
+\end{align*}
+And we have that $Q^* = Q^{-1}$ as desired.
