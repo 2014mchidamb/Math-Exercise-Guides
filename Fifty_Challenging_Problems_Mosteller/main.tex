@@ -1,0 +1,43 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{framed}
+\usepackage{hyperref}
+\usepackage[parfill]{parskip}
+\usepackage{physics}
+
+\begin{document}
+\title{Problem Guide for \textit{Fifty Challenging Problems in Probability with Solutions} by Mosteller}
+\author{Muthu Chidambaram}
+\date{Last Updated: \today}
+
+\maketitle
+
+\tableofcontents
+\newpage 
+
+\section*{About}
+
+\begin{quote}
+        \textit{``A man must love a thing very much if he not only practices it without any hope of fame or money, but even practices it without any hope of doing it well.''} 
+        - G.K. Chesterton (\href{https://mathoverflow.net/questions/43690/whats-a-mathematician-to-do/44213#44213}{Maybe})
+\end{quote}
+
+Almost certainly my most useless set of notes, as the title of this book says \textit{with Solutions}. 
+
+\newpage
+
+\section{The Sock Drawer}
+Let the number of socks in the drawer be $n$, and let the number of red socks be $k$. Then we are given that
+$\binom{k}{2} / \binom{n}{2}$ is $\frac{1}{2}$. Thus, we can constrain our possibilities as follows
+\begin{align*}
+        \binom{k}{2} + \binom{k}{1} \binom{n - k}{1} + \binom{n - k}{2} &= \binom{n}{2} \\
+        \binom{k}{1} \binom{n - k}{1} + \binom{n - k}{2} &= \frac{1}{2} \binom{n}{2} \\
+        n(n - 1) &= 2k(k - 1)
+\end{align*}
+From the last equation, we have that $n = 4, k = 3$ is one solution. Additionally, we can note that
+ $21 * 20 = 3 * 7 * 5 * 2^2 = 2 * 15 * 14$ to get a solution with an even number of black socks. 
+ Beyond that, I'll have to get back to you; I haven't started reading number theory books yet.
+
+\end{document}
