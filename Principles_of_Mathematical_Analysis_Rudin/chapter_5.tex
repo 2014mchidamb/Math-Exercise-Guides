@@ -113,9 +113,74 @@ If we let $f(x) = x \sin \frac{1}{\abs{x}}$ when $x \neq 0$ and $f(0) = 0$, then
 However, plugging $f$ into the above limit and setting $x = 0$, we see that the limit is 0.
 
 \subsection{Exercise 12}
+\begin{align*}
+        &f(x) = \abs{x}^3 = 
+        \begin{cases}
+                -x^3 & x < 0 \\
+                0 & x = 0 \\
+                x^3 & x > 0
+        \end{cases} \implies 
+        f'(x) = 
+        \begin{cases}
+                -3x^2 & x < 0 \\
+                0 & x = 0 \\
+                3x^2 & x > 0
+        \end{cases} \\
+        &\implies f''(x) =
+        \begin{cases}
+                -6x & x < 0 \\
+                0 & x = 0 \\
+                6x & x > 0
+        \end{cases} \implies 
+        f^{(3)}(x) =
+        \begin{cases}
+                -6 & x < 0 \\
+                0 & x = 0 \\
+                6 & x > 0 
+        \end{cases}
+\end{align*}
+So the left and right limits of $f^{(3)}(0)$ do not equal one another.
 
 \subsection{Exercise 14}
+Suppose $f$ is a convex differentiable function. Then
+\begin{align*}
+        f(\lambda x + (1 - \lambda) y) &\leq \lambda f(x) + (1 - \lambda) f(y) \\
+        f(\lambda x + (1 - \lambda) y) - f(y) &\leq \lambda (f(x) - f(y)) \\
+        \frac{f(y) - f(\lambda x + (1 - \lambda) y)}{\lambda (y - x)} &\geq \frac{f(y) - f(x)}{y - x} \\
+        \frac{f(y) - f(\lambda x + (1 - \lambda) y)}{y - (\lambda x + (1 - \lambda)y)} &\geq \frac{f(y) - f(x)}{y - x} 
+\end{align*}
+Since $x$ was arbitrary, the last inequality implies that $f'$ is monotonically increasing (because we can 
+consider a new interval whose left endpoint is $\lambda x + (1 - \lambda) y$).
+
+For the other direction, we can modify the convexity condition until we get something that we can apply
+the mean value theorem to. Letting $z = \lambda x + (1 - \lambda) y$, we have
+\begin{align*}
+        f(z) &\leq \lambda f(x) + (1 - \lambda) f(y) \\ 
+        \lambda (f(z) - f(x)) &\leq (1 - \lambda) (f(y) - f(z)) \\
+        \frac{f(z) - f(x)}{z - x} &\leq \frac{(1 - \lambda) (f(y) - f(z))}{\lambda (z - x)} \\
+                                  &\leq \frac{f(y) - f(z)}{y - z}
+\end{align*}
+The final inequality is true by monotonicity of $f'$ and applying the mean value theorem 
+to $(x, z)$ and $(z, y)$. The final step follows from the fact that $\lambda (z - x) = (1 - \lambda) (y - z)$.
 
 \subsection{Exercise 15}
+Proceeding as directed by the hint, we have
+\begin{align*}
+        f(x + 2h) &= f(x) + 2hf'(x) + 2h^2 f''(c) \\
+        f'(x) &= \frac{1}{2h} (f(x + 2h) - f(x)) - hf''(c) \\
+        M_1 &\leq \frac{1}{2h} (\abs{f(x + 2h)} + \abs{f(x)}) + h\abs{f''(c)} \\
+            &\leq \frac{M_0}{h} + h M_2 \\
+        M_1^2 &\leq \frac{M_0^2}{h^2} + 2 M_0 M_2 + h^2 M_2^2 \\
+              &\leq 4 M_0 M_2 \quad \quad h = \sqrt{\frac{M_0}{M_2}}
+\end{align*}
 
 \subsection{Exercise 18}
+Differentiating $f(t) - f(\beta) = (t - \beta) Q(t)$ and evaluating at $\alpha$, we have
+\begin{align*}
+        f^{(k)}(\alpha) &= (\alpha - \beta) Q^{(k)} (\alpha) - k Q^{(k - 1)} (\alpha) \\
+        \frac{f^{(k)}(\alpha)}{k!} (\beta - \alpha)^k &= -\frac{Q^{(k)}(\alpha)}{k!}(\beta - \alpha)^{k+1} + 
+        \frac{Q^{(k - 1)}(\alpha)}{(k - 1)!} (\beta - \alpha)^{k} \\
+        \sum_{k = 1}^{n - 1}\frac{f^{(k)}(\alpha)}{k!} (\beta - \alpha)^k &=  -\frac{Q^{(n - 1)}(\alpha)}{(n - 1)!}(\beta - \alpha)^{n} + (f(\beta) - f(\alpha)) \\
+        P(\beta) + \frac{Q^{(n - 1)}(\alpha)}{(n - 1)!}(\beta - \alpha)^{n} &= f(\beta)
+\end{align*}
+
