@@ -40,4 +40,32 @@ From the last equation, we have that $n = 4, k = 3$ is one solution. Additionall
  $21 * 20 = 3 * 7 * 5 * 2^2 = 2 * 15 * 14$ to get a solution with an even number of black socks. 
  Beyond that, I'll have to get back to you; I haven't started reading number theory books yet.
 
+\section{Successive Wins}
+Let the probability that Elmer beats his dad be $p$ and let the probability that he beats the champion be $q$.
+We assume that these two probabilities are independent (which may not be safe, hot streaks are a thing).
+We are given that  $p > q$. The probability that Elmer wins the prize in the dad-champ-dad series is
+$p^2q + 2pq(1-p) = 2pq - p^2q$ (either Elmer wins all 3, the first 2, or the last 2). Similarly, the 
+probability for the other series is  $2pq - pq^2$. Since $p^2q > pq^2$ from our assumption that $p > q$,
+Elmer should choose the champ-dad-champ series.
+
+\section{The Flippant Juror}
+We see that the probability that the three-man jury succeeds is $p(1-p) + p^2 = p$, since either both 
+non-coin-flipping jurors pick correctly or one of them picks incorrectly but the coin flip is correct.
+Thus, the one-man and three-man juries both have the same probability of being correct.
+
+\section{Trials until First Success}
+This question is the same as asking for the expected value of a geometric random variable with $p = \frac{1}{6}$
+, so the answer is 6.
+
+\section{Coin in Square}
+Consider a table consisting of just a single 1-by-1 square. The probability that the coin lands entirely within
+this square is the same as  the probability of picking a point $(x, y)$ with $\frac{3}{8} \leq x, y \leq
+\frac{5}{8}$ (assuming the position of the center of the coin is uniformly distributed). 
+This is because we can consider the square with opposite corners $(0, 0)$ and $(1, 1)$ and note
+that the coin is only within this square if its center is at least $\frac{3}{8}$ (its radius) away from each
+of the boundaries. Since these constraints form a square with sidelength $\frac{1}{4}$, the probability the
+coin lands in a single 1-by-1 square is $\frac{1}{16}$. Since the squares are all 1-by-1, the total area of the
+table scales exactly as the probability, so the number of squares does not matter. Thus, the probability
+is just $\frac{1}{16}$.
+
 \end{document}
