@@ -1,0 +1,23 @@
+\section{Calculus of Vector and Matrix Valued Functions}
+
+\subsection{Exercise 1}
+That $\dot{x}(t) = 0 \implies x(t) = c$ follows immediately from the mean value inequality for vector-valued
+functions, $\norm{x(b) - x(a)} \leq (b - a) \norm{x'(t)}$ for some $t \in (a, b)$. My guess is that
+Lax was hinting at applying the mean value theorem for real-valued functions to $(x(b) - x(a), y)$.
+
+\subsection{Exercise 2}
+We have that
+\begin{align*}
+        \dv{x} A^{-1} A = 0 = \bigg(\dv{x} A^{-1}\bigg) A + A^{-1} \bigg(\dv{x} A\bigg) \implies \dv{x} A^{-1} = -A^{-1} \bigg( \dv{x} A \bigg) A^{-1} 
+\end{align*}
+
+\subsection{Exercise 3}
+The matrix $A + B$ satisfies $(A + B)^2 = I$, so we have that
+\begin{align*}
+        e^{A+B} &= \sum_{k = 0}^\infty \frac{(A + B)^k}{k!} \\
+                &= \bigg(\sum_{k = 0}^\infty \frac{1}{(2k)!}\bigg) I +  \bigg(\sum_{k = 0}^\infty \frac{1}{(2k + 1)!}\bigg) (A + B) \\
+                &= \cosh(1) I + \sinh(1) (A + B)
+\end{align*}
+
+\subsection{Exercise 4}
+
