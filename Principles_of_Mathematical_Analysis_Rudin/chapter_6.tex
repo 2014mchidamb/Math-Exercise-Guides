@@ -1,0 +1,22 @@
+\section{The Riemann-Stieltjes Integral}
+
+\subsection{Exercise 1}
+We first note that $\inf{f(x)} = 0$ on any interval $ [p_{i-1}, p_i] \subset [a, b]$. Similarly,
+$\sup{f(x)} = 0$ if $x_0 \notin [p_{i-1}, p_i]$ and 1 otherwise. Thus, we proceed by constructing a
+partition $P$ of $[a, b]$ such that $x_0 \in [p_{i-1}, p_i]$ and $\alpha(p_i) - \alpha(p_{i-1}) < \epsilon$.
+This is possible since $\alpha$ is continuous at $x_0$, so there exists $\delta$ such that choosing
+$p_i - p_{i-1} < \delta$ gives us the previous inequality. We then have that  
+$U(P, f, \alpha) - L(P, f, \alpha) < \epsilon$, so $f \in \mathscr{R}(\alpha)$. Furthermore, since
+$L(P, f, \alpha) = 0$ for all $P$, we have that $\int_{a}^{b} f d\alpha = 0$.
+
+\subsection{Exercise 2}
+Since we're given $f(x) \geq 0$ and $\int_{a}^{b} f(x) dx = 0$, we have that $m = \inf{f(x)} = 0$. Letting
+$m_i$ and $M_i$ denote the infimum and supremum of $f$ on the interval $[x_{i-1}, x_i] \subset [a, b]$,
+we further have that $m_i \leq m \implies m_i = 0 \: \forall i$. Additionally, since $f$ is continuous
+on $[a, b]$ and therefore uniformly continuous (from compactness), we can choose a $\delta$ such that
+\begin{align*}
+        \abs{x_i - x_{i-1}} < \delta &\implies \abs{f(x_i) - f(x_{i-1})} < \epsilon \\
+                                     &\implies \abs{M_i - m_i} < \epsilon \implies M_i < \epsilon
+\end{align*}
+Thus, all of the $M_i$ can be made arbitrarily small, implying that $\sup{f(x)} < \epsilon$ for every 
+positive $\epsilon$. This gives us that $f(x) = 0$.
