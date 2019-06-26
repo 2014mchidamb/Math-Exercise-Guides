@@ -62,4 +62,23 @@ This is because $m \leq f^3 \leq M$ (since $f$ is bounded) and $x^{\frac{1}{3}}$
 $[m, M]$, so we can apply Theorem 6.11.
 
 \subsection{Exercise 6}
+$P$ is compact, so the open cover consisting of neighborhoods around each point of $P$ has a finite subcover.
+Thus, $P$ can be covered by finitely many segments. Additionally, the total length of these segments can be
+made arbitrarily small, since $P$ contains no segments itself. We can then proceed exactly as in the proof of
+Theorem 6.10 to get the desired result.
+
+\subsection{Exercise 7}
+(a) If $f \in \mathscr{R}$, then by Theorem 6.12 (c) we have
+\begin{align*}
+        \abs{\int_{c}^{1} f dx - \int_{0}^{1} f dx} &= \abs{\int_{0}^{c} f dx} \\
+                                                    &\leq cM < \epsilon \quad \text{for} \:\:  c < \frac{\epsilon}{M}
+\end{align*}
+Where $M = \sup{f}$ on $[0, 1]$.
+
+(b) Let $f(x) = \sum_{k=1}^n \frac{(-1)^{k-1}}{k}$ if $x$ is of the form $\frac{1}{n}$ for $n \in \mathbb{N}$ 
+and let $f(x) = 0$ otherwise. Then $f \in \mathscr{R}$ since the alternating harmonic series converges.
+However, $\abs{f}$ corresponds to the regular harmonic series, so $\lim_{c \to 0} \int_{c}^{1} f dx$ 
+does not exist since $f$ is unbounded in every neighborhood around 0.
+
+\subsection{Exercise 8}
 
