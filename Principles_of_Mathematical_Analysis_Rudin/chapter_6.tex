@@ -75,10 +75,65 @@ Theorem 6.10 to get the desired result.
 \end{align*}
 Where $M = \sup{f}$ on $[0, 1]$.
 
-(b) Let $f(x) = \sum_{k=1}^n \frac{(-1)^{k-1}}{k}$ if $x$ is of the form $\frac{1}{n}$ for $n \in \mathbb{N}$ 
-and let $f(x) = 0$ otherwise. Then $f \in \mathscr{R}$ since the alternating harmonic series converges.
-However, $\abs{f}$ corresponds to the regular harmonic series, so $\lim_{c \to 0} \int_{c}^{1} f dx$ 
-does not exist since $f$ is unbounded in every neighborhood around 0.
+(b) Consider $f$ such that
+\begin{align*}
+        f(x) =
+        \begin{cases}
+                0 & x = 0 \\
+                \frac{1}{x} & 0 < x < \frac{1}{2} \\
+                0 & x = \frac{1}{2} \\
+                -\frac{1}{x} & \frac{1}{2} < x \leq 1
+        \end{cases}
+\end{align*}
+Then $\int_{0}^{1} f dx = 0$, but $\int_{0}^{1} \abs{f} dx$ diverges.
 
 \subsection{Exercise 8}
+We see that the partition $P = {1, 2, ..., b + 1}$ of the interval $[1, b + 1]$ corresponds to the upper sum
+$U(P, f) = \sum_{n = 1}^b f(n)$, and $\int_{1}^{b + 1} f(x) dx \leq U(P, f)$. 
+Thus, if $\sum_{n = 1}^\infty f(n)$ converges, then we have that 
+$\int_{1}^{b + 1} f(x) dx$ is bounded and monotonically increasing (since $f(x) \geq 0$),
+so $\int_{1}^{\infty} f(x) dx $ converges. For the other direction, we can take the same partition $P$ 
+and consider $L(P, f) = \sum_{n = 1}^b f(n + 1)$. Since $L(P, f) \leq \int_{1}^{b + 1} f(x) dx$, if 
+$\int_{1}^{\infty} f(x) dx$ converges then so does $\sum_{n = 2}^\infty f(n)$, and we are done (as
+$f(1) < \infty$).
 
+\subsection{Exercise 9}
+Theorem: Let $f$ and $g$ be differentiable functions on $[0, \infty)$ such that 
+$\lim_{x \to \infty} f(x)g(x) = 0$ and $f', g' \in \mathscr{R}$ for every $[0, b]$. Then we have that
+\begin{align*}
+        \int_{0}^{\infty} f(x) g'(x) dx = -f(0)g(0) - \int_{0}^{\infty} f'(x) g(x) 
+\end{align*}
+if both improper integrals converge.
+
+Proof: Take limits on both sides of the integration by parts formula.
+
+Letting $f(x) = \frac{1}{1 + x}$ and $g'(x) = cos(x)$ in the above formula shows that 
+\begin{align*}
+        \int_{0}^{\infty} \frac{cos(x)}{1 + x} dx = \int_{0}^{\infty} \frac{sin(x)}{(1 + x)^2} dx  
+\end{align*}
+
+We have that $\abs{cos(n)} + \abs{cos(n + 1)} \geq c$ for some
+constant $c$ since $cos(n)$ and $cos(n + 1)$ cannot both be 0. As such, 
+$\sum_{n = 1}^\infty \frac{cos(n)}{1 + n}$ diverges since the harmonic series diverges and therefore
+the integral on the left also diverges by the integral test.
+
+\subsection{Exercise 10}
+(a) We can use the convexity of $e^x$ to show this. Let $\lambda = \frac{1}{p}$ and let $u^p = e^a, v^q = e^b$
+for some $a, b$ (this is possible because $u, v \geq 0$). Then we have
+\begin{align*}
+        e^{\lambda a + (1- \lambda) b} &\leq \lambda u^p + (1 - \lambda) v^q \\
+        e^{\lambda a} e^{(1 - \lambda) b} &\leq \frac{u^p}{p} + \frac{v^q}{q} \\
+        uv &\leq \frac{u^p}{p} + \frac{v^q}{q}
+\end{align*}
+
+(b) From part (a) we have that 
+\begin{align*}
+        f(x) g(x) &\leq \frac{f^p(x)}{p} + \frac{g^q(x)}{q} \\
+        \int_{a}^{b} fg d\alpha &\leq 1 
+\end{align*}
+
+(c) We can use part (a) with  $u = \frac{\abs{f(x)}}{\bigg(\int_{a}^{b} f^p d\alpha\bigg)^{\frac{1}{p}}}$ 
+and $v = \frac{\abs{g(x)}}{\bigg(\int_{a}^{b} g^q d\alpha\bigg)^{\frac{1}{q}}}$ to get the desired result.
+
+(d) Assuming the limits exist, the inequality follows for impromper integrals by taking limits on both sides
+and then using limit rules.
