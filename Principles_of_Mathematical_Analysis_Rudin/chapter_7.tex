@@ -1,0 +1,46 @@
+\section{Sequences and Series of Functions}
+
+\subsection{Exercise 1}
+We have that $\abs{f_n(x)} \leq M_n$. From uniform convergence, we get that there exists $N$ such that
+\begin{align*}
+        n, m \geq N \implies \abs{f_n(x) - f_m(x)} < \epsilon \implies \abs{M_n - M_m} < \epsilon
+\end{align*}
+So $\lim_{n \to \infty} M_n = M$ for some $M$. Thus, we can choose $N$ such that $n \geq N \implies M_n < M + 1$
+, so we can set $M_u = \max\{M_1, M_2, ..., M_{N-1}, M + 1\}$. By construction, $M_u$ must be a uniform
+bound for all of the $f_n$.
+
+\subsection{Exercise 2}
+Since $f_n, g_n$ are both uniformly convergent, we can choose $N_1, N_2$ such that 
+\begin{align*}
+        n, m \geq \max\{N_1, N_2\} \implies \abs{f_n(x) - f_m(x)} < \frac{\epsilon}{2}, \: \abs{g_n(x) - g_m(x)} < \frac{\epsilon}{2} \\
+        \abs{f_n(x) + g_n(x) - f_m(x) - g_m(x)} \leq \abs{f_n(x) - f_m(x)} + \abs{g_n(x) - g_m(x)} < \epsilon
+\end{align*}
+So $f_n + g_n$ converges uniformly as well. 
+
+Suppose $f_n \to f$ and $g_n \to g$, with $f_n(x) \leq M_f$ and $g_n(x) \leq M_g$. Then $g(x) f_n(x)$ 
+converges uniformly since $M_g f_n(x)$ converges uniformly, and likewise for $g_n(x) f(x)$. Thus,
+\begin{align*}
+        \frac{\epsilon}{3} &> \abs{(f_n(x) - f(x))(g_n(x) - g(x))} \\
+                 &> \abs{f_n(x)g_n(x) - f_n(x)g(x) - f(x)g_n(x) + f(x)g(x)} \\
+                 &> \abs{f_n(x)g_n(x) - f(x)g(x)} - \abs{f(x)g(x) - f_n(x)g(x)} - \abs{f(x)g(x) - f(x)g_n(x)} \\
+                 &> \abs{f_n(x)g_n(x) - f(x)g(x)} - \frac{\epsilon}{3} - \frac{\epsilon}{3} \\
+        \implies \epsilon &> \abs{f_n(x)g_n(x) - f(x)g(x)}
+\end{align*}
+So $f_n g_n \to fg$ uniformly.
+
+\subsection{Exercise 3}
+Let $f_n(x) = \frac{1}{x} + \frac{1}{n}$ and $g_n(x) = \frac{1}{x}$ on $E = (0, 1)$. 
+Both $f_n$ and $g_n$ converge uniformly, and $f_n(x) g_n(x)$ converges pointwise to $\frac{1}{x^2}$. However,
+\begin{align*}
+        \abs{f_n(x) g_n(x) - \frac{1}{x^2}} = \abs{\frac{1}{xn}}
+\end{align*}
+So the convergence of $f_n(x) g_n(x)$ is not uniform on  $E$.
+
+\subsection{Exercise 4}
+Since $1 + n^2 x = 0$ whenever $x = -\frac{1}{n^2}$, $f(x)$ is not defined/does not converge for 
+$x = 0, -\frac{1}{n^2}$. For all other values of  $x$, however, $f(x)$ converges absolutely since 
+$\sum_{n = 1}^\infty \frac{1}{n^2}$ converges. $f(x)$ converges uniformly on any intervals of the form 
+$(a, -1)$ and $(b, c)$ with $b > 0$, since such intervals do not contain points of the form $-\frac{1}{n^2}$
+and $\frac{1}{x}$ is bounded on all such intervals. $f$ fails to converge uniformly on all other intervals.
+$f(x)$ is continuous on the intervals that it converges uniformly on.
+$f$ is not bounded since $\frac{1}{x}$ can be made arbitrarily large.
