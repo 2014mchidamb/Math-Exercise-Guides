@@ -94,3 +94,35 @@ the number of steps in $B_{ik}(m-1)$ (over all $k$). From this it is clear that 
 $m$ outermost iterations is at most $2^m$ (since $m = 0$ corresponds to a single step). If there are no
 negative cycles, then the shortest path between two vertices will take at most $n-1$ steps, so we only need
 to iterate up to $m = \log_2 m$.
+
+\subsubsection{Exercise 3.12}
+Suppose we complete the for loop and there are two vertices that are not connected. Since the for loop 
+considers every edge, there must be no path between these two vertices. However, this contradicts the
+assumption of the graph being connected, so the final result of the for loop must be a spanning tree.
+
+\subsubsection{Exercise 3.13}
+For $n = 2$, it is clear that a forest with $n-1$ edges must be a spanning tree. Now we assume the
+same is true for $n$ and consider a forest with $n + 1$ vertices. By the inductive assumption, any sub-forest
+consisting of $n - 1$ edges must be a spanning tree for the $n$ vertices it connects. Since these $n$ vertices
+are already connected, adding an edge between any of them would introduce a cycle. Thus, the only way to grow
+this forest of $n$ vertices to a forest of $n + 1$ vertices is to add an edge to vertex $n + 1$, so a forest
+with  $n$ edges must be a spanning tree for its $n + 1$ vertices. This proves one direction; the other 
+direction can be proved similarly.
+
+\subsubsection{Exercise 3.14}
+Just add the bolded edges in Figure 3.16 in order of weight.
+
+\subsubsection{Exercise 3.15}
+The proof idea is the same as that of Lemma 3.1, except now replacing an edge $e$ with another edge $e'$ cannot
+preserve a minimum spanning tree, since $e \neq e'$.
+
+\subsubsection{Exercise 3.16}
+Run Kruskal's but negate the edges in the graph. This has to be the maximum, since we already proved Kruskal's
+to be optimal.
+
+\subsubsection{Exercise 3.17}
+The first axiom is vacuously true for linear independence. For the second axiom, if $Y$ were not linearly 
+independent then we could extend the nontrivial linear relation sending $Y$ to 0 to $X$, so the second axiom
+must also be true. The third axiom holds similarly.
+
+
