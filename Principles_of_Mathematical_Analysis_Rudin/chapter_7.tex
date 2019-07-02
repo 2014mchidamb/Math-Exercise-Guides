@@ -44,3 +44,36 @@ $(a, -1)$ and $(b, c)$ with $b > 0$, since such intervals do not contain points 
 and $\frac{1}{x}$ is bounded on all such intervals. $f$ fails to converge uniformly on all other intervals.
 $f(x)$ is continuous on the intervals that it converges uniformly on.
 $f$ is not bounded since $\frac{1}{x}$ can be made arbitrarily large.
+
+\subsection{Exercise 5}
+For every positive real number $x$, there exists $N$ such that $\frac{1}{N} < x$ (Archimedean property). Hence,
+choosing $n \geq N \implies f_n(x) = 0$. Since every non-positive real number is less than $\frac{1}{n + 1}$ 
+for all $n \in \mathbb{N}$, we have that $f_n$ converges pointwise to the function $f(x) = 0$. 
+As such, it is clear that $\sum_{n = 1}^\infty \abs{f_n(x)} = \sum_{n = 1}^N \abs{f_n(x)}$ converges for all $x$
+, and yet we do not have uniform convergence.
+
+\subsection{Exercise 6}
+We can rewrite the series as
+\begin{align*}
+        \sum_{n = 1}^\infty (-1)^n \frac{x^2 + n}{n^2} = \sum_{n = 1}^\infty (-1)^n \frac{1}{n} + \sum_{n = 1}^\infty (-1)^n \frac{x^2}{n^2}
+\end{align*}
+so the series converges uniformly since the alternating harmonic series converges and the series 
+$\sum_{n = 1}^\infty \frac{M}{n^2}$ converges (where $x^2 \leq M$, which is possible on every bounded interval).
+However, this series also clearly does not converge absolutely for any value of $x$ since the harmonic
+series does not converge.
+
+\subsection{Exercise 7}
+We posit that $f_n$ converges uniformly to the function $f(x) = 0$. For this to be true, there needs to be a
+single $N$ such that $n \geq N$ gives
+\begin{align*}
+        \abs{\frac{x}{1 + nx^2}} < \epsilon \implies \frac{\abs{x} - \epsilon}{\epsilon x^2} < n
+\end{align*}
+for all $x$. In other words, the lefthand side of the last expression above must have a maximum. Since the 
+lefthand side is differentiable for all $x \neq 0$, we can differentiate and equate to 0 to find that 
+\begin{align*}
+        \dv{x} \frac{x - \epsilon}{\epsilon x^2} = \frac{2\epsilon^2 x - \epsilon x^2}{(\epsilon x^2)^2} \\
+        2\epsilon^2 x - \epsilon x^2 = 0 \implies x = 2 \epsilon
+\end{align*}
+giving that $n > \frac{1}{4\epsilon^2}$ is sufficient for all $x$. Additionally, since $f_n(0) = 0$ for all
+$n$, we have that $f_n \to f$ uniformly. Differentiating $f_n$ also shows that $f_n'(x) \to 0$ for all
+$x \neq 0$ and that $f_n'(0) = 1 \neq f'(0)$.
