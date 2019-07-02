@@ -8,7 +8,7 @@ Assume $f(n) = 2^{n} - 1$. Then $f(n + 1) = 2^{n + 1} - 2 + 1 = 2^{n + 1} - 1$.
 \subsubsection{Exercise 3.2}
 We have that
 \begin{align*}
-        (QQ^* )_{ab} &= \frac{1}{n}\sum_{k = 0}^{n - 1} w_n^{ak} \bar{w_n^{kb}} \\
+        (QQ^* )_{ab} &= \frac{1}{n}\sum_{k = 0}^{n - 1} w_n^{ak} \overline{w_n^{kb}} \\
                      &= \frac{1}{n}\sum_{k = 0}^{n - 1} w_n^{k(i - j)}\\
 \end{align*}
 If $i = j$, then $(QQ^*)_{ab} = 1$. Otherwise, since $w_n^{(i - j)}$ is a root of unity,
@@ -125,4 +125,24 @@ The first axiom is vacuously true for linear independence. For the second axiom,
 independent then we could extend the nontrivial linear relation sending $Y$ to 0 to $X$, so the second axiom
 must also be true. The third axiom holds similarly.
 
+\subsubsection{Exercise 3.18}
+Suppose we obtain a maximum flow using Ford-Fulkerson. At each stage of Ford-Fulkerson, we increase the current
+flow $f$ by the minimum $c_f(e)$ in an augmenting path. Since the capacities are all integers, this means at 
+each stage we increase $f$ by an integral amount, so there is a max flow obtained via Ford-Fulkerson that is
+an integer.
 
+\subsubsection{Exercise 3.19}
+No, the maximal flow need not be unique; consider a graph with only a single edge from the source to a fork
+consisting of edges with equal capacity and connecting back to a single node (looks like a kite). The 
+difference between two max flows must be 0, since there must be some edge that they both share (otherwise we
+could just combine both two get a larger flow).
+
+\subsubsection{Exercise 3.20}
+The min cut is not unique; we can remove the two edges from the source or we could remove the two edges to
+the target. Additionally, we can also remove the lower edge from the source and the upper edge to the target.
+
+\subsubsection{Exercise 3.21}
+If there is a flow of value $m$, it must necessarily pass through $m$ of the original edges in the bipartite
+graph $G$, since they were all assigned capacity 1. A matching consisting of $m$ edges in $G$ corresponds to
+$m$ unique left nodes (connected to $s$) and  $m$ unique right nodes (connected to $t $), so we can send a 
+flow of $m$ through this matching.
