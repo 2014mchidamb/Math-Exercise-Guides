@@ -146,3 +146,27 @@ If there is a flow of value $m$, it must necessarily pass through $m$ of the ori
 graph $G$, since they were all assigned capacity 1. A matching consisting of $m$ edges in $G$ corresponds to
 $m$ unique left nodes (connected to $s$) and  $m$ unique right nodes (connected to $t $), so we can send a 
 flow of $m$ through this matching.
+
+\subsection{Problems}
+
+\subsubsection{Problem 3.1}
+We see that $n = 1$ requires only the single move of moving the one disk directly to the desired peg, and that
+$n = 2$ cannot be done in fewer than the 3 moves indicated by the recursive algorithm. Suppose the recursive
+algorithm is optimal for $n$. To move $n + 1$ disks, we must move disk $n + 1$ to the bottom of the desired peg.
+Thus, we first move $n$ disks to the non-desired peg, which
+requires $2^n - 1$ moves. Now there is no ``better'' move than moving disk $n + 1$ to the desired peg, since
+it will be put in its final spot. After making this move, we again have to move the $n$ disks from the other 
+peg to the desired peg, which takes another $2^n - 1$ moves, for a total of $2(2^n - 1) + 1 = 2^{n+1} - 1$ 
+moves, as desired.
+
+\subsubsection{Problem 3.2}
+Figure 3.24 is very helpful. The recursive solution for Towers of Hanoi can be translated to finding a
+Hamiltonian path on an $n$-dimensionl cube as follows
+\begin{enumerate}
+        \item Find a Hamiltonian path on one face of the cube, which is itself an $n-1$-dimensional hypercube.
+        \item Now move from this face to the opposite face; this requires moving once along a single edge
+                connecting the two faces (this is how we create a hypercube in the first place).
+        \item Now we can find a Hamiltonian path on the opposite face, and we are done.
+\end{enumerate}
+The vertices of the cube can be identified with different Hanoi states, and the edges can be identified with
+moves.
