@@ -1,0 +1,42 @@
+\section{Transformations and Expectations}
+
+\subsection{Exercise 1}
+(a) $F_Y(y) = P(X^3 \leq y) = F_X (y^{\frac{1}{3}})$. Differentiating, we get that 
+$f_Y(y) = 14y(1 - y^{\frac{1}{3}})$ which integrates to 1 over $(0, 1)$.
+
+(b)  $f_Y(y) = \dv{y} F_X(\frac{y - 3}{4}) = \frac{7}{4} \exp(\frac{-7(y - 3)}{4})$, which again
+integrates to 1 over $(3, \infty)$. The sample space of $Y$ consists of $(3, \infty)$ because 
+$4X + 3$ is monotonically increasing and $4(0) + 3 = 3$.
+
+(c) We need only consider positive square roots, since  $x \in (0, 1)$. Thus,
+$f_Y(y) = \frac{1}{2\sqrt{y}}30y (1 - \sqrt{y})^2$, which integrates to 1 over $(0, 1)$.
+
+\subsection{Exercise 2}
+(a) $f_Y(y) = \frac{1}{2\sqrt{y}} f_X(\sqrt{y}) = \frac{1}{2\sqrt{y}}$
+
+(b) Plug $x = e^{-y}$ into $f_X(x)$ and multiply by $e^{-y}$ (the negative of the derivative, since $-\log X$
+is decreasing).
+
+(c) Plug in  $x = \log y$ and multiply by $\frac{1}{y}$.
+
+\subsection{Exercise 3}
+From the definition of $Y$, we can see that the sample space is
+$\mathcal{Y} = \big(\frac{n}{n+1}\big)_{\mathbb{N}}$. Solving $y = \frac{x}{x + 1}$ for $y$, we find that
+$f_Y(y) = f_X(\frac{y}{1 - y})$.
+
+\subsection{Exercise 4}
+(a) Integrating from $-\infty$ to 0 gives $\frac{1}{2}$ and likewise for 0 to  $\infty$, so $f$ is a pdf.
+
+(b) If $t \leq 0$, then we have that $P(X < t) = \frac{1}{2} e^{\lambda t}$. Otherwise, 
+\begin{align*}
+        P(X < t) &= \int_{-\infty}^{t} f(x) = \int_{-\infty}^{0} f(x) + \int_{0}^{t} f(x) \\ 
+                 &= \frac{1}{2} + \frac{1}{2} - \frac{1}{2} e^{-\lambda t} \\
+                 &= 1 - \frac{1}{2}e^{-\lambda t}
+\end{align*}
+
+(c) If $t \leq 0$, $P(\abs{X} < t)$ is clearly 0. Otherwise,
+\begin{align*}
+        P(\abs{X} < t) &= P(-t < X < t) = P(X < t) - P(X < -t) \\
+                       &= 1 - e^{- \lambda t} 
+\end{align*}
+from the CDFs computed in part (b). 
