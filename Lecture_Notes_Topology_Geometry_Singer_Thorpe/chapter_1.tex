@@ -1,0 +1,16 @@
+\section{Some Point Set Topology}
+
+\subsection{Naive Set Theory}
+
+\subsubsection{Theorem 1}
+We only prove (10) to illustrate the technique; the other parts are either immediate
+from definitions or can be proved similarly.
+
+(10) 
+\begin{align*}
+        &x \in \bigg(\cup_{S_i \in \mathcal{S}_1} S_i\bigg) \cap \bigg(\cup_{S_i \in \mathcal{S}_2} S_i\bigg) \\
+        \implies &\exists i, j \: | \: x \in S_i \cap S_j \implies x \in \cup_{S_i \in \mathcal{S}_1, S_j \in \mathcal{S}_2} (S_i \cap S_j) \\
+                 &x \in \cup_{S_i \in \mathcal{S}_1, S_j \in \mathcal{S}_2} (S_i \cap S_j) \implies \exists i, j \: | \: x \in S_i \cap S_j \\
+        \implies &x \in \bigg(\cup_{S_i \in \mathcal{S}_1} S_i\bigg) \cap \bigg(\cup_{S_i \in \mathcal{S}_2} S_i\bigg)
+\end{align*}
+
