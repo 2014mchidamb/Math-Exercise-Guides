@@ -1,0 +1,33 @@
+\section{The Basics}
+
+\subsection{Exercises}
+
+\subsubsection{Exercise 2.1}
+Let $a = nb + k$. If $n \geq 2$, then $\frac{a}{2} \geq b > a \mod b$ since $a \mod b \leq b-1$. For $n = 1$
+we have
+\begin{align*}
+        k < b \implies \frac{k}{2} < \frac{b}{2} \implies k < \frac{b}{2} + \frac{k}{2} = \frac{a}{2}
+\end{align*}
+Since Euclid's algorithm ``alternates'' between performing divisions on $a$ and $b$ (since $a$ is replaced
+by $b$ after a step), the number of divisions it performs is bounded by $2\log_2 a$.
+
+\subsubsection{Exercise 2.2}
+The maximum divisor of $a$ is bounded by $\sqrt{a}$. We can find all primes less than or equal to $\sqrt{a}$ 
+in polynomial time by using a prime number sieve approach (e.g. Sieve of Eratosthenes). Once we have
+the primes, the number of operations it takes to compute the prime factorization of $a$ is bounded by
+$\sqrt{a} \log_2 a$, since the number of primes is bounded by $\sqrt{a}$ and  2 is the smallest prime.
+
+\subsubsection{Exercise 2.3}
+Changing logarithm base amounts to multiplying by a constant.
+
+\subsubsection{Exercise 2.4}
+We have the following
+\begin{itemize}
+        \item $4\log_2 n = \log_2 n^4 \implies n^4$
+        \item $4\sqrt{n} = \sqrt{16n} \implies 16n$
+        \item $4n \implies 4n$ 
+        \item $4n^2 = (2n)^2 \implies 2n$
+        \item $4 * 2^n = 2^{n+2} \implies n + 2$ 
+        \item $4 * 4^n = 4^{n+1} \implies  n + 1$
+\end{itemize}
+
