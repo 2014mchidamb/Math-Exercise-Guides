@@ -77,3 +77,45 @@ lefthand side is differentiable for all $x \neq 0$, we can differentiate and equ
 giving that $n > \frac{1}{4\epsilon^2}$ is sufficient for all $x$. Additionally, since $f_n(0) = 0$ for all
 $n$, we have that $f_n \to f$ uniformly. Differentiating $f_n$ also shows that $f_n'(x) \to 0$ for all
 $x \neq 0$ and that $f_n'(0) = 1 \neq f'(0)$.
+
+\subsection{Exercise 8}
+Since $\sum \abs{c_n}$ converges, there exists $N$ such that $n, m \geq N$ gives
+\begin{align*}
+        \epsilon > \sum_{i = n}^m \abs{c_i} \geq \sum_{i = n}^m \abs{c_i I(x - x_i)} \geq \abs{\sum_{i = n}^m c_i I(x - x_i)}
+\end{align*}
+so $f(x)$ converges uniformly as $x$ was arbitrary ($0 \leq I(x - x_i) \leq 1$ for all $x$). If $x \neq x_n$ 
+and $x$ is not a limit point of $x_n$, then $f(x)$ is clearly continuous since there is a neighborhood
+$B_{\delta}(x)$ that contains none of the $x_n$ which implies that $f(x)$ is constant in this neighborhood.
+If $x$ is a limit point of the sequence $x_n$, then for any $\epsilon > 0$ we can choose $N$ such that
+$n \geq N \implies \abs{c_n} < \epsilon$, so $f $ is continuous at $x$. 
+
+\subsection{Exercise 9}
+Since $f_n$ is a sequence of continuous functions that converges uniformly to $f$, $f$ is continuous. By
+uniform convergence of $f_n$, we have that there exists 
+$N_1 \: | \: n  \geq N_1 \implies \abs{f_n(x) - f(x)} < \frac{\epsilon}{2}$. By continuity of $f$, we have that there
+exists $N_2 \: | \: n \geq N_2 \implies \abs{f(x_n) - f(x)} < \frac{\epsilon}{2}$. 
+Choosing $n \geq \max(N_1, N_2)$ then gives
+\begin{align*}
+        \abs{f_n(x_n) - f(x)} &= \abs{f_n(x_n) - f(x_n) + f(x_n) - f(x)} \\
+                              &\leq \abs{f_n(x_n) - f(x_n)} + \abs{f(x_n) - f(x)} \\
+                              &< \epsilon
+\end{align*}
+so $\lim_{n \to \infty} f_n(x_n) = f(x)$. The converse need not be true. Consider
+\begin{align*}
+        f_n(x) = 
+        \begin{cases}
+                \frac{1}{n} & x = \frac{1}{n} \\
+                0 & x \neq \frac{1}{n}
+        \end{cases} \\
+\end{align*}
+which satisfies $\lim_{n \to \infty} f_n(x_n) = 0$ for all sequences $x_n$ despite none of the $f_n$ being
+continuous. 
+
+\subsection{Exercise 10}
+$f(x)$ converges uniformly since $0 \leq (nx) < 1$. Since $(nx)$ is discontinuous only when $nx$ is an integer,
+$f(x)$ is discontinuous only at rational values of $x$ (because we can choose $n = b$ so that 
+$n\frac{a}{b} = a$). The continuity of $f(x)$ at irrational values of $x$ comes from the fact that the partial
+sums are continuous at all such $x$ and converge uniformly to $f(x)$. Since 
+$f_n(x) = \sum_{i = 1}^n \frac{(ix)}{i^2}$ contains only finitely many discontinuities in any bounded interval
+(there are only finitely many rational $x = \frac{z}{i}$ such that $z \in [a, b]$), we have that 
+$f_n \in \mathscr{R}$. Thus, applying Theorem 7.16, we get that $f \in \mathscr{R}$.
