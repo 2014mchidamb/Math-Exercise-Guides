@@ -1,0 +1,14 @@
+\section{Overview of Supervised Learning}
+
+\subsection{Exercise 2.1}
+This question is poorly worded. We assume that the question means there exists some model that, given $x$,
+predicts a vector $\hat{y}$ such that $\hat{y}_k$ is the probability that $x$ belongs to class $k$. We then
+have that
+\begin{align*}
+        \text{arg}\min_k \norm{t_k - \hat{y}} &= \text{arg}\min_k \sum_{i = 1}^K \big((t_k)_i - \hat{y}_i\big)^2 \\
+                                    &= \text{arg}\min_k (1 - \hat{y}_k)^2 + \sum_{i = 1, i \neq k}^K \hat{y}_i^2 \\
+                                    &= \text{arg}\min_k (1 - \hat{y}_k)^2 + \sum_{i = 1, i \neq k}^K \hat{y}_i^2 - \sum_{i = 1}^K \hat{y}_i^2\\
+                                    &= \text{arg}\min_k (1 - \hat{y}_k)^2 - \hat{y}_k^2 \\
+                                    &= \text{arg}\min_k 1 - 2\hat{y}_k \\
+                                    &= \text{arg}\max_k \hat{y}_k
+\end{align*}
