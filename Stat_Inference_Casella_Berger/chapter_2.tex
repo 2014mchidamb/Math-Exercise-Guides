@@ -40,3 +40,33 @@ $f_Y(y) = f_X(\frac{y}{1 - y})$.
                        &= 1 - e^{- \lambda t} 
 \end{align*}
 from the CDFs computed in part (b). 
+
+\subsection{Exercise 5}
+The sample space $\mathcal{Y}$ is $[0, 1]$. Thus, we need to consider 
+$P(Y \leq y) = P(X \leq \sin^{-1} \sqrt{y})$ for $y \in [0, 1]$. By symmetry, we can just consider the case
+where $\sin^{-1}$ is restricted to $[0, \frac{\pi}{2}]$, as the other three quadrants have the same area.
+Therefore,
+\begin{align*}
+        f_Y(y) &= 4 \dv{y} F_X(\sin^{-1} \sqrt{y}) \\
+               &= 4 \dv{y} \frac{\sin^{-1} \sqrt{y}}{2\pi} \\
+               &= \frac{1}{\pi \sqrt{y (1 - y)}}
+\end{align*}
+At $y = 0$ and $y = 1$, the density is infinite/undefined - I'm not really sure how to interpret this.
+
+\subsection{Exercise 11}
+(a) We have that 
+\begin{align*}
+        \mathrm{E} [X^2] = \frac{1}{\sqrt{2\pi}}\int_{-\infty}^{\infty} x^2 e^{-\frac{x^2}{2}} &= \frac{2}{\sqrt{2\pi}} \int_{0}^{\infty} x^2 e^{-\frac{x^2}{2}} \\
+                                                                            &= \frac{2}{\sqrt{2\pi}} \big(\lim_{x \to \infty} -x e^{-\frac{x^2}{2}} + \int_{0}^{\infty} e^{-\frac{x^2}{2}}\big) \\
+                                                                            &= 1
+\end{align*}
+Where we integrated by parts using $dv = xe^{-\frac{x^2}{2}}$ and $u = x$, applied L'H\^opital's rule, 
+and then compared to the CDF of the normal distribution.
+
+(b) The pdf $f_Y(y)$ is just $f_X(y) + f_X(-y)$, so $f_Y(y) = \frac{2}{\sqrt{2\pi}} e^{-\frac{y^2}{2}}$.
+We can then compute $\mathrm{E} [Y]$ as
+\begin{align*}
+        \mathrm{E} [Y] = \frac{2}{\sqrt{2\pi}} \int_{0}^{\infty} y e^{-\frac{y^2}{2}} &= \frac{2}{\sqrt{2\pi}}  
+\end{align*}
+To compute the variance we need to compute $\mathrm{E} [Y^2]$, which is identical to $\mathrm{E} [X^2]$. Thus, 
+$\mathrm{Var} [Y] = \mathrm{E} [Y^2] - \mathrm{E} [Y]^2 = 1 - \frac{2}{\pi}$.
