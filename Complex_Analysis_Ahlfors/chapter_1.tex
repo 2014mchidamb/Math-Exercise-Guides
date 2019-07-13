@@ -1,0 +1,46 @@
+\section{Complex Numbers}
+
+\subsection{Arithmetic Operations}
+
+\subsubsection{Exercise 3}
+This exercise is much easier if we represent the complex numbers in polar form (which has not been introduced
+yet). We see that
+\begin{align*}
+        \frac{-1 \pm i \sqrt{3}}{2} &= e^{i \frac{2\pi}{3}}, \: e^{i \frac{4 \pi}{3}} \\
+        \frac{\pm 1 \pm i \sqrt{3}}{2} &= e^{i \frac{2\pi}{3}}, \: e^{i \frac{4 \pi}{3}}, \:  
+        e^{i \frac{\pi}{3}}, \: e^{i \frac{5 \pi}{3}} \\
+\end{align*}
+which gives us the desired equality since $e^{i 2\pi} = 1$.
+
+\subsection{Square Roots}
+Once again, all of these computational exercises are made much easier with polar form. 
+They seem more tedious than instructive.
+
+\subsection{Justification}
+Going to come back to this after finishing chapter 3 of Birkhoff/MacLane (which I've been neglecting...).
+
+\subsection{Conjugation, Absolute Value}
+
+\subsubsection{Exercise 3}
+We can manipulate the equality to get
+\begin{align*}
+        \norm{\frac{a - b}{1 - \bar{a}b}} &= 1 \\
+        \norm{a - b}^2 &= \norm{1 - \bar{a}b}^2 \\
+        \norm{a}^2 + \norm{b}^2 - 2\Re(a\bar{b}) &= 1 + \norm{a}^2 \norm{b}^2 - 2\Re(a\bar{b}) 
+\end{align*}
+Thus we see that equality holds if either $\norm{a} = 1$ or $\norm{b} = 1$, excepting the case where 
+$a = b = 1$ as that makes the denominator in the equality 0.
+
+\subsubsection{Exercise 4}
+Let $z = \alpha + \beta i$. Then we have
+\begin{align*}
+        \big((a + b) \alpha + c\big) + (a - b)\beta i &= 0 \\
+        \implies (a + b) \alpha + c &= 0 \\
+        \implies (a - b) \beta = 0
+\end{align*}
+If $a - b = 0$, $\beta$ could be anything, so we must have $a - b \neq 0$ for the solution to be unique.
+Similarly, if $a + b = 0$ then $\alpha$ can either be anything or there is no solution for $\alpha$ 
+(if $c \neq 0$). Thus, the two conditions we need are  $a + b \neq 0$ and $a - b \neq 0$.
+
+\subsubsection{Exercise 5}
+
