@@ -286,3 +286,49 @@ of 3-cycles.
 \subsubsection{Exercise 13}
 That $(1 2), (2 3), \: ...\:  (n - 1 n)$ are generators for $S_n$ follows immediately from Exercise 11 and the fact 
 that $(1 2 \: ... \: n - 1) = (n - 2 n - 1) ... (1 2)$.
+
+\subsection{Transformation Groups}
+
+\subsubsection{Exercise 2}
+The left regular representation of $S_3$ is the function that assigns each element $\sigma \in S_3$ to
+$f_{\sigma} (x) = \sigma \circ x$ where $f_{\sigma}:  S_3 \to S_3$.
+
+\subsubsection{Exercise 4}
+The isotropy subgroup of a single vertex is just the group of permutations that leave the given vertex fixed
+and permute the other seven vertices (isomorphic to $S_7$).
+
+\subsubsection{Exercise 5}
+The isotropy subgroups are all isomorphic to $S_{n - 1}$, as they consist of all permutations that leave a 
+single element fixed. To see that these subgroups are conjugate to one another, let $G_i$ be the isotropy
+subgroup of $i$. Then we have that for  $g \in G_i$, $(i j) g (i j) \in G_j$, since $(i j)$ maps $j$ to $i$ 
+and then back to $j$ again.
+
+\subsubsection{Exercise 6}
+From Proposition 15, we have that cyles of the same length are conjugate to one another. Furthermore,
+we know that every element of $S_n$ has a unique disjoint cycle decomposition. The different possible length
+cycle decompositions form unique conjugacy classes (from Proposition 15), so the number of conjugacy classes
+for $S_n$ is just the number of partitions of $n$. For $S_3$ this is 3 and for $S_4$ this is 5.
+
+\subsubsection{Exercise 7}
+The left regular representation of the additive group  $\mathbb{R}$ assigns to each element $z \in \mathbb{R}$ 
+the function $f_z(x) = x + z$, which is exactly a translation by $z$ of the real line. Similarly,
+the left regular representation of the additive group $\mathbb{R} \times \mathbb{R}$ corresponds to a
+translation of $(z_1, z_2)$ in the cartesian plane.
+
+\subsubsection{Exercise 8}
+Since $G$ acts transitively on $x$, there exists $g$ such that $gx = y$. Let $z$ be an element that fixes 
+$x$. Then we have that $gzg^{-1} y = gzx = gx = y$, so $gzg^{-1}$ fixes $y$ as desired.
+
+\subsubsection{Exercise 9}
+For any subgroup $S$ of $\Delta_4$, we can consider any action of $\Delta_4$ on the square that has each
+element of an equivalence class of $\Delta_4 / S$ act the same way on an element of the square (not exactly
+sure how an ``element'' of the square should be defined, I suppose a point). Such an action necessarily
+fixes the subgroup $S$.
+
+I was a bit confused by this question and found some more discussion \href{https://math.stackexchange.com/questions/76255/show-every-subgroup-of-d4-can-be-regarded-as-an-isotropy-group-for-a-suitable-ac}{here}.
+
+\subsubsection{Exercise 10}
+Let $I$ be an invariant subset containing $x$. Then $gx \in I$ for all $g \in G$, implying that 
+$\text{Orb}(x) \subset I$. Since by definition  $\text{Orb}(x)$ is invariant, it must be the smallest such
+set. By the previous logic, we further have that $I = \cup_{x \in G} \text{Orb}(x)$, which can be reduced
+to a union of disjoint orbits (since one element appearing in another's orbit means their orbits are the same).
