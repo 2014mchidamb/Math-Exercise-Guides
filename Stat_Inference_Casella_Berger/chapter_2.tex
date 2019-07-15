@@ -70,3 +70,50 @@ We can then compute $\mathrm{E} [Y]$ as
 \end{align*}
 To compute the variance we need to compute $\mathrm{E} [Y^2]$, which is identical to $\mathrm{E} [X^2]$. Thus, 
 $\mathrm{Var} [Y] = \mathrm{E} [Y^2] - \mathrm{E} [Y]^2 = 1 - \frac{2}{\pi}$.
+
+\subsection{Exercise 12}
+We see that $y = d \tan(x)$. Since $\tan(x)$ is increasing on $(0, \frac{\pi}{2})$, we get that
+\begin{align*}
+        f_Y(y) &= F_X\big(\tan^{-1} \frac{y}{d}\big) \dv{y} \tan^{-1} \frac{y}{d} \\
+               &= \frac{2\tan^{-1} \frac{y}{d}}{\pi d\big(1 + \frac{y^2}{d^2}\big)}
+\end{align*}
+for $y \in (0, \infty)$. We can compute $\mathrm{E} [Y]$ directly from $f_X(x)$ as
+\begin{align*}
+        \mathrm{E} [Y] &= \frac{2d}{\pi}\int_{0}^{\frac{\pi }{2}} \tan(x) dx \\
+                       &= \infty
+\end{align*}
+So $\mathrm{E} [Y]$ does not exist.
+
+\subsection{Exercise 13}
+A sequence of flips has length $l$ if there are either $l$ heads in a row or $l$ tails in a row, so
+$P(X = l) = p^l (1 - p) + (1 - p)^l p = p \text{Geom}(1 - p) + (1 - p) \text{Geom}(p)$. Therefore,
+by linearity of expected value, $\mathrm{E} [X] = \frac{p}{1 - p} + \frac{1 - p}{p}$.
+
+\subsection{Exercise 14}
+(a) We have that
+\begin{align*}
+        \int_{0}^{\infty} 1 - F_X(x) dx = \int_{x = 0}^{\infty} \int_{y = x}^{\infty} f_X(y) dy dx  
+\end{align*}
+Since $0 \leq x \leq \infty$ and $x \leq y \leq \infty$, we can change the order of integration by having
+$0 \leq y \leq \infty$ on the outside and $0 \leq x \leq y$ on the inside
+\begin{align*}
+        \int_{x = 0}^{\infty} \int_{y = x}^{\infty} f_X(y) dy dx &= \int_{y = 0}^{\infty} \int_{x = 0}^{y} dx f_X(y) dy \\
+                                                                 &= \int_{0}^{\infty} y f_X(y) dy \\
+                                                                 &= E[X]
+\end{align*}
+
+
+(b) We can rewrite the expected value as a sum of infinite sums to see that
+\begin{align*}
+        E[X] &= \sum_{k = 1}^\infty k f(k) = \sum_{k = 1}^\infty f(k) + \sum_{k = 2}^\infty f(k) + ... \\
+             &= \sum_{k = 0}^\infty \sum_{j = k + 1}^\infty f(k) = \sum_{k = 0}^\infty (1 - F_X(k))
+\end{align*}
+
+\subsection{Exercise 17}
+(a) We need to solve $m^3 = 1 - m^3$, since $F_X(x) = x^3$. Solving gives $m = \sqrt[3]{\frac{1}{2}}$.
+
+(b) $f$ is an even function, so $m = 0$.
+
+\subsection{Exercise 18}
+
+\subsection{Exercise 25}
