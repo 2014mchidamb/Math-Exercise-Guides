@@ -43,4 +43,31 @@ Similarly, if $a + b = 0$ then $\alpha$ can either be anything or there is no so
 (if $c \neq 0$). Thus, the two conditions we need are  $a + b \neq 0$ and $a - b \neq 0$.
 
 \subsubsection{Exercise 5}
+We can write $\abs{\sum_{i = 1}^n a_i b_i}^2$ as $(\sum_{i = 1}^n a_i b_i) (\sum_{j = 1}^n \overline{a_j b_j})$
+to see that it can be expanded as a sum whose terms consist of $\abs{a_i}^2 \abs{b_i}^2$ and 
+$a_i b_i \overline{a_j b_j}$ over all $1 \leq i, j \leq n$. The $a_i b_i \overline{a_j b_j}$ terms can be
+paired with the $a_j b_j \overline{a_i b_i}$ terms to get that
+\begin{align*}
+        \abs{\sum_{i = 1}^n a_i b_i}^2 &= \sum_{i = 1}^n \abs{a_i}^2 \abs{b_i}^2 + \sum_{1 \leq i < j \leq n} 2 \Re a_i b_i \overline{a_j b_j} \\
+                                       &= \sum_{i = 1}^n \abs{a_i}^2 \sum_{i = 1}^n \abs{b_i}^2 - \sum_{1 \leq i < j \leq n} \abs{a_i \bar{b}_j - a_j \bar{b}_i}^2
+\end{align*}
+
+\subsection{Inequalities}
+
+\subsubsection{Exercise 3}
+We apply the triangle inequality and then Cauchy-Schwarz to get
+\begin{align*}
+        \abs{\sum_{i} \lambda_i a_i} \leq \sum_{i} \abs{\lambda_i a_i} \leq \sum_{i} \abs{\lambda_i} \abs{a_i} < \sum_{i} \abs{\lambda_i} = 1
+\end{align*}
+Where the final strict inequality follows from $\abs{a_i} < 1$.
+
+\subsubsection{Exercise 4}
+We have that $\abs{z - a} = \abs{z} - \abs{a}$ when $\frac{z}{a} \geq 1$ (applying our criterion for equality
+to $\abs{(z - a) + a}$). Thus, if $\abs{a} \leq \abs{c}$, we can choose $z$ such that $\frac{z}{a} \geq 1$ 
+and $\abs{z} = \abs{c}$, so a solution to the equation exists. Now suppose a solution exists to 
+ $\abs{z - a} + \abs{z + a} = 2\abs{c}$. Then by applying the triangle inequality, we have 
+ \begin{align*}
+         2\abs{c} \geq \abs{z - a} + \abs{z + a} \geq \abs{z - a - z - a} = 2\abs{a}
+ \end{align*}
+ so $\abs{a} \leq \abs{c}$.
 
