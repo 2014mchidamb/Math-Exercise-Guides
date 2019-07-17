@@ -31,3 +31,41 @@ We have the following
         \item $4 * 4^n = 4^{n+1} \implies  n + 1$
 \end{itemize}
 
+\subsection{Problems}
+
+\subsubsection{Problem 2.18}
+An adjacency matrix requires a single bit for each vertex pair, so we need $n^2$ bits to specify it. A list
+of edges consists of  $m$ tuples of the form $(a, b)$ for $1 \leq a, b \leq n$, so it requires $2m\log n$ 
+bits. Thus, we are better off using the adjacency list format for sparse graphs and the adjacency matrix 
+format for dense graphs. If, however, we consider multigraphs, then the adjacency matrix requires $n^2 \log n$
+bits (as we need to store the number of edges from $a$ to $b$). Thus, in the multigraph case, we can always
+choose to use adjacency lists.
+
+\subsubsection{Problem 2.19}
+Suppose $f(n) = O(n^a)$ and $g(n) = O(n^b)$. Then we have that
+\begin{align*}
+        \exists c_1, c_2, N \: | \: f(n) &\leq c_1 n^a, \: g(n) \leq c_2 n^b \quad \forall n \geq N\\
+        \implies g(f(n)) &\leq g(c_1 n^a) \leq c_2 (c_1 n^a)^b = O(n^{ab})
+\end{align*}
+so $\text{poly}(n)$ is closed under composition. Thus, any polynomial time algorithm that calls another 
+polynomial time algorithm remains polynomial.
+
+\subsubsection{Problem 2.20}
+Since $f(n) = 2^{\Theta(\log^k n)}$ and $g(n) = O(n^a)$, there exists $N$ such that for all $n \geq N$
+we have $f(n) \geq 2^{c_1 \log^k n}$ and $g(n) \leq c_2 n^a$ for some constants $c_1, c_2$. Thus,
+\begin{align*}
+        \lim_{n \to \infty} \frac{f(n)}{g(n)} &\geq \lim_{n \to \infty} \frac{2^{c_1 \log^k n}}{c_2 n^a} \\
+                                              &= \lim_{n \to  \infty} \frac{(n^{c_1})^{\log^{k - 1} n}}{c_2 n^a}
+\end{align*}
+Since $\lim_{n \to \infty}\log^{k - 1} n = \infty$, we have that $f(n) = \omega(g(n))$. To see that 
+$f(n) = o(h(n))$, we substitute $n = 2^x$ to get
+\begin{align*}
+        \lim_{x \to \infty} \frac{f(2^x)}{g(2^x)} &\leq \lim_{x \to \infty} \frac{2^{a_1 x^k}}{2^{a_2 2^{c x}}} \\
+                                                  &= 0
+\end{align*}
+Where we used the fact that $\lim_{x \to \infty} \frac{a_1 x^k}{a_2 2^{c x}} = 0$. Finally, to see that 
+$\text{QuasiP}$ is closed under composition, we can check that 
+\begin{align*}
+        2^{\log^{k_1} 2^{\log^{k_2} n}} = 2^{\log^{k_1 k_2} n}
+\end{align*}
+
