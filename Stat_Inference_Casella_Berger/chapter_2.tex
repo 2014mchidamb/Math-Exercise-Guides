@@ -115,5 +115,58 @@ $0 \leq y \leq \infty$ on the outside and $0 \leq x \leq y$ on the inside
 (b) $f$ is an even function, so $m = 0$.
 
 \subsection{Exercise 18}
+We differentiate under the integral sign to get
+\begin{align*}
+        \dv{a} \mathrm{E} [\abs{X - a}] &= \dv{a} \bigg(\int_{a}^{\infty} (x - a) f_X(x) dx + \int_{-\infty}^{a} (a - x) f_X(x) dx\bigg) \\
+                                        &= \int_{a}^{\infty} -f_X(x) dx + \int_{-\infty}^{a} f_X(x) dx \\  
+                                        &= 2F_X(a) - 1
+\end{align*}
+Setting the last line equal to 0 yields $a = m$. To see that this is a minimum, we note that $2F_X(a) - 1 \leq 0$
+when $a < m$ and $2F_X(a) - 1 \geq 0$ when $a > m$.
 
 \subsection{Exercise 25}
+(a)
+\begin{align*}
+        F_{-X}(x) = P(X \geq -x) &= 1 - F_X(-x) \\
+                                 &= \int_{-x}^{\infty} f_X(x) dx \\
+                                 &= \int_{-x}^{0} f_X(x) dx + \int_{0}^{\infty} f_X(x) dx \\
+                                 &= \int_{0}^{x} f_X(x) dx + \int_{-\infty}^{0} f_X(x) dx \\  
+                                 &= F_X(x)
+\end{align*}
+
+(b)
+\begin{align*}
+        M_X(t) &= \int_{-\infty}^{\infty} e^{tx} f_X(x) dx \\ 
+               &= \int_{-\infty}^{0} e^{tx} f_X(x) dx + \int_{0}^{\infty} e^{tx} f_X(x) dx \\  
+               &= \int_{0}^{\infty} e^{-tx} f_X(x) dx + \int_{-\infty}^{0} e^{-tx} f_X(x) dx \\
+               &= M_X(-t)
+\end{align*}
+
+\subsection{Exercise 29}
+(a) For binomial, we have
+\begin{align*}
+        \mathrm{E} [X(X - 1)] &= \sum_{k = 0}^n k(k - 1) \binom{n}{k} p^k (1 - p)^{n - k} \\
+                              &= n (n - 1) p^2 \sum_{k = 2}^n \binom{n - 2}{k - 2} p^(k - 2) (1 - p)^{(n - 2) - (k - 2)} \\
+                              &= n (n - 1) p^2
+\end{align*}
+For Poisson, we have
+\begin{align*}
+        \mathrm{E} [X(X - 1)] &= \sum_{k = 0}^{\infty} k(k - 1) \frac{\lambda^k e^{-\lambda}}{k!} \\ 
+                              &= \lambda^2 \sum_{k = 2}^{\infty} \frac{\lambda^{k - 2} e^{-\lambda}}{(k - 2)!} \\
+                              &= \lambda^2
+\end{align*}
+
+(b) To compute the variances, we can use linearity of expectation to see that 
+$\mathrm{E} [X(X - 1)] + \mathrm{E} [X] - \mathrm{E} [X]^2 = \mathrm{Var} [X]$. So for binomial, we get
+\begin{align*}
+        \mathrm{Var} [X] &= n (n - 1) p^2 + np - n^2 p^2 = np - np^2 = np(1 - p)
+\end{align*}
+And for Poisson, we get
+\begin{align*}
+        \mathrm{Var} [X] &= \lambda^2 + \lambda - \lambda^2 = \lambda 
+\end{align*}
+
+(c) This one is kind of a pain to typeset; the technique is the same as (a), although more involved.
+
+\subsection{Exercise 31}
+No such distribution exists, since $M_X(0) = 0$, which contradicts the fact that $\mathrm{E} [1] = 1$.
