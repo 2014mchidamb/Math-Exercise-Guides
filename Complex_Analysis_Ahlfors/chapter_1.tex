@@ -71,3 +71,20 @@ and $\abs{z} = \abs{c}$, so a solution to the equation exists. Now suppose a sol
  \end{align*}
  so $\abs{a} \leq \abs{c}$.
 
+\subsection{Geometric Addition and Multiplication}
+
+\subsubsection{Exercise 2}
+We will only show one direction, since the other direction just reverses the steps. Suppose that 
+$a_1, a_2, a_3$ indicate the vertices of an equilateral triangle. Then the angles between the edges
+$a_1 - a_3, a_3 - a_2, a_2 - a_1$ must be equal. Using the fact that $\text{arg} \frac{a_2}{a_1} = \text{arg} a_2 - \text{arg} a_1$, we get
+\begin{align*}
+        \frac{a_1 - a_3}{a_3 - a_2} &= \frac{a_3 - a_2}{a_2 - a_1} \\
+        a_1 a_2 - a_1^2 - a_2 a_3 + a_3 a_1 &= a_3^2 - 2 a_2 a_3 + a_2^2 \\
+        a_1 a_2 + a_2 a_3 + a_3 a_1 &= a_1^2 + a_2^2 + a_3^2
+\end{align*}
+
+\subsubsection{Exercise 4}
+Let the center of the circle be $c$. Then we can proceed similarly to Exercise 2 by noting that since
+$\abs{c - a_1} = \abs{c - a_2} = \abs{c - a_3}$, we have that the angle between $c - a_1$ and $a_1 - a_3$ 
+is the same as the angle between $a_1 - a_3$ and $a_3 - c$. We can then solve for $c$ and use $c$ to compute
+the radius. The result, though, is messy and not fun to typeset.
