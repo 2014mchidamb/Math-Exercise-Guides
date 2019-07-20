@@ -1,0 +1,12 @@
+\section{Needles in a Haystack: the Class NP}
+
+\subsection{Exercises}
+
+\subsubsection{Exercise 1}
+If a 2-coloring of a graph exists, then we can flip all of the colors in the graph to produce another valid
+two-coloring. Thus, we can proceed to construct a two-coloring by picking an uncolored vertex and then coloring
+it an arbitrary color, which then determines the colors of all of the veritces it is connected to. We do
+this until either the graph is completely colored, or until we need to recolor an already colored vertex
+(in which case the graph is not 2-colorable). This algorithm is linear in the number of edges of the graph, so 2-coloring is in $P$.
+
+
