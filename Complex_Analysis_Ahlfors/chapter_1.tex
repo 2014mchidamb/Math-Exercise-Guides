@@ -88,3 +88,40 @@ Let the center of the circle be $c$. Then we can proceed similarly to Exercise 2
 $\abs{c - a_1} = \abs{c - a_2} = \abs{c - a_3}$, we have that the angle between $c - a_1$ and $a_1 - a_3$ 
 is the same as the angle between $a_1 - a_3$ and $a_3 - c$. We can then solve for $c$ and use $c$ to compute
 the radius. The result, though, is messy and not fun to typeset.
+
+\subsection{The Binomial Equation}
+
+\subsubsection{Exercise 4}
+Let $s = 1 + w^h + ... + w^{(n - 1)h}$. Then we have that $w^h s = w^h + w^{2h} + ... + w^{nh}$, which implies
+that $w^h s = s$ since $w^{nh} = 1$. If $h$ is not a multiple of $n$, then $w^h \neq 1$, so $s = 0$.
+
+\subsubsection{Exercise 5}
+The approach is the same as Exercise 4. Letting $s$ denote the sum, we multiply by $-w^h$ to get that
+$-w^h s = (-1)^n - w^h + ... + (-1)^{n - 1} w^{(n - 1)h}$. Thus, $s = 0$ if $n$ is even (even if $w^h = -1$).
+Otherwise, we solve $-w^h s = s - 2$ to get that $s = \frac{2}{1 + w^h}$ ($w^h \neq -1$ since $n$ is odd).
+
+\subsection{Analytic Geometry}
+
+\subsubsection{Exercise 1}
+We refer back to Exercise 4 from the section ``Conjugation, Absolute Value''. If $z = \alpha + \beta i$, then
+\begin{align*}
+        (a + b) \alpha + c &= 0 \implies \alpha = -\frac{c}{a + b}\\
+        (a - b) \beta &= 0
+\end{align*}
+If $a - b = 0$, then $z = -\frac{c}{a + b} + ti$ for all $t \in \mathbb{R}$, which is a line.
+
+\subsubsection{Exercise 2}
+We have the following:
+\begin{itemize}
+        \item Ellipse: Given foci $f_1, f_2$, we can write the equation as $\abs{z - f_1} + \abs{z - f_2} = 2a$.
+        \item Hyperbola: Given foci $f_1, f_2$, we can write the equation as
+                $\abs{\abs{z - f_1} - \abs{z - f_2}} = 2a$.
+        \item Parabola is a little trickier, since now we're concerned with distance to a point (focus) as
+                well as the distance to a line (directrix). One can compute the minimum distance to the
+                directrix using a number of methods (calculus, complex inner product, etc.). Out of laziness
+                I'm just going to call the distance to the directrix $\abs{z - d}$. Then we have that the
+                equation for a parabola looks like $\abs{z - f} = \abs{z - d}$.
+\end{itemize}
+
+\subsection{The Spherical Representation}
+
