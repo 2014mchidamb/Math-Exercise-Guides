@@ -20,4 +20,34 @@ The matrix $A + B$ satisfies $(A + B)^2 = I$, so we have that
 \end{align*}
 
 \subsection{Exercise 4}
+We can use uniform continuity to swap the limits to get
+\begin{align*}
+        \lim_{m \to \infty} \norm{\dot{E}_m(t) - F(t)} &= \lim_{m \to \infty} \lim_{h \to 0} \norm{\frac{E_m(t + h) - E_m(t)}{h} - F(t)} \\
+                                                       &= \lim_{h \to 0} \lim_{m \to \infty} \norm{\frac{E_m(t + h) - E_m(t)}{h} - F(t)} \\
+                                                       &= \lim_{h \to 0} \norm{\frac{E(t + h) - E(t)}{h} - F(t)} \\
+                                                       &\implies \dot{E}(t) = F(t)
+\end{align*}
+
+\subsection{Exercise 5}
+Let $M \geq \norm{A(t)}, \norm{\dot{A}(t)}$. Then we can use the expression for the derivative of $A^k(t)$
+to get
+\begin{align*}
+        \norm{\dv{t} A^k} &= \norm{\dot{A} A^{k - 1} + A \dot{A} A^{k - 2} + ... + A^{k - 1}\dot{A}} \\
+                   &\leq kM^k \\
+        \implies \norm{\dot{E}_m(t) - \dot{E}_n(t)} &\leq \sum_{k = n + 1}^m \frac{kM^k}{k!}
+\end{align*}
+so $\dot{E}_m(t)$ converges.
+
+\subsection{Exercise 6}
+\begin{align*}
+        \dv{t} \log\det e^{At} = \Tr(e^{-At} A e^{At}) = \Tr(A)
+\end{align*}
+
+\subsection{Exercise 7}
+Let $v$ be an eigenvector of $A$ with eigenvalue $a$. Then
+\begin{align*}
+        e^A v &= \sum_{k = 0}^\infty \frac{A^k v}{k!} \\
+              &= \sum_{k = 0}^\infty \frac{a^k v}{k!} \\
+              &= e^a v
+\end{align*}
 
