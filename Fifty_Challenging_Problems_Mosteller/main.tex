@@ -68,4 +68,20 @@ coin lands in a single 1-by-1 square is $\frac{1}{16}$. Since the squares are al
 table scales exactly as the probability, so the number of squares does not matter. Thus, the probability
 is just $\frac{1}{16}$.
 
+\section{Chuck-a-Luck}
+The player loses with probability $\bigg(\frac{5}{6}\bigg)^3$ and wins with the complement of that probability.
+When the player wins, their expected gain is $ \mathrm{E} [X] $, where $X$ is binomially distributed with
+$n = 3$ and $p = \frac{1}{6}$. Thus, the total change in the player's stake is $-\bigg(\frac{5}{6}\bigg)^3 + \frac{1}{2} = -\frac{17}{216} \approx -0.079$ (where we used the fact that $\mathrm{E} [X] = np$).
+
+\section{Curing the Compulsive Gambler}
+The cure is crushing Kind Friend's bank account; for Mr. Brown to not be ahead after 36 plays, he cannot win
+on even a single play (since then the worst he could do is lose the 35 other plays, which would bring him to
+net 0). The probability that Mr. Brown loses all 36 plays is $\bigg(\frac{37}{38}\bigg)^{36} \approx 0.383$,
+so Kind Friend is paying him quite often.
+
+\section{Perfect Bridge Hand}
+There are $\binom{52}{13}$ possible bridge hands, of which only 4 consist of 13 cards of the same suit.
+Thus, assuming each hand is equally likely,
+the chance of getting such a hand is basically 0 ($\approx 6.299 * 10^{-12}$).
+
 \end{document}
