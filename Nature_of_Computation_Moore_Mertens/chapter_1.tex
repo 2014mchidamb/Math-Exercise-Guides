@@ -9,4 +9,26 @@ vertices of odd degree, so it does not.
 \subsection{Problems}
 
 \subsubsection{Problem 1}
+Each edge in a finite graph increases the total sum of the graph's vertex degrees by 2. Thus, this sum must
+be an even number, so we cannot have an odd number of vertices with odd degree (otherwise the sum would be odd).
 
+\subsubsection{Problem 2}
+Consider a finite simple graph with $n$ vertices. Each vertex can have a degree between 1 and $n - 1$, since
+we cannot have multiple edges or self-loops. Thus, by the pigeonhole principle, at least two of the $n$ 
+vertices must have the same degree (there is no bijection between the $n$ vertices and the $n - 1$ degree
+options).
+
+\subsubsection{Problem 3}
+If every vertex has even degree, we can construct a set of covering cycles as follows. Choose an arbitrary
+vertex with non-zero degree and traverse a cycle starting at that vertex, while deleting all edges traversed along the way.
+Repeat this procedure until all edges have been deleted. We are guaranteed to be able to find the
+aforementioned cycles since the graph is connected; an edge "leaving" a vertex can be paired with an edge
+"coming in" to the vertex.
+
+Once we have a set of covering cycles, we can combine them into a single cycle as follows. Consider a cycle
+starting at vertex $a$ and another, edge-disjoint cycle starting at vertex $b$ such that $b$ also occurs
+in the cycle starting at $a$. We can then combine the two cycles by starting at vertex $a$ and traversing
+its cycle until arriving at vertex $b$, at which point we traverse the cycle starting at vertex $b$. Finally,
+we finish the rest of vertex $a$'s cycle from $b$ onwards. Since cycles $a$ and $b$ were edge-disjoint, this
+combined cycle does not visit any edge twice. We can repeat this cycle combination procedure until only a
+single cycle is left, which is the Eulerian cycle.
