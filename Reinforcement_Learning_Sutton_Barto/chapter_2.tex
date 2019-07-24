@@ -1,0 +1,25 @@
+\section{Multi-armed Bandits}
+
+\subsection{Exercise 1}
+$1 - \epsilon = \frac{1}{2}$.
+
+\subsection{Exercise 2}
+Exploration definitely happened at $t = 2$, since we switched from action 1 to action 2 despite
+$Q_2(1) = 1 > Q_2(2) = 0$. Similarly, exploration also definitely happened at $t = 5$, since at that
+point action 2 would have been the greedy choice. Depending on how ties are broken during greedy selection,
+it is possible that exploration also happened at  $t = 3$, since at that point actions 1 and 2 would have
+been tied.
+
+\subsection{Exercise 3}
+Intuitively, it seems clear that the $\epsilon = 0.01$ strategy will perform the best both in terms of
+cumulative reward and probability of selecting the best action over the long run, as it will eventually
+find the optimal action and choose it 99\% of the time.
+
+To put this more quantitatively, we can consider the performance of each of the 3 methods after $N$ trials,
+such that $N$ is large enough for the two $\epsilon > 0$ approaches to have found the optimal action with a
+high degree of certainty (we can choose $N$ for any degree of certainty we like, courtesy of the law of
+large numbers). After $N$ trials, the probability that the $\epsilon = 0.1$ strategy selects the best action is
+0.9, whereas for $\epsilon = 0.01$ the probability is 0.99. For greedy, the probability is either 1 or 0 after
+$N$ trials, since there is no guarantee that it found the optimal action. Since it is unlikely (\textbf{TODO:}
+make this more precise) that greedy converged to the optimal action, the expected difference in cumulative
+reward after $N$ trials will quickly grow to favor the $\epsilon = 0.01$ strategy.
