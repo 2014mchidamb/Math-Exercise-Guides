@@ -1,0 +1,60 @@
+\section{Common Families of Distributions}
+
+\subsection{Exercise 1}
+\begin{align*}
+        \mathrm{E} [X] &= \sum_{i = N_0}^{N_1} \frac{i}{N_1 - N_0 + 1} = \frac{1}{N_1 - N_0 + 1} (\sum_{i = 1}^{N_1} i - \sum_{i = 1}^{N_0 - 1} i) = \frac{N_1 + N_0}{2} \\
+        \mathrm{E} [X^2] &= \frac{1}{N_1 - N_0 + 1} (\sum_{i = 1}^{N_1} i^2 - \sum_{i = 1}^{N_0 - 1} i^2) = \frac{2N_0^2 + 2N_0N_1 - N_0 +2N_1^2 + N_1}{6} \\
+        \mathrm{Var} [X] &= \mathrm{E} [X^2] - \mathrm{E} [X]^2 = \frac{(N_1 - N_0 + 1)^2 - 1}{12} 
+\end{align*}
+
+\subsection{Exercise 2}
+(a) Suppose the number of defective parts in the lot is $D$. The likelihood that we accept a sample from such
+a lot is $P(X = 0)$, where $X$ is distributed according to $\text{Hypergeom}(100, D, K)$. 
+Given that a lot is unacceptable if $D > 5$, we need only consider the case where $D = 6$, since larger $D$ 
+lead to lower likelihood of being incorrectly accepted. Thus, we solve
+\begin{align*}
+        \frac{\binom{94}{K}}{\binom{100}{K}} < 0.1 
+\end{align*}
+by running the following Python code:
+\begin{lstlisting}[language=python]
+  from scipy import special
+
+  K = 1
+  while special.binom(94, K) / special.binom(100, K) > 0.1:
+    K += 1
+\end{lstlisting}
+to get that $K = 32$.
+
+(b) This is the same as part (a) except that we now have to consider $P(X = 0) + P(X = 1) < 0.1$. Slightly
+modifying the Python code above yields $K = 51$.
+
+\subsection{Exercise 3}
+At each second, the probability that at least one car passes in the next 3 seconds is $1 - P(X = 0)$, where
+$X$ is binomial with $n = 3$ and $p = p$. Thus, the probability that the pedestrian has to wait 4 seconds
+before starting to cross is the probability that at least one car passes in the first three seconds multiplied 
+by the probabilities that a car crosses at the 4th second and that no cars cross during seconds 5-7. This
+probability is $(1 - (1 - p)^3) p (1 - p)^3$.
+
+\textbf{NOTE:} I compared my answer to the actual solutions, but I don't buy that the actual
+answer is $(1 - p (1 - p)^3) (1 - p)^3$ based on the logic provided. What if cars pass on the first and second
+seconds, but then no cars pass after? The pedestrian could then leave after two seconds.
+
+\subsection{Exercise 4}
+(a) If unsuccessful keys are not eliminated, then this is the same as asking for the expectation of a 
+geometric random variable with $p = \frac{1}{n}$, so we expect that it will take $n$ trials.
+
+(b) If we eliminate unsuccessful keys, then our expectation looks like  
+\begin{align*}
+        \mathrm{E} [X] &= \frac{1}{n} + 2 * \frac{n - 1}{n} * \frac{1}{n - 1} + ... \\
+                       &= \frac{1}{n} \sum_{i = 1}^n i = \frac{n + 1}{2}
+\end{align*}
+
+\subsection{Exercise 5}
+The standard drug's effectiveness can be modeled as a binomial distribution with $n = 100$ and $p = 0.8$, since
+we are given that the drug is expected to be effective in 80 out of 100 cases. Computing $P(X \geq 85)$ yields
+a value of approximately 0.129, which means that it is fairly unlikely for the new drug to work in 85
+(or more) cases if it was worse than the first drug. Thus, we conclude that the new drug is superior.
+
+\subsection{Exercise 7}
+We would like to have $P(X \geq 2) = 1 - P(X < 2) > 0.99$. Thus, we can solve 
+$e^{-\lambda} (1 + \lambda) < 0.01$ to get that $\lambda > 6.638$.
