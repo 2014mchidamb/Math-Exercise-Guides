@@ -125,3 +125,22 @@ We have the following:
 
 \subsection{The Spherical Representation}
 
+\subsubsection{Exercise 1}
+If the stereographic projections of $z$ and $z'$ are diametrically opposite, the distance between the 
+projections is 2. Thus
+\begin{align*}
+        \frac{\abs{z - z'}^2}{(1 + \abs{z}^2) (1 + \abs{z'}^2} &= 1 \\
+        \abs{z}^2 -z\bar{z}' - \bar{z}z' + \abs{z'}^2 &= 1 + \abs{z}^2 + \abs{z'}^2 + \abs{z}^2 \abs{z'}^2 \\
+        z\bar{z}' + \bar{z}z' + z\bar{z}' \bar{z}z' &= -1 \\
+        (z\bar{z}' + 1)(\bar{z}z' + 1) &= 0 \implies z\bar{z}' = -1
+\end{align*}
+The other direction follows from reversing the steps above.
+
+\subsubsection{Exercise 2}
+Using the fact that the diameter of the sphere is 2, we can solve for the inscribed cube's sidelength by 
+applying the Pythagorean theorem to the triangle whose hypotenuse joins the bottom left and top right 
+vertices of the cube. This gives us that $2^2 - 2s^2 = s^2 \implies s = \sqrt{\frac{4}{3}}$. Now if we 
+label the bottom left corner of the cube as $(x_1, x_2, x_3)$ and the top right corner of the cube as
+$(x_1', x_2', x_3')$, we can use the fact that $x_i = -x_i'$ to get that $x_1 = x_2 = x_3 = \sqrt{\frac{1}{3}}$ 
+. Thus, the vertices of the cube are $(\pm \sqrt{\frac{1}{3}}, \pm \sqrt{\frac{1}{3}}, \pm \sqrt{\frac{1}{3}})$
+from which it is then straightforward to compute the stereographic projections.
