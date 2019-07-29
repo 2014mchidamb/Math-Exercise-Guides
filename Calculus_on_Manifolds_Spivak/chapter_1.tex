@@ -1,0 +1,76 @@
+\section{Functions on Euclidean Space}
+
+\subsection{Norm and Inner Product}
+
+\subsubsection{Exercise 1}
+\begin{align*}
+        \sum_{i = 1}^n x_i^2  = \sum_{i = 1}^n \abs{x_i}^2 \leq \bigg(\sum_{i = 1}^n \abs{x_i}\bigg)^2 
+        \implies \sqrt{\sum_{i = 1}^n x_i^2} \leq \sum_{i = 1}^n \abs{x_i}^2 
+\end{align*}
+
+\subsubsection{Exercise 2}
+We need $\sum_{i = 1}^n x_i y_i = \abs{x} \abs{y}$. Linear dependence by itself is not enough, since if
+$x$ and $y$ are opposite sign we see that the lefthand sum will be negative. Thus, we need linear dependence 
+as well as $x$ and $y$ having the same sign.
+
+\subsubsection{Exercise 3}
+The proof is identical to the $\abs{x + y}$ case, except now we have a $-2 \sum_{i = 1}^n x_i y_i$ term.
+Thus, equality holds when $x$ and $y$ are linearly dependent and have opposite signs.
+
+\subsubsection{Exercise 4}
+$\abs{\abs{x} - \abs{y}}^2 = \abs{x}^2 + \abs{y}^2 - 2\abs{x} \abs{y}$. Since $\abs{x} \abs{y} \geq \langle x, y \rangle$, we have the desired inequality.
+
+\subsubsection{Exercise 5}
+\begin{align*}
+        \abs{z - x} = \abs{z - y + y - x} \leq \abs{z - y} + \abs{y - x}
+\end{align*}
+Geometrically, this is just the fact that any sidelength of a triangle must be bounded by the sum of the
+other two sidelengths.
+
+\subsubsection{Exercise 6}
+(a) We can proceed as Spivak hints by noting that for the $\int_{a}^{b} (f - \lambda g)^2 > 0$ case, the
+proof is identical to that of Theorem 1-1 (2). For the $\int_{a}^{b} (f - \lambda g)^2 = 0$ case (which is when equality is obtained), we
+can use the fact that $(f - \lambda g)^2 = 0$ almost everywhere.
+
+However, I think it's a little smoother to handle both cases at once:
+\begin{align*}
+        \int_{a}^{b} (f - \lambda g)^2 = \int_{a}^{b} f^2 - 2\lambda \int_{a}^{b} fg + \lambda^2 \int_{a}^{b} g^2 &\geq 0 \\ 
+        \int_{a}^{b} f^2 - \frac{2 \bigg(\int_{a}^{b} fg\bigg)^2}{\int_{a}^{b} g^2} + \frac{\bigg(\int_{a}^{b} fg\bigg)^2}{\int_{a}^{b} g^2} &\geq 0 \quad \text{for} \: \: \lambda = \frac{\int_{a}^{b} fg}{\int_{a}^{b} g^2} \\
+        \sqrt{\int_{a}^{b} f^2 \int_{a}^{b} g^2} &\geq \abs{\int_{a}^{b} fg}
+\end{align*}
+
+(b) Equality does not necessarily imply that $f = \lambda g$, since we could consider $f$ and $g$ to be
+0 everywhere except two points $a$ and $b$ such that $f(a) \neq \lambda g(a)$ and $f(b) \neq \lambda g(b)$.
+However, if $f$ and $g$ are continuous, then $\int_{a}^{b} (f - \lambda g)^2 = 0$ implies that $f = \lambda g$.
+
+(c) Define $f(m) = x_i$ and $g(m) = y_i$ for $m \in [i, i + 1)$. Then $\int_{1}^{n} f g = \sum_{1}^n x_i y_i$ 
+(we can break up the integral at the points of discontinuity) and Theorem 1-1 (2) follows.
+
+\subsubsection{Exercise 7}
+(a) If $T$ is inner product preserving then we have $\langle Tx, Tx \rangle = \langle x, x \rangle$, so
+$T$ is norm preserving. If $T$ is norm preserving, then
+\begin{align*}
+        \langle T(x - y), T(x - y) \rangle &= \abs{T(x)}^2 + \abs{T(y)}^2 - 2\langle T(x), T(y) \rangle \\
+        \langle x - y, x - y \rangle &= \abs{x}^2 + \abs{y}^2 - 2 \langle x, y \rangle \\
+        \implies \langle T(x), T(y) \rangle &= \langle x, y \rangle
+\end{align*}
+so $T$ is inner product preserving.
+
+(b) Since $Tx = Ty \implies T(x - y) = 0 \implies \abs{x - y} = 0$, $T$ is injective. Furthermore,  
+$Tx = 0 \implies \abs{x} = 0$, so the nullspace of $T$ is trivial and $T$ is thus surjective. Now if we
+consider $T^{-1} y = x$, then we have $\langle y, y \rangle = \langle TT^{-1} y, TT^{-1} y \rangle = \langle T^{-1} y, T^{-1} y \rangle$.
+
+\subsubsection{Exercise 10}
+Let $\norm{T}_F = \sqrt{\sum_{i = 1}^n \sum_{j = 1}^m T_{ij}^2}$ (Frobenius norm). Then we have
+\begin{align*}
+        \abs{T h}^2 = \sum_{i = 1}^n \bigg(\sum_{j = 1}^m T_{ij} h_j\bigg)^2 &\leq \sum_{i = 1}^n \sum_{j = 1}^m T_ij^2 \sum_{j = 1}^m h_j^2 = \norm{T}_F^2 \abs{h}^2
+\end{align*}
+so letting $M = \norm{T}_F$ gives the desired inequality.
+
+\subsubsection{Exercise 12}
+Linearity and injectivity of $T$ follow from linearity of inner product. To see surjectivity, we note that 
+any element $f \in (\mathbb{R}^n)^*$ is determined entirely by $f(e_1), ..., f(e_n)$ due to linearity. Thus,
+$f(y) = \langle x, y \rangle$ for the unique $x$ satisfying $x_i = f(e_i)$.
+
+\subsubsection{Exercise 13}
+Expanding $\langle x + y, x + y \rangle$ gives the desired result.
