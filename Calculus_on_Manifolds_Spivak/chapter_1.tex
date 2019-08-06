@@ -74,3 +74,42 @@ $f(y) = \langle x, y \rangle$ for the unique $x$ satisfying $x_i = f(e_i)$.
 
 \subsubsection{Exercise 13}
 Expanding $\langle x + y, x + y \rangle$ gives the desired result.
+
+\subsection{Subsets of Euclidean Space}
+
+\subsubsection{Exercise 14}
+Any point $a$ in the union is also in some set which contains an open set around $a$, and by the definition of
+union this open set is also in the union. For finite intersection, if a point is in two open sets, then both
+sets must contain some open rectangles around that point; the smaller of these rectangles is in the 
+intersection of both sets. For infinite intersection, we can consider the intersection of 
+$(-\frac{1}{n}, \frac{1}{n})$ for all $n \in \mathbb{N}$, as it consists only of the single point 0.
+
+\subsubsection{Exercise 17}
+The procedure hinted by Spivak seems to be to split the square into 4 quadrants and then select a point from
+each quadrant while satisfying the constraint, then repeat this procedure indefinitely (split the 4 quadrants
+into 16 quadrants, etc.). However, I'm not sure how to make this procedure more rigorous.
+
+\subsubsection{Exercise 19}
+We can use the facts that the rationals are dense in $\mathbb{R}$ and that closed sets contain all of their
+limit points (although neither fact is proved so far in this book) to immediately get the desired result.
+
+\subsubsection{Exercise 21}
+(a) Since $A$ is closed, $A^c$ is open, which means $x$ has an open rectangle (and thus, an open ball) around
+it that is contained within $A^c$. Therefore, there exists $d > 0$ such that $\abs{y - x} \geq d$ for all
+$y \in A$.
+
+(b) Suppose that for every $d > 0$, we could choose $y_i \in A$ and $x_i \in B$ such that $\abs{y_i - x_i} < d$.
+This would imply that we could pick a sequence $\{y_n\} \in A$ and a sequence $\{x_n\} \in B$ such that
+ $\lim_{n \to \infty} y_n = \lim_{n \to \infty} x_n$. Since $B$ is compact, this limit must be a point in
+  $B$, which contradicts the disjointness of  $A$ and  $B$.
+
+(c) Consider $A = \{(0, i) \: | \: i \in \mathbb{N}\}$ and $B = \{(0, i + \frac{1}{i}) \: | \: i \in \mathbb{N}\}$.
+For any $d$, we can choose $i$  such that $\frac{1}{i} < d$.
+
+\subsubsection{Exercise 22}
+This is easier to argue with open/closed balls instead of open/closed rectangles (for me). Every point
+$c \in C$ must have an open ball $B_{\delta} (c) \subset U$ for some $\delta > 0$. For each such ball,
+consider instead $B_{r} (c)$ with $r < \delta$. The closure of $B_r(c)$ is a closed ball that is contained
+within $U$. Now, since $C$ is compact, it can be covered by finitely many of these closed balls. Since
+closed sets are closed under finite union, we can take $D$ to be the union of these balls to get a compact
+set whose interior contains $C$.
