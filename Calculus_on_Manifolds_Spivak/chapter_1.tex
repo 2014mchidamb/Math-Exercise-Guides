@@ -1,4 +1,6 @@
 \section{Functions on Euclidean Space}
+\textbf{NOTE:} My notes differ from Spivak's text in that I use subscripts to denote
+components instead of superscripts.
 
 \subsection{Norm and Inner Product}
 
@@ -113,3 +115,39 @@ consider instead $B_{r} (c)$ with $r < \delta$. The closure of $B_r(c)$ is a clo
 within $U$. Now, since $C$ is compact, it can be covered by finitely many of these closed balls. Since
 closed sets are closed under finite union, we can take $D$ to be the union of these balls to get a compact
 set whose interior contains $C$.
+
+\subsection{Functions and Continuity}
+
+\subsubsection{Exercise 23}
+Suppose $\lim_{x \to a} f(x) = b$. Then we can choose $\delta$ such that $\abs{x - a} < \delta$ implies
+$\abs{f(x) - b} < \epsilon$ for any $\epsilon > 0$. Rewriting $\abs{f(x) - b}$ as 
+$\sqrt{\sum_{i = 1}^m (f_i (x) - b_i)^2}$ gives $\abs{f_i(x) - b_i} < \epsilon$ for the same $\delta$, so
+we get $\lim_{x \to a} f_i(x) = b_i$. The other direction reverses the steps after choosing 
+$\abs{f_i(x) - b_i} < \frac{\epsilon}{\sqrt{m}}$. 
+
+\subsubsection{Exercise 24}
+This is basically the same as the previous exercise.
+
+\subsubsection{Exercise 25}
+From Exercise 1-10 we have that there exists  $M$  such that $\abs{T(x)} \leq M \abs{x}$. Thus, for any
+$\epsilon > 0$ and $a \in \mathbb{R}^n$, we can choose $\delta = \frac{\epsilon}{M}$. Using this $\delta$,
+we get $\abs{x - a} < \delta$ implies $\abs{T(x) - T(a)} = \abs{T(x - a)} < \epsilon$, so $T$ is continuous.
+
+\subsubsection{Exercise 28}
+Choose any $x$ on the boundary of  $A$ and let  $f(y) = \frac{1}{\abs{y - x}}$. Since $f$ is the quotient
+of two continuous functions ($g(y) = 1$ and  $h(y) = \abs{y - x}$) with non-zero denonimator, $f$ is continuous.
+Furthermore, by construction we can choose  $y$ arbitrarily close to  $x$, so  $f$ is unbounded.
+
+\subsubsection{Exercise 29}
+Since $f$ is continuous,  $f(A)$ is compact. By Heine-Borel,  $f(A) \subset \mathbb{R}$ is closed and bounded,
+so it contains its maximum and minimum.
+
+\subsubsection{Exercise 30}
+Let $x_0 = a$. We have that
+\begin{align*}
+        \sum_{i = 1}^n o(f, x_i) &= \lim_{\delta \to 0} \sum_{i = 1}^n [M(f, x_i, \delta) - m(f, x_i, \delta)] \\
+                                 &\leq \lim_{\delta \to 0} \sum_{i = 1}^n [M(f, x_i, \delta) - M(f, x_{i - 1}, \delta)] \\
+                                 &\leq \lim_{\delta \to 0} M(f, x_n, \delta) - m(f, a, \delta) \\
+                                 &\leq f(b) - f(a)
+\end{align*}
+Where we used the fact that $f$ is increasing to get $m(f, x_i, \delta) \geq M(f, x_{i - 1}, \delta)$.
