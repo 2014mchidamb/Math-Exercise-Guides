@@ -429,3 +429,54 @@ so $\text{In} (G) \triangleleft \text{Aut} (G)$.
 \subsubsection{Exercise 12}
 Since $g \to ag$ is a permutation on $G$, $gT \to agT$ is a permutation on $G / T$. We also have that
 $h_a \circ h_b (gT) = a (bg T) = (ab)g T = h_{ab} (gT)$ so $h: G \to S(G / T)$ is a morphism. 
+
+\subsection{Quotient Groups}
+
+\subsubsection{Exercise 1}
+Let $\phi$ be a morphism with $\phi(R) = 0$ and $\phi(D) = 1$. Then $\phi$ is an epimorphism with kernel
+$S$, so $\Delta_n / S \cong \mathbb{Z}_2$.
+
+\subsubsection{Exercise 2}
+The quotient groups of $\Delta_4$ correspond to its normal subgroups, which are:
+\begin{itemize}
+        \item $\{1\}, \{R\}, \{R^2\}$
+        \item  $\{R^2, D\}, \{R^2, RD\}$
+\end{itemize}
+
+\subsubsection{Exercise 3}
+(a) Let $\phi: 4\mathbb{Z} \to \mathbb{Z}_5$ be defined as $\phi(x) = x \mod 5$. Then $\phi$ is an epimorphism
+with kernel $20\mathbb{Z}$, so $4\mathbb{Z} / 20\mathbb{Z} \cong \mathbb{Z}_5$. Similarly, we can also
+define $\phi: \mathbb{Z}_6 \to \mathbb{Z}_3$ as $\phi(x) = x \mod 3$. This is another epimorphism with
+kernel $3\mathbb{Z}_6$, so $\mathbb{Z}_6 / 3\mathbb{Z}_6 \cong \mathbb{Z}_3$.
+
+(b) More generally, we can define $\phi: k \mathbb{Z} \to \mathbb{Z}_m$ as $\phi(x) = \frac{x}{k} \mod m$, 
+which is an epimorphism with kernel $m k  \mathbb{Z}$. Thus, $k\mathbb{Z} / m k \mathbb{Z} \cong \mathbb{Z}_m$.
+From this result, we get that 
+$(\mathbb{Z} /m k \mathbb{Z}) / (k\mathbb{Z} / m k \mathbb{Z}) \cong \mathbb{Z}_{m k} / \mathbb{Z}_m$, which
+is in turn isomorphic to $\mathbb{Z}_k$.
+
+\subsubsection{Exercise 4}
+I'm not really sure what counts as a ``familiar group here'', but we can consider $x \to \abs{x}$ again to
+see that $Q^* / \{\pm 1 \}$ is isomorphic to the multplicative group of positive rationals.
+
+\subsubsection{Exercise 6}
+Consider $\phi: G \to \text{In} G$ where $\phi(g) = \gamma_g$ with $\gamma_g(x) = gxg^{-1}$. By construction,
+$\phi$ is an epimorphism, and $\gamma_g(x) = x$ iff $g \in Z$. Thus, $G / Z \cong \text{In} G$.
+
+\subsubsection{Exercise 7}
+(a) Since $[xgx^{-1}, xhx^{-1}] = x g x^{-1} x h x^{-1} x g^{-1} x^{-1} x h^{-1} x^{-1} = x[g, h]x^{-1}$, we
+have that $[G, G] \triangleleft G$. 
+
+(b) Since $[G, G] [x, y] = [G, G] \implies [G, G] xy = [G, G] yx$, $G / [G, G]$ is abelian. Any morphism
+$\phi: G \to A$ carries all of the elements of the coset $[G, G]x$ to the single element $\phi(x)$. Thus,
+we can factor $\phi$ as $\phi' \circ p$, where $\phi': G / [G, G] \to A$ with $\phi'([G, G]x) = \phi(x)$.
+
+\subsubsection{Exercise 8}
+Since $G/N \cong \mathbb{Z}_5$, $G$ must be a group of order 10. This implies that  $G$ is either  $\Delta_5$
+or $\mathbb{Z}_10$ (see exercise 7 in section 8). However, $\Delta_5$ does not have a normal subgroup
+of order 2, so $G \cong Z_{10}$.
+
+\subsubsection{Exercise 9}
+Since $N \subset M$, we can define an epimorphism $\phi: G / N \to G / M$ that maps the coset $Ng$ to the
+coset  $Mg$. The kernel of this epimorphism is $Nm$ for all $m \in M$, which is exactly $M / N$. Thus,
+we get that  $(G / N) / (M / N) \cong G / M$.
