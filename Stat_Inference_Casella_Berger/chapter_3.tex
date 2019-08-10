@@ -58,3 +58,52 @@ a value of approximately 0.129, which means that it is fairly unlikely for the n
 \subsection{Exercise 7}
 We would like to have $P(X \geq 2) = 1 - P(X < 2) > 0.99$. Thus, we can solve 
 $e^{-\lambda} (1 + \lambda) < 0.01$ to get that $\lambda > 6.638$.
+
+\subsection{Exercise 12}
+I tried to do this analytically but struggled to show equivalence between the summations; obtaining the result
+through qualitative reasoning is much simpler. $F_X(r - 1)$ is the probability that there are at most $r - 1$
+successes in $n$ Bernoulli trials, which is the same as saying that we get success number $r$ after $n$ trials.
+Thus, we must have at least $n + 1 - r$ failures, which is $1 - F_Y(n - r)$ (I don't deserve credit for this,
+I looked up part of the solution here - maybe I'll retry the analytic approach later).
+
+\subsection{Exercise 15}
+I spent an absurd amount of time on this question because I was working off of Wikipedia's provided negative
+binomial MGF, which treats $p$ as $1 - p$. After finding the proper MGF, the result is straightforward: 
+\begin{align*}
+        \lim_{r \to \infty} \bigg(\frac{p}{1 - (1 - p)e^t}\bigg)^r &= 
+        \lim_{r \to \infty}\bigg(1 + \frac{p}{1 - (1 - p)e^t} - \frac{1 - (1 - p)e^t}{1 - (1 - p)e^t}\bigg)^r \\
+                                                                   &= \lim_{r \to \infty} \bigg(1 + \frac{r\frac{-(1 - p) + (1 - p)e^t}{1 - (1 - p)e^t}}{r}\bigg)^r \\
+                                                                   &= \exp(-\lambda + \lambda e^t)
+\end{align*}
+
+\subsection{Exercise 19}
+Since $\alpha = 1, 2, 3, ...$ we have $\Gamma(\alpha) = (\alpha - 1)!$. We can then integrate by parts with 
+$u = \frac{1}{(\alpha - 1)!} z^{\alpha - 1}$ and $dv = e^{-z}$ to get
+\begin{align*}
+        \int_{x}^{\infty} \frac{1}{(\alpha - 1)!} z^{\alpha - 1} e^{-z} dz &= \frac{x^{\alpha - 1} e^{-x}}{(\alpha - 1)!} + \int_{x}^{\infty} \frac{1}{(\alpha - 2)!} z^{\alpha - 2} e^{-z} dz \\
+                                                                           &= \sum_{y = 0}^{\alpha - 1} \frac{x^y e^{-x}}{y!}
+\end{align*}
+where the last line follows from repeatedly integrating by parts until $z^{\alpha - k} = 0$. Probabilistically,
+this equality gives that $P(X \geq x) = P(Y \leq \alpha - 1)$ where $X$ is Gamma distributed with 
+ $\alpha = \alpha, \beta = 1$ and $Y$ is Poisson with $\lambda = x$.
+
+\subsection{Exercise 44}
+Directly applying Chebychev to $P(\abs{X} \geq b)$ gives $P(\abs{X} \geq b) \leq \frac{\mathrm{E}[\abs{X}]}{b}$.
+Furthermore, since $P(\abs{X} \geq b) = P(X^2 \geq b^2)$, we can apply Chebychev again to get
+$P(\abs{X} \geq b) \leq \frac{\mathrm{E} [X^2]}{b^2}$. Both $\mathrm{E} [\abs{X}]$ and $\mathrm{E} [X^2]$ 
+can be computed via integration by parts as 1 and 2 respectively. Thus, for $b = 3$ the $X^2$ bound is
+better and for  $b = \sqrt{2}$ the $\abs{X}$ bound is better.
+
+\subsection{Exercise 45}
+(a)
+\begin{align*}
+        M_X(t) &= \int_{-\infty}^{\infty} e^{tx} f_X(x) dx \\ 
+               &\geq e^{at} \int_{x \geq a} f_X(x) dx \quad \text{since } e^{xt} \geq e^{at} \text{ for } x \geq a, t \geq 0 \\
+               &\geq e^{at} P(X \geq a)
+\end{align*}
+
+(b) Identical to (a), except we use  $x \leq a$ in step 2 since $t < 0$.
+
+(c) We just need $h(t, x)$ to be nonnegative and $h(t, x) \geq 1$ for all $x, t \geq 0$, since then we can
+replicate the steps of (a).
+
