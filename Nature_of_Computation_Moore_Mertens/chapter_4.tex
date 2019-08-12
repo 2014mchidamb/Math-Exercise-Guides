@@ -5,8 +5,57 @@
 \subsubsection{Exercise 1}
 If a 2-coloring of a graph exists, then we can flip all of the colors in the graph to produce another valid
 two-coloring. Thus, we can proceed to construct a two-coloring by picking an uncolored vertex and then coloring
-it an arbitrary color, which then determines the colors of all of the veritces it is connected to. We do
+it an arbitrary color, which then determines the colors of all of the vertices it is connected to. We do
 this until either the graph is completely colored, or until we need to recolor an already colored vertex
-(in which case the graph is not 2-colorable). This algorithm is linear in the number of edges of the graph, so 2-coloring is in $P$.
+(in which case the graph is not 2-colorable). This algorithm is linear in the number of edges and vertices of the graph, so 2-coloring is in $P$.
 
+\subsubsection{Exercise 2}
 
+\subsubsection{Exercise 3}
+Suppose we wish to determine whether a graph $G$ with  $n$ vertices is  $k$-colorable. We can extend $G$ to
+be a graph $G'$ with $n + 1$ vertices by adding an additional vertex that we then connect to all of the original
+$n$ vertices of  $G$ (this can be done in  $O(n)$ time). By construction, $G'$ is  $(k + 1)$-colorable if and
+only if its subgraph $G$ is $k$-colorable (since node $n + 1$ is connected to all of $G$, the subgraph $G$
+must be colored with only $k$ colors). 
+
+\subsubsection{Exercise 4}
+Since boolean operations are commutative, we can write $\phi'$ as:
+\begin{align*}
+        \phi'(p, q, r) &= (p \vee q) \wedge (p \vee \bar{q}) \wedge (r \vee q) \wedge (r \vee \bar{q}) \wedge (\bar{p} \vee \bar{r}) \\
+                       &= p \wedge r \wedge (\bar{p} \vee \bar{r})
+\end{align*}
+which is clearly not satisfiable, since $p = 1, r = 1 \implies (\bar{p} \vee \bar{r}) = 0$.
+
+\subsubsection{Exercise 5}
+For a graph to be 3-colorable (let our 3 colors be R, G, and B), each vertex in the graph must be colored
+either R, G, or B, and no adjacent vertices may have the same color. If we let $v_r^{(i)}, v_g^{(i)}, v_b^{(i)}$
+denote boolean variables that are true when vertex $i$ is colored R, G, and B respectively and $N(i)$ denote
+all of the neighbors of vertex $i$, we can translate 3-colorability into the following boolean expression
+for each vertex $i$:
+\begin{align*}
+\bigwedge_i (v_r^{(i)} \vee v_g^{(i)} \vee v_b^{(i)}) \wedge \big((v_r^{(i)} \wedge_{j \in N(i)} \bar{v}_r^{(j)}) \vee (v_b^{(i)} \wedge_{j \in N(i)} \bar{v}_b^{(j)}) \vee (v_g^{(i)} \wedge_{j \in N(i)} \bar{v}_g^{(j)})\big)
+\end{align*}
+Repeatedly applying the distributive law to the part of the above expression that consists of ors of ands
+produces a CNF expression that must be true for every vertex $i$. Since satisfiability of the resulting
+expression corresponds directly to whether the original graph is 3-colorable or not, we have that
+3-colorability can be reduced to SAT.
+
+\subsubsection{Exercise 6}
+Factoring out $x$ in the first expression leads to $x \vee (z_1 \wedge \bar{z}_1) = x$. The second expression
+is even more straightforward; we just factor out $(x \vee y)$.
+
+\subsubsection{Exercise 7}
+If any of the $x_i$ are true, then it is clear that the right-hand side can be made true by picking $(z_1, z_2)$
+such that the (at most) two clauses not containing a true $x_i$ value can be made true.
+For the other direction, iterating through all possible $(z_1, z_2)$ values shows that the right-hand side is
+only true if at least one of the $x_i$ (where $i$ depends on the values of $z_1, z_2$) is true.
+
+There is probably a better approach here than the above ``brute force'' reasoning; I should come back to this.
+
+\subsubsection{Exercise 8}
+The approach from Exercise 5 still works.
+
+\subsubsection{Exercise 9}
+There are only $(2n)^k$ possible unique $k$-clauses (each of the $k$ literals can either be one of the 
+variables or its complement), so the number of bits needed to specify a satisfiability problem is polynomial
+in the number of variables (each of which requires only a single bit).
