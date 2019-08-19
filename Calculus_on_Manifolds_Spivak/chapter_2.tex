@@ -1,0 +1,72 @@
+\section{Differentiation}
+
+\subsection{Basic Definitions}
+
+\subsubsection{Exercise 1}
+Let the derivative of $f$ at $a$ be the linear operator $\lambda$. Then, by problem $1-10$, we have that
+$\abs{\lambda(h)} \leq M \abs{h}$ for some $M \in \mathbb{R}$. Thus,
+\begin{align*}
+        \abs{(f(a + h) - f(a)} &= \frac{\abs{f(a + h) - f(a)}}{\abs{h}} * \abs{h} \\
+                               &\leq \frac{\abs{f(a + h) - f(a) - \lambda(h)} + \abs{\lambda(h)}}{\abs{h}} * \abs{h} \\
+        \implies \lim_{h \to 0} \abs{f(a + h) - f(a)} &\leq \lim_{h \to 0} \frac{\abs{f(a + h) - f(a) - \lambda(h)} + \abs{\lambda(h)}}{\abs{h}} \lim_{h \to 0} \abs{h} \\
+                                                      &\leq M * 0 = 0
+\end{align*}
+
+\subsubsection{Exercise 2}
+If $f$ is independent, we can define $g = f(x, y_0)$ for some arbitrary $y_0$. If there exists $g$ such that
+$f(x, y) = g(x)$ for all $x, y$, then we have $f(x, y_1) = g(x) = f(x, y_2)$ so $f$ is independent of the
+second variable. In this case, $f'(a, b) = g'(a)$.
+
+\subsubsection{Exercise 3}
+A function that is independent of both variables must, by construction, be constant.
+
+\subsubsection{Exercise 4}
+(a) When $t < 0$, we have
+\begin{align*}
+        h(t) = -t\abs{x} g\bigg(\frac{tx}{-t \abs{x}}\bigg) = t\abs{x}g\bigg(\frac{x}{\abs{x}}\bigg)
+\end{align*}
+which is the same as $h(t)$ when $t > 0$, so $h(t)$ is differentiable with derivative $f(x)$.
+
+(b) Since $g(0, 1) = g(1, 0) = 0$, we have that $f(h, 0) = f(0, k) = 0$. Letting $\lambda = Df(0, 0)$, we have
+that
+\begin{align*}
+        \lim_{(h, 0) \to 0} \frac{\abs{\lambda(h, 0)}}{\abs{h}} &= \lim_{(h, 0) \to 0} \frac{\abs{h} \lambda(1, 0)}{\abs{h}} \\
+                                                                &= \lambda(1, 0) = 0
+\end{align*}
+if $\lambda$ exists. Similarly, considering $(0, k) \to 0$ gives $\lambda(0, 1) = 0$, so $\lambda = 0$. 
+As a result, we have that $f$ is differentiable at $(0, 0)$ only if
+\begin{align*}
+        \lim_{(h, k) \to (0, 0)} \frac{\abs{f(h, k)}}{\abs{(h, k)}} = \lim_{(h, k) \to (0, 0)} \abs{g\bigg(\frac{(h, k)}{\abs{(h, k)}}\bigg)} = 0
+\end{align*}
+which implies that $g = 0$ (we can consider $t(x, y)$ as $t \to 0$ for every $(x, y)$ on the unit circle). 
+
+\subsubsection{Exercise 5}
+Apply the previous exercise with $g(x, y) = x\abs{y}$.
+
+\subsubsection{Exercise 8}
+If $f$ is differentiable, then
+\begin{align*}
+        \lim_{h \to 0} \frac{\abs{f(a + h) - f(a) - \lambda(h)}}{\abs{h}} &= 0 \\
+                                                                          &= \lim_{h \to 0} \frac{\abs{(f_1(a + h) - f_1(a) - \lambda_1(h), f_2(a + h) - f_2(a) - \lambda_2(h))}}{\abs{h}} \\
+                                                                          &\geq \lim_{h \to 0} \frac{\abs{f_1(a + h) - f_1(a) - \lambda_1(h)}}{\abs{h}}
+\end{align*}
+so $f_1$ and $f_2$ are both differentiable. The reverse direction is a straightforward application of the triangle
+inequality.
+
+\subsubsection{Exercise 9}
+(a) If $f$ is differentiable at $a$, then we can let $g(x) = f(a) + f'(a) (x - a)$. For the other direction,
+\begin{align*}
+        \lim_{h \to 0} \frac{f(a + h) - a_0 - a_1h}{h} &= 0 \\
+        \implies \lim_{h \to 0} \frac{f(a + h) - a_0}{h} &= a_1 \\
+        \implies a_0 = f(a)
+\end{align*}
+so $f$ is differentiable at $a$.
+
+(b) We can break up the $n^{\text{th}}$ order limit into
+\begin{align*}
+        \lim_{x \to  a} \frac{f(x) - g(x)}{(x - a)^n} &=
+        \lim_{x \to a} \frac{f(x) - \sum_{i = 0}^{n - 1} \frac{f^{(i)}(a)}{i!} (x - a)^i}{(x - a)^n} +
+        \frac{f^{(n)}(a)}{n!} \\
+                                                      &= \frac{f^{(n)}(a)}{n!} - \frac{f^{(n)}(a)}{n!} = 0
+\end{align*}
+where the last step follows from repeated application of L'Hopital's.
