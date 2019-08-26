@@ -1,0 +1,28 @@
+\section{Complex Functions}
+
+\subsection{Analytic Functions}
+
+\subsubsection{Exercise 4}
+Let $f(z) = u(z) + iv(z)$ with $\abs{f(z)} = c$. Then we have that
+\begin{align*}
+        &u^2(z) + v^2(z) = c^2 \\
+        \implies &u(z) (\pdv{u}{x} - \pdv{u}{y}) + v(z) (\pdv{v}{x} - \pdv{v}{y}) = 0.
+\end{align*}
+If $u(z) = 0$ or $v(z) = 0$, then $f(z)$ is clearly a constant. Otherwise, both differences of partial 
+derivatives must be 0. Applying Cauchy-Riemann then gives that $\pdv{u}{x} = -\pdv{u}{x}$ (and similar for
+$v(z)$), so $f(z)$ must also be constant in this case. 
+
+\subsubsection{Exercise 5}
+Let $f(z) = u(z) + iv(z)$. Then $\overline{f(\bar{z})} = u(\bar{z}) - iv(\bar{z})$, which we can write as
+$u(x, -y) - iv(x, -y)$. Differentiating with respect to $x$ and $y$, it is straightforward to check that
+$\overline{f(\bar{z})}$ satisfies Cauchy-Riemann and is therefore analytic if $f(z)$ is analytic.
+
+\subsubsection{Exercise 6}
+Since $\pdv{u}{y} \pdv{y}{-y} = -\pdv{u}{y}$, we have that $u'(x, y) = u(x, -y)$ satisfies $\Delta u' = 0$ and
+is thus harmonic as well.
+
+\subsubsection{Exercise 7}
+Can be shown by following the procedure outlined in the text; let $x = \frac{1}{2} (z + \bar{z})$ and
+$y = \frac{-i}{2} (z - \bar{z})$ and differentiate.
+
+
