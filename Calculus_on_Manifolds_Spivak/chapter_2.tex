@@ -70,3 +70,46 @@ so $f$ is differentiable at $a$.
                                                       &= \frac{f^{(n)}(a)}{n!} - \frac{f^{(n)}(a)}{n!} = 0
 \end{align*}
 where the last step follows from repeated application of L'Hopital's.
+
+\subsection{Basic Theorems}
+
+\subsubsection{Exercise 11}
+(a) Let $G$ be a function such that $G' = g$. Then
+\begin{align*}
+        f'(x, y) &= g(x + y) (\pi_1'(x, y) + \pi_2'(x, y)) \\
+                 &= g(x + y) ((1, 0) + (0, 1)) = (g(x + y), g(x + y))
+\end{align*}
+
+(b) Following the setup of (a), we have
+\begin{align*}
+        f'(x, y) &= g(xy) (y \pi_1'(x, y) + x \pi_2'(x, y)) \\
+                 &= g(xy) (y, x)
+\end{align*}
+
+\subsubsection{Exercise 12}
+(a) Since $f(h, k) = hk f(1, 1)$, the desired result follows immediately from $\lim_{(h, k) \to 0} \frac{\abs{hk}}{\abs{(h, k)}} = 0$.
+
+(b) We have that $f(a + h, b + k) - f(a, b) = f(a, k) + f(h, b) + f(h, k)$ from bilinearity, so $Df(a, b)(x, y) = f(a, y) + f(x, b)$ as
+desired.
+
+(c) The function $p: \mathbb{R} \times \mathbb{R} \to \mathbb{R}$ from Theorem 2-3 is bilinear, so it is just a special case
+of (b).
+
+\subsubsection{Exercise 14}
+(a) We can bound the multilinear case with the bilinear case:
+\begin{align*}
+        \lim_{h \to 0} \frac{\abs{f(a_1, ..., h_i, ..., h_j, ..., a_k)}}{\abs{h}} &\leq
+        \lim_{h \to 0} \frac{\abs{f(a_1, ..., h_i, ..., h_j, ..., a_k)}}{\abs{(h_i, h_j)}} \\ &\leq
+        \lim_{(h_i, h_j) \to 0} \frac{\abs{f(a_1, ..., h_i, ..., h_j, ..., a_k)}}{\abs{(h_i, h_j)}} \\
+                                                                                             &= 0
+\end{align*}
+
+(b) Expanding $f(a_1 + h_1, ..., a_n + h_n) - f(a_1, ..., a_n) - Df(a_1, ..., a_n)(h_1, ..., h_n)$
+leaves only terms that are at least bilinear, so by part (a) we are done.
+
+\subsubsection{Exercise 16}
+Using the fact that $Dx = x$ (from Theorem 2-3), we have that
+\begin{align*}
+        f'(f^{-1}) \circ f^{-1\prime} (x) &= x \\
+        \implies f^{-1\prime} (x) &= [f'(f^{-1} (x))]^{-1} 
+\end{align*}
