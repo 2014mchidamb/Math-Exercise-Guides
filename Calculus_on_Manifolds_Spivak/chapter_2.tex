@@ -113,3 +113,87 @@ Using the fact that $Dx = x$ (from Theorem 2-3), we have that
         f'(f^{-1}) \circ f^{-1\prime} (x) &= x \\
         \implies f^{-1\prime} (x) &= [f'(f^{-1} (x))]^{-1} 
 \end{align*}
+
+\subsection{Partial Derivatives}
+
+\subsubsection{Exercise 19}
+Since $f(1, y) = 1$, $D_2 f(1, y) = 0$.
+
+\subsubsection{Exercise 21}
+(a) The first term of $f$ is independent of $y$, so we need not consider it. Letting $G_2$ be the antiderivative of
+$g_2$, we have that the second term is equivalent to $G_2(x, y) - G_2(x, 0)$. Differentiating this with respect to $y$
+yields $g_2(x, y)$ as desired.
+
+(b) Replacing the first integrand with $g_1(t, y)$ and the second integrand with $g_2(0, t)$ will give
+$D_2 f(x, y) = g_1(x, y)$.
+
+(c) The functions $f(x, y) = \frac{x^2}{2} + \frac{y^2}{2}$ and $f(x, y) = xy$ will work (obtained by integrating the
+desired partial derivatives with respect to $x$ and $y$).
+
+\subsubsection{Exercise 22}
+Applying the mean value theorem to each variable gives the desired results.
+
+\subsubsection{Exercise 23}
+(a) Consider $(x_1, y_1)$ and $(x_2, y_2)$. Since $D_1 f = D_2 f = 0$, we have that $f$ is constant along the lines from
+$(x_1, y_1)$ to $(-\epsilon, y_1)$, $(-\epsilon, y_1)$ to $(-\epsilon, y_2)$, and $(-\epsilon, y_2)$ to $(x_2, y_2)$ by
+the logic of the previous exercise (where $\epsilon > 0$). Thus, $f(x_1, y_1) = f(x_2, y_2)$ for all $(x_1, y_1)$ and
+$(x_2, y_2)$.
+
+(b) Take the following function:
+\begin{align*}
+        f(x, y) = 
+        \begin{cases}
+                0 & x < 0 \\
+                1 & x \geq 0, y > 0 \\
+                -1 & x \geq 0, y < 0 \\
+        \end{cases}
+\end{align*}
+This function is not independent of $y$, since $f(0, 1) \neq f(0, -1)$. However,
+$D_2 f = 0$ (due to $x \geq 0, y = 0$ not being in $A$).
+
+\subsubsection{Exercise 25}
+Since $\exp(-x^{-2})$ is $C^\infty$ for all $x \neq 0$, $f$ is also $C^\infty$ for all such $x$. For
+$x = 0$, we can proceed via L'Hopital's as suggested:
+\begin{align*}
+        f'(0) &= \lim_{h \to 0} \frac{f(h) - f(0)}{h} \\
+              &= \lim_{h \to 0} \frac{\exp(-h^{-2})}{h} \\
+              &= \lim_{h \to 0} \frac{\frac{1}{h}}{\exp(h^{-2})} \\
+              &= \lim_{h \to 0} \frac{h}{2\exp(h^{-2})} \\
+              &= 0
+\end{align*}
+Repeating this procedure indefinitely shows that $f^{(i)}(0) = 0$ and that $f$ is $C^\infty$.
+
+\subsubsection{Exercise 26}
+(a) The strategy from the previous exercise should work.
+
+(b) Consider the following function:
+\begin{align*}
+        f(x) =
+        \begin{cases}
+                \exp(-x^{-2}) \exp(-(x - \epsilon)^{-2}) & x \in (0, \epsilon) \\
+                0 & x \notin (0, \epsilon)
+        \end{cases}
+\end{align*}
+Now we can define $g(x) = \int_{0}^{x} f / \int_{0}^{\epsilon} f$ as suggested. Since
+$f(x) = 0$ for all $x \geq \epsilon$, we have that $\int_{0}^{x} f = \int_{0}^{\epsilon} f$.
+Similarly, $\int_{0}^{x} f = 0$ for $x \leq 0$.
+
+(c) The fact that $g$ is $C^\infty$ follows from $f$ being $C^\infty$. Similarly,
+plugging $\frac{x_i - a_i}{\epsilon}$ into $f$ gives
+$\exp(-\big(\frac{x_i - (a_i + \epsilon)}{\epsilon}\big)^{-2}) \exp(-\big(\frac{x_i - (a_i - \epsilon)}{\epsilon}\big)^{-2})$, from
+which it can be seen that $f$ is positive only on 
+$(a_1 - \epsilon, a_1 + \epsilon) \times ... \times (a_n - \epsilon, a_n + \epsilon)$
+and 0 everywhere else.
+
+(d) Since $C$ is compact and in $\mathbb{R}^n$, we can choose finitely many
+closed rectangles around points in $C$ such that these rectangles are contained
+in $A$ and their union covers $C$. For each such rectangle, we can then mimic
+the style of the function $g$ in part (c) to produce a $C^\infty$ function that is 
+non-zero only in that rectangle. Finally, we can take the sum of these functions
+to get a function that is $C^\infty$ and positive on $C$ while being 0 outside of a
+closed set contained in $A$.
+
+(e) The function described in (d) satisfies $f(x) \geq \epsilon$ (for some $\epsilon > 0$)
+for all $x \in C$ since $C$ is compact. Thus, we can consider $g \circ f$ with
+the aforementioned $\epsilon$ ($g$ is described in (b)) to get the desired 
+function.
