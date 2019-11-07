@@ -1,0 +1,87 @@
+\section{Probability}
+
+\subsection{Exercise 1}
+If $x \in B_i$, then $x \in A_i$ and $x \notin A_j \forall j < i$, so $x \notin B_j \forall j < i$.
+Thus, all of the $B_i$ are disjoint. Furthermore, if $x \in A_n$, then 
+$x \in A_i$ for some $i \leq n$, so $x \in \cup_{i = 1}^n B_i$. The reverse direction
+is also true by definition of $B_i$, so $\cup_{i = 1}^n A_i = \cup_{i = 1}^n B_i$.
+
+To prove the monotonically decreasing case, we first note that
+$A_n \setminus A = \cup_{i = n}^\infty A_i \setminus A_{i + 1}$. This can be
+seen from the fact that $x \in A_n \setminus A \implies x \notin \cap_{i = n}^\infty A_i$,
+so there exists $i$ such that $x \in A_i$ and $x \notin A_{i + 1}$, which gives
+$x \in A_i \setminus A_{i + 1}$. The reverse direction follows from the
+definition of monotonically decreasing, so we have equality.
+
+Since all of the $A_i \setminus A_{i + 1}$ are disjoint, we have
+\begin{align*}
+        \lim_{n \to \infty} P(A_n) &= P(A) + \lim_{n \to \infty} P(A_n \setminus A) \\
+                                   &= P(A) + \lim_{n \to \infty} \sum_{i = n}^\infty P(A_i \setminus A_{i + 1}) \\
+                                   &= P(A)
+\end{align*}
+as desired.
+
+\subsection{Exercise 5}
+The sample space consists of all strings that end in an H and otherwise contain only Ts
+except for a single other H (i.e. ``TTTTHTTTH''). If we stop at $k$ tosses, then toss $k$
+must have been an H and there must also have been exactly one H in the first $k - 1$ tosses.
+Since we have $k - 1$ options for the other H, we have that the probability is
+$\frac{k - 1}{2^k}$.
+
+\subsection{Exercise 6}
+Consider the partition of $\Omega$ into singletons. Assigning any non-zero probability to
+these singletons would cause the probability of $\Omega$ (which is the sum of the probabilities
+of the singletons) to diverge.
+
+\subsection{Exercise 8}
+Applying the results from exercises 4 and 7, we have
+\begin{align*}
+        P\big(\cap_{i = 1}^\infty A_i\big) &= P\bigg(\big(\cup_{i = 1}^\infty A_i^c\big)^c\bigg) \\
+                                             &= 1 - P\big(\cup_{i = 1}^\infty A_i^c\big) \\
+                                             &\geq 1 - \sum_{i = 1}^\infty P(A_i^c) \\
+                                             &= 1
+\end{align*}
+Where the last line follows from the fact that $P(A_i) = 1$ was given.
+
+\subsection{Exercise 10}
+We define the sample space $\Omega$ to consist of the doubles $(A, B)$ where
+$A, B \in \{1, 2, 3\}$ and $A, B$ correspond to the door containing the prize
+and the door shown by Monty respectively. We can then define the event that 
+door $i$ contains the prize as $X_i = \{(A, B) \: | \: A = i\}$. Similarly,
+we can define the event that door $i$ is shown as $Y_i = \{(A, B) \: | \: B = i\}$.
+
+Now we can compute the probability $P(X_2 Y_3)$ using Bayes theorem as
+$P(X_2 Y_3) = P(Y_3 | X_2) P(X_2) = 1 * \frac{1}{3}$. The calculation for
+$P(X_3 Y_2)$ is identical. Furthermore, $P(X_1 Y_2) = P(X_1 Y_3) = \frac{1}{6}$, 
+so our likelihood of winning is always increased by switching.
+
+\subsection{Exercise 11}
+\begin{align*}
+        P(A^c) P(B^c) &= (1 - P(A)) (1 - P(B)) \\
+                      &= 1 - P(A) - P(B) + P(A)P(B) \\
+                      &= 1 - P(A) - P(B) + P(AB) \\
+                      &= 1 - P(A \cup B) \\
+                      &= P(A^c B^c)
+\end{align*}
+
+\subsection{Exercise 12}
+Let the sample space $\Omega$ consist of the doubles $(C, S)$ where $C \in \{1, 2, 3\}$
+(card number) and $S \in \{1, 2\}$ (card side). Let $A$ denote the event that we see
+a green side, and let $B$ denote the event that we see the double green card. Then
+$P(B | A) = \frac{P(AB)}{P(A)} = \frac{1}{3} / \frac{1}{2} = \frac{2}{3}$.
+
+\subsection{Exercise 14}
+If $P(A) = 0$, then we have that $P(AB) = 0 = P(A)P(B)$ for all $B$ since $AB \subset A$.
+If $P(A) = 1$, then we have $P(A \cup B) = P(A) + P(B) - P(A \cap B) = 1 + P(B) - P(A \cap B)$
+which implies $P(A \cap B) = P(B) = P(A)P(B)$.
+If $A$ is independent of itself, then $P(A)^2 = P(A)$, which is only possible if
+$P(A) = 1$ or $P(A) = 0$.
+
+\subsection{Exercise 17}
+$P(ABC) = \frac{P(ABC)}{P(BC)} \frac{P(BC)}{P(C)} P(C) = P(A | BC) P(B | C) P(C)$.
+
+\subsection{Exercise 18}
+We have that $\sum_{i} P(B | A_i) P(A_i) = P(B)$. If $P(A_1 | B) < P(A_1)$, then
+applying Bayes' Theorem gives $P(B | A_1) < P(B)$. Now assume $P(B | A_k) \leq P(B)$
+for all $k > 1$. Then $\sum_{i} P(B | A_i) P(A_i) < \sum_{i} P(B) P(A_i) = P(B)$,
+which is a contradiction.
